@@ -9,11 +9,15 @@ pagetype: blog
 {% if paginator.total_posts == 0 %}
     <p>No posts right now.</p>
 {% else %}
-{% for post in site %}
-  {{post.title}}
-{% endfor %} 
-{% endif %}
+<ul class="blog-list">
+    {% for post in paginator.posts %}
+        <li>
+            <a class="blog-heading" href="{{ post.url | relative_url }}">{{ post.title }}</a><span class="date">{{ post.date | date_to_string }}</span>
+            <div class="excerpt">{{ post.excerpt }}</div>
+        </li>
+    {% endfor %}
 </ul>
+{% endif %}
 
 <hr>
 {% if paginator.total_pages > 1 %}
@@ -31,7 +35,3 @@ pagetype: blog
     {% endif %}
 </ul>
 {% endif %}
-
-<p class="p1"><span class="s1">{% endif %}<span class="Apple-converted-space"> </span></span></p>
-</body>
-</html>
