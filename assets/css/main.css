@@ -6,7 +6,13 @@ body, h1, p {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+}
+
+/* Add background texture */
+body {
+    background-color: #f5f5f5;
+    background-image: url('texture.png'); /* Replace 'texture.png' with your own texture image */
+    background-repeat: repeat;
 }
 
 header {
@@ -42,16 +48,30 @@ nav a {
 
 .project {
     margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
+/* Improved button styles */
 button {
     background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Define the earth-tone background color */
+.earth-tone-bg {
+    background-color: #c0a080; /* Earth-tone color */
+    color: #333; /* Dark text on the earth-tone background */
 }
