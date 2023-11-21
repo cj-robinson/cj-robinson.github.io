@@ -9,6 +9,15 @@ pagetype: blog
 {% if paginator.total_posts == 0 %}
     <p>No posts right now.</p>
 {% else %}
+<div class="blogPage-categoryList">
+    <ul>
+    <li><a href="{{ "/categories/" | relative_url }}">Categories</a> : </li>
+    {% for category in site.categories %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <li><a href="{{"/categories/#" | append: category_name | relative_url}}">{{category_name}}</a></li>
+    {% endfor %}
+</ul>
+</div>
 <ul class="blog-list">
     {% for post in paginator.posts %}
         <li>
