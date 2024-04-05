@@ -7,7 +7,7 @@ google_analytics: # Tracking ID, e.g. "UA-000000-01"
 # Author
 author:
   name: CJ Robinson
-  desc: Data person. My full name is Christopher, but mostly I go by CJ. Thanks for visiting!
+  desc: Data person. Thanks for visiting!
   email: cjrobinson34@gmail.com
   selfie: assets/img/profile.jpg
 

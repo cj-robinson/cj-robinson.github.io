@@ -2,6 +2,10 @@
 layout: about 
 ---
 
+---
+
+My full name is Christopher, but mostly I go by CJ.
+
 I work at The New York Times as a senior data analyst for the Games team. We use user engagement data to understand what can make NYT Games like Wordle, Strands, Connections, and the Crossword more engaging and enjoyable.
 
 I enjoy transit, cities, coffee, and games.
