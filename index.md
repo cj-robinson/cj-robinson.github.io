@@ -2,7 +2,7 @@
 layout: about 
 ---
 
-I work at The New York Times as a senior data analyst for the Games team. We use user engagement data to understand what can make our games more engaging and enjoyable.
+I work at The New York Times as a senior data analyst for the Games team. We use user engagement data to understand what can make NYT Games like Wordle, Strands, Connections, and the Crossword more engaging and enjoyable.
 
 I enjoy transit, cities, coffee, and games.
 
