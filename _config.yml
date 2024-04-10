@@ -2,7 +2,7 @@
 title: CJ Robinson
 baseurl: ""
 url: "https://cj-robinson.github.io/"
-google_analytics: "G-1ZP391TG23"
+google_analytics: G-1ZP391TG23
 
 # Author
 author:
@@ -50,7 +50,7 @@ plugins:
   - jekyll-paginate
 
 # Permalinks
-permalink: /:year-:month-:day/:title
+permalink: /portfolio/:title
 paginate_path: "/portfolio/page:num/"
 paginate: 5
 exclude:
