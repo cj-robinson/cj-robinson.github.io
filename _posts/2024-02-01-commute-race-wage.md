@@ -3,6 +3,8 @@ layout: post
 title:  "Determining Travel Time to Work: The Effects of Race and
 Wage on Commuting in Large Cities"
 tech: "R"
+categories: Portfolio
+
 ---
 
 In this paper, I built upon previous research by John Kain, who in the 1960s coined the "Spatial Mismatch Hypothesis." He found that Black workers who largely resided in cities faced reverse commutes to get to jobs in the suburbs, and therefore more likely to have increased commute times and friction in finding work. 

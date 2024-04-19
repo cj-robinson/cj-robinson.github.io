@@ -2,6 +2,8 @@
 layout: post
 title:  "2020 N.Y.P.D. Complaints"
 tech: "R"
+categories: Portfolio
+
 ---
 # In 2020, a Record-High Proportion of Complaints Against N.Y.P.D. Officers Went Unpunished
 ## Data released by the Civilian Complaint Review Board shows that the highest percentage of complaints against police were substantiated than ever before in 2020, while complaints with penalties were at an all-time low.
