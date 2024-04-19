@@ -3,7 +3,8 @@ layout: base
 permalink: /portfolio/
 
 ---
-
+<h1 style="text-align:center;">Portfolio</h1>
+<hr />
 <div class="portfolio">
   {% for post in site.categories.Portfolio%}
       {% if post.external_url %}
@@ -18,7 +19,8 @@ permalink: /portfolio/
 	      <div>
 	        <h1 class="portfolio-title">{{ post.title }}</h1>
 	        <div class="portfolio-line"></div>
-	      </div>
+			<br> {{ post.excerpt | strip_html }}
+			</div>
 	    </a>
       {% endif %}
   {% endfor %}

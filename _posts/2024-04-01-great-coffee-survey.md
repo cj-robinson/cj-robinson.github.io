@@ -6,7 +6,7 @@ categories: Portfolio
 
 ---
 
-James Hoffman, a YouTube creator, [recently released anonymized results of what he calls the “Great American Taste Test.”](https://www.youtube.com/watch?v=bMOOQfeloH0&ab_channel=JamesHoffmann) The survey aimed to study which roast levels and flavor profiles groups prefer based on demographic attributes and coffee habits. Because of the the types of coffees and the data collected on respondents, the survey also gives an interesting look into how taste is shaped by more than just preference. 
+James Hoffman, a YouTube creator, [recently released anonymized results of what he calls the “Great American Taste Test.”](https://www.youtube.com/watch?v=bMOOQfeloH0&ab_channel=JamesHoffmann) The survey aimed to study which roast levels and flavor profiles groups prefer based on demographic attributes and coffee habits. Because of the the types of coffees and the data collected on respondents, the survey gives an interesting look into how taste is shaped by more than just preference. 
 
 The taste test involved sending 5,000 people a shipment of four different coffee blends. Coffees A, B and C followed a typical range of roast levels from light to dark. Coffee D was an experimentally roasted coffee that was fermented during its processing. The survey asked participants to rate each coffee individually on a scale from one to five with five being the most favorable. 
 
