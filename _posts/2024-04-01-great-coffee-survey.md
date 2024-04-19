@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Great American Coffee Survey"
-tech: "R"
+tech: "R, ggplot"
 categories: Portfolio
 
 ---

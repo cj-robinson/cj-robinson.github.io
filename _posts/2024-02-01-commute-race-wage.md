@@ -2,7 +2,7 @@
 layout: post
 title:  "Determining Travel Time to Work: The Effects of Race and
 Wage on Commuting in Large Cities"
-tech: "R"
+tech: "R, ggplot"
 categories: Portfolio
 
 ---

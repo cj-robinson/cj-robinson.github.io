@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "2020 N.Y.P.D. Complaints"
-tech: "R"
+tech: "R, ggplot"
 categories: Portfolio
 
 ---
