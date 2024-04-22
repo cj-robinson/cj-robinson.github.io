@@ -12,6 +12,7 @@ permalink: /portfolio/
 	      <div>
 	        <h1 class="portfolio-title">{{ post.title }}</h1>
 	        <div class="portfolio-line"></div>
+			<br> {{ post.excerpt | strip_html }}
 	      </div>
 	    </a>
 		{% else %}
