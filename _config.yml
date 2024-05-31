@@ -48,6 +48,7 @@ sass:
 # Gems
 plugins:
   - jekyll-paginate
+  - jekyll-seo-tag
 
 # Permalinks
 paginate: 5
