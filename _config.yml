@@ -49,7 +49,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
-
+  - jekyll-sitemap
 # Permalinks
 paginate: 5
 exclude:
