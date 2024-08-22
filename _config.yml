@@ -1,5 +1,5 @@
 # Site settings
-title: CJ Robinson
+title: CJ Robinson Data Portfolio
 baseurl: ""
 url: "https://cj-robinson.github.io"
 google_analytics: G-1ZP391TG23
@@ -60,3 +60,4 @@ exclude:
   - "READE.md"
   - "screenshot.png"
   - "vendor"
+  - "other/*"
