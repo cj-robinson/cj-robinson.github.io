@@ -1,12 +1,12 @@
 # Site settings
-title: CJ Robinson Data Portfolio
+title: C.J. Robinson Data Portfolio
 baseurl: ""
 url: "https://cj-robinson.github.io"
 google_analytics: G-1ZP391TG23
 
 # Author
 author:
-  name: CJ Robinson
+  name: C.J. Robinson
   desc: Data person. Thanks for visiting!
   email: cjrobinson34@gmail.com
   selfie: assets/img/profile.jpg
