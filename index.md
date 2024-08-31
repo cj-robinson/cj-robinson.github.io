@@ -4,7 +4,7 @@ layout: about
 
 ---
 
-My full name is Christopher, but mostly I go by C.J. (sometimes CJ)
+My full name is Christopher, but mostly I go by C.J. (sometimes CJ).
 
 I'm currently a student at the Columbia Journalism School pursuing an M.S. in Data Journalism.
 

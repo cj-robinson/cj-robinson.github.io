@@ -1,12 +1,12 @@
 ---
 layout: base 
-permalink: /portfolio/
-
+permalink: /clips/
+title: News Clips
 ---
-<h1 style="text-align:center;">Data Portfolio</h1>
+<h1 style="text-align:center;">News Clips</h1>
 <hr />
-<div class="portfolio">
-  {% for post in site.categories.Portfolio%}
+<div class="clips">
+  {% for post in site.categories.Clips%}
       {% if post.external_url %}
 	    <a href="{{ post.external_url }}" class="portfolio-item">
 	      <div>
@@ -21,7 +21,7 @@ permalink: /portfolio/
 	        <h1 class="portfolio-title">{{ post.title }}</h1>
 	        <div class="portfolio-line"></div>
 			<br> {{ post.excerpt | strip_html }}
-			</div>
+	      </div>
 	    </a>
       {% endif %}
   {% endfor %}
