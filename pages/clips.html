@@ -3,27 +3,49 @@ layout: base
 permalink: /clips/
 title: News Clips
 ---
+
+<style>
+	.portfolio-image-container {
+	  width: 100%;
+	  max-width: 600px; /* Adjust this to your preferred maximum width */
+	  margin: 0 auto;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  margin-top: 15px; /* Add some space below the title */
+
+	}
+	.portfolio-image {
+	  max-height: 300px; /* Set this to your desired target height */
+	  max-width: 100%;
+	  width: auto;
+	  height: auto;
+	  object-fit: contain;
+	}
+
+</style>
+
+
 <h1 style="text-align:center;">News Clips</h1>
 <hr />
 <div class="clips">
-  {% for post in site.categories.Clips%}
+  {% for post in site.categories.Clips %}
       {% if post.external_url %}
-	    <a href="{{ post.external_url }}" class="portfolio-item">
-	      <div>
-	        <h1 class="portfolio-title">{{ post.title }}</h1>
-	        <div class="portfolio-line"></div>
-			<br> {{ post.excerpt | strip_html }}
-	      </div>
-	    </a>
-		{% else %}
-	    <a href="{{ post.url | prepend: site.baseurl }}" class="portfolio-item">
-	      <div>
-	        <h1 class="portfolio-title">{{ post.title }}</h1>
-	        <div class="portfolio-line"></div>
-			<br> {{ post.excerpt | strip_html }}
-	      </div>
-	    </a>
+        <a href="{{ post.external_url }}" class="portfolio-item">
+      {% else %}
+        <a href="{{ post.url | prepend: site.baseurl }}" class="portfolio-item">
       {% endif %}
+        <div>
+          <h1 class="portfolio-title">{{ post.title }}</h1>
+          <div class="portfolio-line"></div>
+          <br> {{ post.excerpt | strip_html }}
+		  {% if post.image %}
+		  <div class="portfolio-image-container">
+			<img src="{{ post.image }}" alt="{{ post.title }}" class="portfolio-image">
+		  </div>
+		{% endif %}
+        </div>
+      </a>
   {% endfor %}
 </div>
 

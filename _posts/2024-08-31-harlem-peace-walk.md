@@ -7,7 +7,7 @@ external_site: HERE
 categories: Clips
 published: true
 excerpt: "The Harlem/Palestine Peace Walk had over 30 demonstrators march through the streets of Harlem with a small police presence following closely behind."
-
+image: "/assets/img/peace-walk/flyer.jpg"
 ---
 
 [View the story here.](https://theuptowner.org/police-follow-as-group-holds-peace-walk-for-black-august-in-harlem/)

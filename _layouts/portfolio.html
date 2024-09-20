@@ -14,6 +14,11 @@ permalink: /portfolio/
 	        <div class="portfolio-line"></div>
 			<br> {{ post.excerpt | strip_html }}
 	      </div>
+		  {% if post.image %}
+		  <div class="portfolio-image-container">
+			<img src="{{ post.image }}" alt="{{ post.title }}" class="portfolio-image">
+		  </div>
+			{% endif %}
 	    </a>
 		{% else %}
 	    <a href="{{ post.url | prepend: site.baseurl }}" class="portfolio-item">
@@ -22,6 +27,11 @@ permalink: /portfolio/
 	        <div class="portfolio-line"></div>
 			<br> {{ post.excerpt | strip_html }}
 			</div>
+			{% if post.image %}
+			<div class="portfolio-image-container">
+			  <img src="{{ post.image }}" alt="{{ post.title }}" class="portfolio-image">
+			</div>
+		  {% endif %}
 	    </a>
       {% endif %}
   {% endfor %}
