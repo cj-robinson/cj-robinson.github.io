@@ -11,6 +11,7 @@ title: External Work
 	    <a href="{{ post.external_url }}" class="portfolio-item">
 	      <div>
 	        <h1 class="portfolio-title">{{ post.title }}</h1>
+			<h3 class="small-border"><em>{{ post.publication | strip_html }}</em></h3>
 	        <div class="portfolio-line"></div>
 			<br> {{ post.excerpt | strip_html }}
 	      </div>
@@ -19,6 +20,7 @@ title: External Work
 	    <a href="{{ post.url | prepend: site.baseurl }}" class="portfolio-item">
 	      <div>
 	        <h1 class="portfolio-title">{{ post.title }}</h1>
+			<h3 class="small-border"><em>{{ post.publication | strip_html }}</em></h3>
 	        <div class="portfolio-line"></div>
 			<br> {{ post.excerpt | strip_html }}
 	      </div>

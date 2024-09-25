@@ -6,6 +6,7 @@ external_url: "https://theuptowner.org/chronic-absenteeism-remains-high-in-harle
 external_site: HERE
 categories: Clips
 published: true
+publication: "The Uptowner"
 excerpt: "Over half of Harlem elementary schoolers are chronically absent, which can imperil students’ futures, experts warn."
 image: "/assets/img/absentee/absentee-viz.png"
 ---

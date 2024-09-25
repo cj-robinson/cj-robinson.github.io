@@ -6,6 +6,7 @@ external_url: "https://theuptowner.org/police-follow-as-group-holds-peace-walk-f
 external_site: HERE
 categories: Clips
 published: true
+publication: "The Uptowner"
 excerpt: "The Harlem/Palestine Peace Walk had over 30 demonstrators march through the streets of Harlem with a small police presence following closely behind."
 image: "/assets/img/peace-walk/flyer.jpg"
 ---
