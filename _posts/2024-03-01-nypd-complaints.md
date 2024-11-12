@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "2020 N.Y.P.D. Complaints"
+title:  "In 2020, a Record-High Proportion of Complaints Against N.Y.P.D. Officers Went Unpunished"
 tech: "R, ggplot"
 categories: Portfolio
 excerpt: The highest percentage of substantiated complaints against N.Y.P.D. officers went without discipline in 2020, despite the highest number of substantiated complaints on record, a review of Civilian Complaint Review Board data demonstrates. 
+image: "/assets/img/nypd/complaints_by_category.png"
 ---
-# In 2020, a Record-High Proportion of Complaints Against N.Y.P.D. Officers Went Unpunished
 
 The highest percentage of substantiated complaints against N.Y.P.D. officers went without discipline in 2020, despite the highest number of substantiated complaints on record, a review of Civilian Complaint Review Board data demonstrates. 
 

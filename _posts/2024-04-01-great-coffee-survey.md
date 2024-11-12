@@ -3,7 +3,7 @@ layout: post
 title:  "The Great American Coffee Survey"
 tech: "R, ggplot"
 categories: Portfolio
-
+image: "/assets/img/coffee/age_ridges.png"
 ---
 
 James Hoffman, a YouTube creator, [recently released anonymized results of what he calls the “Great American Taste Test.”](https://www.youtube.com/watch?v=bMOOQfeloH0&ab_channel=JamesHoffmann) 
