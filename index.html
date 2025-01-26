@@ -1,8 +1,132 @@
-<html>
-  <head>
-    <title>C.J. Robinson</title>
-  </head>
-  <body>
-    <h1>Welcome to my website!</h1>
-  </body>
+<!doctype html>
+
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <title>C.J. Robinson</title>
+
+</head>
+
+<body>
+  <section class="hero is-info is-small">
+    <div class="hero-head has-background-primary-15">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <p class="title navbar-item has-text-primary-15-invert">C.J. Robinson</p>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <div class="container mt-5">
+    <div class="box">
+      <p class="subtitle">My full name is Christopher, but mostly I go by C.J. (sometimes CJ).</p>
+
+      <p class="subtitle">I'm currently a student at the Columbia Journalism School pursuing an M.S. in Data Journalism.
+      </p>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="box">
+      <div class="columns">
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <div class="image-container" style="background-image: url('src/oath.png');"></div>
+          </figure>
+        </div>
+        <div class="column is-two-thirds is-flex is-flex-direction-column">
+          <div>
+            <p class="title is-3">
+              Office of Administration Trials and Hearings (OATH) Dashboard
+            </p>
+            <div class="subtitle">
+              Flask app to explore data from the Office of Administration Trials and Hearings (OATH) pulled from NYC Open
+              Data.
+            </div>
+          </div>
+          <div class="mt-auto mb-6">
+            <span class="tag is-primary is-medium has-background-primary-20">
+              <a href="https://oath-dash.onrender.com/" target="_blank"
+                class="custom-link">Visit dashboard</a>
+            </span>
+            <span class="tag is-dark is-medium">
+              <a href="https://github.com/cj-robinson/oath-dash" target="_blank"
+                class="custom-link">Visit GitHub</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="box">
+      <div class="columns">
+        <div class="column is-two-thirds is-flex is-flex-direction-column">
+          <div>
+            <p class="title is-3">
+              Columbia Journalism Review story on Courier Newsroom
+            </p>
+            <div class="subtitle">
+              I pulled the data and crafted each visualization for this piece with additional writing, editing and
+              reporting. Combined, the progressive newsroom’s $6 million ad spend on Meta was second only to the Trump and
+              Harris official campaigns.
+            </div>
+          </div>
+          <div class="mt-auto mb-6">
+            <span class="tag is-primary is-medium has-background-primary-20">
+              <a href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php" target="_blank"
+                class="custom-link">Visit CJR page for story</a>
+            </span>
+            <span class="tag is-dark is-medium">
+              <a href="https://github.com/cj-robinson/elections-meta-spend-2024" target="_blank"
+                class="custom-link">Visit GitHub</a>
+            </span>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <div class="image-container"
+              style="background-image: url('https://cj-robinson.github.io/assets/img/courier-meta/keystone_dist.jpg');">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="columns">
+        <div class="column is-one-third">
+          <figure class="image is-5by3">
+            <div class="image-container" style="background-image: url('src/ultimate-guitar.jpeg');"></div>
+          </figure>
+        </div>
+        <div class="column is-two-thirds is-flex is-flex-direction-column">
+          <div>
+            <p class="title is-3">Scraping the Most Popular Songs to Learn on Guitar</p>
+            <div class="subtitle">
+              Using Selenium and requests, I scrape the most popular songs on www.ultimate-guitar.com, a website dedicated
+              to learning how to play songs on the guitar through community-contributed tabs and chords. I also include
+              artist country of origin to output into an interactive map.
+            </div>
+          </div>
+          <div class="mt-auto mb-6">
+            <span class="tag is-dark is-medium">
+              <a href="https://github.com/cj-robinson/ultimate-guitar-popular-tabs" target="_blank"
+                class="custom-link">Visit GitHub</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
