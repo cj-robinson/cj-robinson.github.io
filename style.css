@@ -53,6 +53,16 @@
   left: 80%;
 }
 
+.bsky-icon {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M254.896 188.031C252.711 214.159 230.893 235.116 204.097 235.116H155.459C128.663 235.116 106.845 214.159 104.66 188.031L102.081 157.019H257.475L254.896 188.031Z" fill="currentColor"/><path d="M132.959 85.354H226.597L179.778 157.019H102.081L132.959 85.354Z" fill="currentColor"/></svg>');
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
 .card {
   /* remove drop shadow */
   box-shadow: none;
@@ -147,6 +157,7 @@ body {
   margin-top: 1rem;
   min-height: 2em;
 }
+
 
 .subtitle {
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
