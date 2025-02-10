@@ -11,3 +11,11 @@ document.addEventListener('mousemove', (e) => {
     arrow.style.transformOrigin = 'bottom center';
   });
 });
+
+
+document.querySelector('.scroll-arrow').addEventListener('click', () => {
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: 'smooth'
+  });
+});

@@ -5,125 +5,195 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>C.J. Robinson</title>
 
 </head>
 
 <body>
-  <section class="hero is-info is-small">
-    <div class="hero-head has-background-primary-15">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <p class="title navbar-item has-text-primary-15-invert">C.J. Robinson</p>
-          </div>
+  <section class="hero custom-hero is-medium">
+    <div class="hero-body">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <p class="title has-text-primary-15-invert">Hi, my name is C.J. Robinson.</p>
+          <br>
+          <p class="subtitle hero-subtitle">I'm currently a student at the Columbia Journalism School pursuing an M.S. in Data
+            Journalism.</p>
+          <p class="subtitle hero-subtitle">Previously, I worked as a product analyst at the New York Times Games team using user engagement data to understand what makes games more engaging + enjoyable, and as a marketing data scientist at Expedia building custom R packages.</p>
         </div>
-      </nav>
+        <div class="column is-narrow">
+          <figure>
+            <img src="assets/profile.jpg" width="500">
+            <figcaption class="hero-subtitle">My eyes are usually closed in pictures</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="scroll-arrow">
+        <span class="arrow-down"></span>
+      </div>
     </div>
   </section>
 
-  <div class="container mt-5">
-    <div class="box">
-      <p class="subtitle">My full name is Christopher, but mostly I go by C.J. (sometimes CJ).</p>
 
-      <p class="subtitle">I'm currently a student at the Columbia Journalism School pursuing an M.S. in Data Journalism.
-      </p>
-    </div>
-  </div>
-  
-  <div class="container mt-5">
-    <div class="box">
-      <div class="columns">
-        <div class="column is-one-third">
-          <figure class="image is-5by3">
-            <div class="image-container" style="background-image: url('src/oath.png');"></div>
-          </figure>
-        </div>
-        <div class="column is-two-thirds is-flex is-flex-direction-column">
-          <div>
-            <p class="title is-3">
-              Office of Administration Trials and Hearings (OATH) Dashboard
-            </p>
-            <div class="subtitle">
-              Flask app to explore data from the Office of Administration Trials and Hearings (OATH) pulled from NYC Open
-              Data.
-            </div>
-          </div>
-          <div class="mt-auto mb-6">
-            <span class="tag is-primary is-medium has-background-primary-20">
-              <a href="https://oath-dash.onrender.com/" target="_blank"
-                class="custom-link">Visit dashboard</a>
-            </span>
-            <span class="tag is-dark is-medium">
-              <a href="https://github.com/cj-robinson/oath-dash" target="_blank"
-                class="custom-link">Visit GitHub</a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="box">
-      <div class="columns">
-        <div class="column is-two-thirds is-flex is-flex-direction-column">
-          <div>
-            <p class="title is-3">
-              Columbia Journalism Review story on Courier Newsroom
-            </p>
-            <div class="subtitle">
-              I pulled the data and crafted each visualization for this piece with additional writing, editing and
-              reporting. Combined, the progressive newsroom’s $6 million ad spend on Meta was second only to the Trump and
-              Harris official campaigns.
-            </div>
-          </div>
-          <div class="mt-auto mb-6">
-            <span class="tag is-primary is-medium has-background-primary-20">
-              <a href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php" target="_blank"
-                class="custom-link">Visit CJR page for story</a>
-            </span>
-            <span class="tag is-dark is-medium">
-              <a href="https://github.com/cj-robinson/elections-meta-spend-2024" target="_blank"
-                class="custom-link">Visit GitHub</a>
-            </span>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <figure class="image is-5by3">
-            <div class="image-container"
-              style="background-image: url('https://cj-robinson.github.io/assets/img/courier-meta/keystone_dist.jpg');">
-            </div>
-          </figure>
-        </div>
-      </div>
-    </div>
 
-    <div class="box">
-      <div class="columns">
-        <div class="column is-one-third">
-          <figure class="image is-5by3">
-            <div class="image-container" style="background-image: url('src/ultimate-guitar.jpeg');"></div>
-          </figure>
-        </div>
-        <div class="column is-two-thirds is-flex is-flex-direction-column">
-          <div>
-            <p class="title is-3">Scraping the Most Popular Songs to Learn on Guitar</p>
-            <div class="subtitle">
-              Using Selenium and requests, I scrape the most popular songs on www.ultimate-guitar.com, a website dedicated
-              to learning how to play songs on the guitar through community-contributed tabs and chords. I also include
-              artist country of origin to output into an interactive map.
-            </div>
+  <div class="container mt-5">
+    <h1 class="title has-text-centered">Recent Work</h1>
+    <div class="columns is-multiline">
+      <!-- Evictions Data Story Card -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <div href="https://cj-robinson.github.io/evictions-story" class="image-container" style="background-image: url('assets/evictions.png');"></div>
+            </figure>
           </div>
-          <div class="mt-auto mb-6">
-            <span class="tag is-dark is-medium">
-              <a href="https://github.com/cj-robinson/ultimate-guitar-popular-tabs" target="_blank"
-                class="custom-link">Visit GitHub</a>
-            </span>
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">New York City evictions surged in 2024 despite new tenant protections              </p>
+              <p class="subtitle">Data story examining the 2024 increase in NYC evictions in spite of new tenant protection laws</p>
+              <div class="mt-4">
+                <span class="tag is-ft is-medium ">
+                  <a href="https://cj-robinson.github.io/evictions-story" target="_blank" class="custom-link">View story</a>
+                </span>
+                <span class="tag is-dark is-medium">
+                  <a href="https://github.com/cj-robinson/2024-evictions-data-story" target="_blank" class="custom-link">Visit
+                    GitHub</a>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- OATH Dashboard Card -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <div class="image-container" style="background-image: url('assets/oath.png');"></div>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">OATH Dashboard</p>
+              <p class="subtitle">Flask app to explore data from the Office of Administration Trials and Hearings (OATH)
+                pulled from NYC Open Data.</p>
+              <div class="mt-4">
+                <span class="tag is-ft is-medium ">
+                  <a href="https://oath-dash.onrender.com/" target="_blank" class="custom-link">Visit dashboard</a>
+                </span>
+                <span class="tag is-dark is-medium">
+                  <a href="https://github.com/cj-robinson/oath-dash" target="_blank" class="custom-link">Visit
+                    GitHub</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CJR Story Card -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <div class="image-container" style="background-image: url('assets/keystone_dist.jpg');"></div>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">Courier Newsroom Spent Big on a Meta Ad Blitz in October              </p>
+              <p class="subtitle">Columbia Journalism Review story on partisan newsrooms in 2024 election</p>
+              <div class="mt-4">
+                <span class="tag is-ft is-medium">
+                  <a href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php"
+                    target="_blank" class="custom-link">View story</a>
+                </span>
+                <span class="tag is-dark is-medium">
+                  <a href="https://github.com/cj-robinson/elections-meta-spend-2024" target="_blank"
+                    class="custom-link">Visit GitHub</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ultimate Guitar Card -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <div class="image-container" style="background-image: url('assets/ultimate-guitar.jpeg');"></div>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">Popular Guitar Songs Scraper</p>
+              <p class="subtitle">Using Selenium and requests to scrape the most popular songs on
+                www.ultimate-guitar.com, including artist country data for interactive mapping.</p>
+              <div class="mt-4">
+                <span class="tag is-dark is-medium">
+                  <a href="https://github.com/cj-robinson/ultimate-guitar-popular-tabs" target="_blank"
+                    class="custom-link">Visit GitHub</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Absenteeism Card -->
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <div class="image-container" style="background-image: url('assets/absentee-viz.png');"></div>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">Chronic Absenteeism Remains High in Harlem Elementary Schools              </p>
+              <p class="subtitle">Over half of Harlem elementary schoolers are chronically absent, which can imperil students' futures, experts warn.
+                Story was picked up by the Associated Press Newswire through Columbia News Service.</p>
+              <div class="mt-4">
+                <span class="tag is-ft is-medium">
+                  <a href="https://columbianewsservice.com/2024/11/18/chronic-absenteeism-remains-high-in-harlem-elementary-schools/"
+                    target="_blank" class="custom-link">View story</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Card -->
+      <!-- <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-5by3">
+              <div class="image-container" style="background-image: url('assets/absentee-viz.png');"></div>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">The Great American Coffee Survey</p>
+              <p class="subtitle">Ever wonder what Americans think of artisinal coffee?</p>
+              <div class="mt-4">
+                <span class="tag is-ft is-medium">
+                  <a href="https://columbianewsservice.com/2024/11/18/chronic-absenteeism-remains-high-in-harlem-elementary-schools/"
+                    target="_blank" class="custom-link">View story</a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+
     </div>
   </div>
 
