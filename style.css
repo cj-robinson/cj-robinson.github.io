@@ -1,78 +1,78 @@
 .arrow {
-  position: absolute;
   pointer-events: none;
-  /* Prevent arrows from interfering with cursor */
+  position: absolute;
   transform-origin: bottom center;
+
+  /* Prevent arrows from interfering with cursor */
   /* Set the transform origin to the bottom center */
 }
 
 .arrow {
-  margin-top: 40px;
-  width: 50px;
-  height: 10px;
   background-color: #292929;
+  height: 10px;
+  margin-top: 40px;
   transform: rotate(90deg);
-
+  width: 50px;
 }
 
 .arrow::before {
+  background-color: #292929;
   content: "";
   display: block;
-  width: 40px;
   height: 10px;
-  background-color: #292929;
+  left: -9px;
   position: relative;
   top: -11px;
-  left: -9px;
   transform: rotate(-45deg);
+  width: 40px;
 }
 
 .arrow::after {
+  background-color: #292929;
   content: "";
   display: block;
-  width: 40px;
   height: 10px;
-  background-color: #292929;
-  position: relative;
   left: -9px;
+  position: relative;
   transform: rotate(45deg);
+  width: 40px;
 }
 
 #arrow1 {
-  top: 20%;
   left: 20%;
+  top: 20%;
 }
 
 #arrow2 {
-  top: 50%;
   left: 50%;
+  top: 50%;
 }
 
 #arrow3 {
-  top: 80%;
   left: 80%;
+  top: 80%;
 }
 
 .bsky-icon {
   background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M254.896 188.031C252.711 214.159 230.893 235.116 204.097 235.116H155.459C128.663 235.116 106.845 214.159 104.66 188.031L102.081 157.019H257.475L254.896 188.031Z" fill="currentColor"/><path d="M132.959 85.354H226.597L179.778 157.019H102.081L132.959 85.354Z" fill="currentColor"/></svg>');
-  width: 1.25em;
-  height: 1.25em;
-  display: inline-block;
-  background-size: contain;
   background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1.25em;
   vertical-align: middle;
+  width: 1.25em;
 }
 
 .card {
-  /* remove drop shadow */
+  background-color: rgb(252, 249, 226);
   box-shadow: none;
-  /* add border */
+  padding: 1rem;
 }
 
-
 .subtitle {
-  /* remove drop shadow */
   box-shadow: none;
+
+  /* remove drop shadow */
 }
 
 .hero-subtitle {
@@ -85,34 +85,36 @@
 
 .custom-link {
   color: white;
+
   /* Change this to your desired color */
 }
 
 .custom-link:hover {
   color: white;
+
   /* Optional: Change the color on hover */
 }
 
 .image-container {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  /* Ensures the image covers the container without distortion */
   background-position: center;
-  /* Centers the image within the container */
+  background-size: cover;
   border-radius: .75rem;
+  height: 100%;
   position: relative;
   transition: all 0.3s ease;
+  width: 100%;
 
+  /* Ensures the image covers the container without distortion */
+  /* Centers the image within the container */
 }
 
 .box {
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   margin-bottom: 2rem;
+  transition: transform 0.3s ease;
 }
 
 .box:hover {
@@ -122,7 +124,6 @@
 .hero {
   background-color: #a2a251;
   padding-bottom: 40px;
-
 }
 
 .tag {
@@ -136,30 +137,25 @@
 }
 
 .title {
+  padding-bottom: 5px;
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
-  padding-bottom: 5px;
 }
 
 body {
+  background-color: rgb(252, 249, 226);
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
-  background-color: rgb(252, 249, 226);
-}
-
-.card {
-  background-color: rgb(252, 249, 226);
-
 }
 
 .caption-container {
-  position: relative;
   margin-top: 1rem;
   min-height: 2em;
+  position: relative;
 }
 
-
 .subtitle {
+
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
@@ -169,21 +165,17 @@ body {
 }
 
 .scroll-arrow {
-  position: absolute;
   bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
   cursor: pointer;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
 }
 
 .image-switch {
-  position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.image-container {
   position: relative;
 }
 
@@ -191,24 +183,30 @@ body {
   transform: translateY(-5px);
 }
 
-.primary-image,
-.hover-image {
-  transition: opacity 0.3s ease-in-out;
+.profile-container{
+  background-position: center;
+  background-size: cover;
+  border-radius: .75rem;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  /* Ensures the image covers the container without distortion */
+  /* Centers the image within the container */
 }
 
 .hover-image {
+  left: 0;
   opacity: 0;
   position: absolute;
   top: 0;
-  left: 0;
 }
 
 .hover-caption {
+  left: 0;
   opacity: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .image-switch:hover .hover-image,
@@ -222,17 +220,15 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-
   .arrow-down {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid white;
     border-bottom: 2px solid white;
-    transform: rotate(45deg);
+    border-right: 2px solid white;
+    display: block;
+    height: 20px;
     margin: 0 auto;
+    transform: rotate(45deg);
+    width: 20px;
   }
-
 }
 
 @keyframes bounce {
