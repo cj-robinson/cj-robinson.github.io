@@ -57,9 +57,6 @@ transform: rotate(45deg);
   /* add border */
 }
 
-.image-container {
-  border-radius: .75rem;
-}
 
 .subtitle {
   /* remove drop shadow */
@@ -87,6 +84,8 @@ transform: rotate(45deg);
   height: 100%;
   background-size: cover; /* Ensures the image covers the container without distortion */
   background-position: center; /* Centers the image within the container */
+  border-radius: .75rem;
+  position: relative;
 }
 
 .box {
@@ -163,6 +162,50 @@ body {
   margin: 0 auto;
 }
 
+.image-switch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  position: relative;
+}
+
+.caption-container {
+  position: relative;
+  margin-top: 1rem;
+  min-height: 2em;
+}
+
+.primary-image, .hover-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-image {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hover-caption {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-switch:hover .hover-image,
+.image-switch:hover .hover-caption {
+  opacity: 1;
+}
+
+.image-switch:hover .primary-image,
+.image-switch:hover .primary-caption {
+  opacity: 0;
+}
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
