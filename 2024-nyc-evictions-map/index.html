@@ -25,11 +25,28 @@
     <script src="https://kit.fontawesome.com/e0b8a3b78e.js" crossorigin="anonymous"></script>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-size: 20px;
             font-family: Georgia, 'Times New Roman', Times, serif;
             text-rendering: optimizeLegibility;
+        }
+
+        .hero {
+            background-color: #a2a251;
+            padding: 1.5rem;
+            width: 100%;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .hero-body {
+            width: 100%;
+            margin: 0;
         }
 
         .content {
@@ -47,7 +64,7 @@
         }
 
         .footer {
-            background: #a2a251;;
+            background: #a2a251;
             text-align: center;
             font-size: 0.8em;
             margin-top: 4em;
@@ -121,17 +138,27 @@
                 padding-left: 0.5em;
                 padding-right: 0.5em;
             }
+
+            .hero {
+                padding: 1rem;
+            }
+
+            .hero-body {
+                width: 100%;
+                margin: 0;
+            }
         }
     </style>
 </head>
 
 <body>
-    <section class="hero custom-hero is-small" style="background-color: #a2a251; padding: 1.5rem; width: 100%;">
+    <section class="hero">
         <div class="hero-body">
             <a href="https://cj-robinson.github.io" style="color:transparent;">
                 <h1 class="title"
                     style="font-family: -apple-system, BlinkMacSystemFont, 'helvetica neue', helvetica,arial, sans-serif; color: white; font-size: 2rem; margin: 0;">
-                    C.J. Robinson</h1>
+                    C.J. Robinson
+                </h1>
             </a>
         </div>
     </section>
@@ -181,10 +208,12 @@
                 <a href="mailto:c.j.robinson@columbia.edu" class="icon is-medium mr-3" style="color:transparent;">
                     <i class="fas fa-envelope fa-lg" style="color:white;"></i>
                 </a>
-                <a href="https://bsky.app/profile/cj-robinson.bsky.social" class="icon is-medium mr-3" style="color:transparent;">
+                <a href="https://bsky.app/profile/cj-robinson.bsky.social" class="icon is-medium mr-3"
+                    style="color:transparent;">
                     <i class="fa-brands fa-bluesky" style="color:white;"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/christophercjrobinson" class="icon is-medium mr-3" style="color:transparent;">
+                <a href="https://www.linkedin.com/in/christophercjrobinson" class="icon is-medium mr-3"
+                    style="color:transparent;">
                     <i class="fab fa-linkedin fa-lg" style="color:white;"></i>
                 </a>
                 <a href="https://github.com/cj-robinson" class="icon is-medium mr-3" style="color:transparent;">
