@@ -7,9 +7,6 @@ a:hover {
   pointer-events: none;
   position: absolute;
   transform-origin: bottom center;
-
-  /* Prevent arrows from interfering with cursor */
-  /* Set the transform origin to the bottom center */
 }
 
 .arrow {
@@ -90,14 +87,10 @@ a:hover {
 
 .custom-link {
   color: white;
-
-  /* Change this to your desired color */
 }
 
 .custom-link:hover {
   color: white;
-
-  /* Optional: Change the color on hover */
 }
 
 .image-container {
@@ -109,8 +102,6 @@ a:hover {
   transition: all 0.3s ease;
   width: 100%;
 
-  /* Ensures the image covers the container without distortion */
-  /* Centers the image within the container */
 }
 
 .box {
@@ -160,7 +151,6 @@ body {
 }
 
 .subtitle {
-
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
@@ -170,12 +160,12 @@ body {
 }
 
 .scroll-arrow {
-  bottom: 30px;
   cursor: pointer;
   left: 50%;
-  position: absolute;
+  position: relative;
   text-align: center;
   transform: translateX(-50%);
+  bottom: 5px;
 }
 
 .image-switch {
@@ -195,9 +185,6 @@ body {
   height: 100%;
   position: relative;
   width: 100%;
-
-  /* Ensures the image covers the container without distortion */
-  /* Centers the image within the container */
 }
 
 .hover-image {
@@ -231,7 +218,7 @@ body {
   margin-bottom: 0.5rem; /* Add bottom margin for stacking */
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) and (min-height: 600px)  {
   .arrow-down {
     border-bottom: 2px solid white;
     border-right: 2px solid white;
@@ -241,23 +228,31 @@ body {
     transform: rotate(45deg);
     width: 20px;
   }
+
+  .arrow-caption {
+    position: relative;
+    animation: bounce 1.5s  infinite;
+    animation-iteration-count: 3;
+    bottom: 10px;
+    margin: 0 auto;
+
+  }
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,
   80%,
   100% {
-    transform: translateY(0) rotate(45deg);
+    transform: translateY(0) ;
   }
 
   40% {
-    transform: translateY(-10px) rotate(45deg);
+    transform: translateY(-10px);
   }
 
   60% {
-    transform: translateY(-5px) rotate(45deg);
+    transform: translateY(-5px);
   }
 }

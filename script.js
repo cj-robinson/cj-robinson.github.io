@@ -19,3 +19,10 @@ document.querySelector('.scroll-arrow').addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+document.querySelector('.arrow-down').addEventListener('click', () => {
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: 'smooth'
+  });
+});
