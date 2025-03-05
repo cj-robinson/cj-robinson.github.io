@@ -160,7 +160,7 @@
                 padding-right: 0.5em;
             }
 
-            .footer{
+            .footer {
                 width: 100%;
             }
 
@@ -203,13 +203,18 @@
 
         <hr>
 
-        <p>
-            Citi Bike's website claims to allow you to <a href="https://citibikenyc.com/">"Bike NYC. Like, all of
+        <p>Citi Bike's website claims to allow you to <a href="https://citibikenyc.com/">"Bike NYC. Like, all of
                 it."</a> For many New Yorkers, however, a recent analysis found that when and where you bike could
-            preclude your ability from conviently docking in certain neighborhoods.</p>
-        <p>
+            preclude your ability to conveniently use the service in certain neighborhoods.</p>
 
-        </p>
+        <p>Avid Citi Bike riders may have experienced the competitive nature of docking a bike in a neighborhood such as
+            Red Hook on a busy afternoon. Bikers often circle the neighborhood or camp next to a station, hoping to find
+            someone to rent a bike to free up space. What began as a twenty-minute journey can quickly involve walking
+            more than a mile or waiting an indeterminate amount of time.</p>
+
+        <p>Commuting patterns and times affect stations across the city. Docks are most unavailable between 6-8 a.m. and
+            3-5 p.m., with mornings more difficult for docking bikes and afternoons more difficult for renting.</p>
+
     </div>
 
     <div class="full-width">
@@ -734,41 +739,21 @@
 
     <div class="content">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.</p>
-        <p>You can change the fonts by using <a href="https://fonts.google.com/">Google Fonts</a> and some CSS.
-            Right
-            now we're using Lora for headlines and Georgia for body copy.</a></p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.</p>
+        <p>The office of the City Comptroller released a <a
+                href="https://comptroller.nyc.gov/reports/riding-forward-overhauling-citi-bikes-contract-for-better-more-equitable-service/#analysis-of-citi-bike-performance">report
+                in 2023</a> detailing the many issues with Citi Bike service throughout New York. It found that
+            low-income neighborhoods were more likely to experience poor service.</p>
+
+        <p>At a granular hourly level, though, neighborhoods with large proportions of high-income workers show that
+            Citi Bike is also often failing these customers.</p>
+
+        <p>For instance, the East Village and Alphabet City neighborhoods of Manhattan experience clogged stations in
+            the morning and afternoon, only adequately serving users at noon. Hudson Yards experiences smooth service
+            through the morning, but by late afternoon has no stations that experience greater than 90% availability
+            throughout the week.</p>
+
+
     </div>
-
-
-    <div class="content">
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-            rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-            explicabo.
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-            dolores eos qui ratione voluptatem sequi nesciunt.</p>
-
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-            rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-            explicabo.
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-            dolores eos qui ratione voluptatem sequi nesciunt.</p>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
-            non
-            numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-            minima
-            veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-            consequatur?</p>
-    </div>
-
 
 
     <div class="full-width">
@@ -1040,10 +1025,11 @@
 
             }
 
+            /* 
             .mini-maps-container>div>figure>img {
                 border-style: solid;
                 border-width: .25px;
-            }
+            } */
 
             .legend-container {
                 display: flex;
@@ -1195,12 +1181,21 @@
     </div>
 
     <div class="content">
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
-            optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
-            omnis dolor repellendus.</p>
+        <p>Lyft, the company that owns and operates Citi Bike, only publishes data for station availability in real
+            time, meaning that historical analysis requires continuously capturing this data. I tracked these stations
+            from August to November 2024, downloading data every 10 minutes.</p>
+
+        <p>The Comptroller's report found that although Lyft has a contractual obligation to service stations around the
+            city, Lyft is rebalancing stations (replacing bikes from full to empty stations) at historically low levels.
+            “From 2014 to 2019, Citi Bike completed over 100 annual rebalancing moves per bike compared to just 26 in
+            2022 – an 80% drop,” the report stated. Lyft said this was due to their ‘Bike Angels' program, which
+            incentivizes users to move bikes from low- to high-demand stations in exchange for rewards like free rides
+            or discounts.</p>
+
+        <p>The citywide view illustrates both the extent of service issues throughout the city and supports the findings
+            of the Comptroller's report. In addition to the highlighted neighborhoods, stations in the Bronx, Sunset
+            Park, Flatbush, and outer Queens all have consistently unreliable service, no matter the time of day.</p>
+
     </div>
 
     <div>
@@ -1459,16 +1454,14 @@
 
     </div>
     <div class="content">
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
-            optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
-            omnis dolor repellendus.</p>
+        <p>Despite <a href="https://gothamist.com/news/higher-citi-bike-prices-take-effect-in-nyc-what-to-know">higher
+                Citi Bike prices</a> and New York's system status as a <a
+                href="https://prod.crainsnewyork.com/transportation/citi-bike-operator-could-be-worth-500m-lyft-weighs-sale">"crown
+                jewel"</a> for Lyft, conditions show continual deterioration.</p>
     </div>
     <div class="footer">
         <div class="content">
-            <p>You can find the code for this template <a href="https://github.com/jsoma/citi-bike-deserts/">here</a>.
+            <p>You can find the code for this project <a href="https://github.com/jsoma/citi-bike-deserts/">here</a>.
             </p>
         </div>
     </div>
