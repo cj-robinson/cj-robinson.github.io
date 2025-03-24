@@ -55,6 +55,13 @@ a:hover {
   top: 80%;
 }
 
+.container {
+  max-width: 100%;
+  /* Ensure containers don't exceed the viewport width */
+  overflow-x: hidden;
+  /* Prevent horizontal overflow */
+}
+
 .bsky-icon {
   background-image: url('data:image/svg+xml;charset=utf-8,<svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M254.896 188.031C252.711 214.159 230.893 235.116 204.097 235.116H155.459C128.663 235.116 106.845 214.159 104.66 188.031L102.081 157.019H257.475L254.896 188.031Z" fill="currentColor"/><path d="M132.959 85.354H226.597L179.778 157.019H102.081L132.959 85.354Z" fill="currentColor"/></svg>');
   background-repeat: no-repeat;
@@ -134,14 +141,14 @@ a:hover {
 .title {
   padding-bottom: 5px;
 
-font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
 
 body {
   background-color: rgb(252, 249, 226);
 
-font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
 
@@ -170,17 +177,13 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   transform: translateX(-50%);
 }
 
-.image-switch {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+
 
 .image-container:hover {
   transform: translateY(-5px);
 }
 
-.profile-container{
+.profile-container {
   background-position: center;
   background-size: cover;
   border-radius: .75rem;
@@ -203,15 +206,7 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   top: 0;
 }
 
-.image-switch:hover .hover-image,
-.image-switch:hover .hover-caption {
-  opacity: 1;
-}
 
-.image-switch:hover .primary-image,
-.image-switch:hover .primary-caption {
-  opacity: 0;
-}
 
 .tag {
   border-radius: 20px;
@@ -220,32 +215,38 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   transition: all 0.3s ease;
 }
 
-  .arrow-down {
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
-    display: block;
-    height: 20px;
-    margin: 0 auto;
-    transform: rotate(45deg);
-    width: 20px;
+.arrow-down {
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  display: block;
+  height: 20px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  width: 20px;
+}
+
+.mobile-dissapear {
+  display: none;
+  height:0;
+}
+
+
+@media screen and (min-width: 1000px) and (min-height: 600px) {
+  .mobile-dissapear {
+    display: flex;
+    height:100%;
   }
-  /* Add bottom margin for stacking */
 
-
-@media screen and (min-width: 900px) and (min-height: 600px)  {
   .arrow-caption {
-    animation: bounce 1.5s  infinite;
+    animation: bounce 1.5s infinite;
     animation-iteration-count: 3;
     bottom: 10px;
     margin: 0 auto;
     position: relative;
   }
 
-  .hero {
-    height: 75vh;
-  }
 
-  .profile-container{
+  .profile-container {
     background-position: center;
     background-size: cover;
     border-radius: .75rem;
@@ -253,6 +254,24 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     position: relative;
     width: 100%;
   }
+  
+  .image-switch {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .image-switch:hover .hover-image,
+  .image-switch:hover .hover-caption {
+    opacity: 1;
+  }
+  
+  .image-switch:hover .primary-image,
+  .image-switch:hover .primary-caption {
+    opacity: 0;
+  }
+
+
 }
 
 @keyframes bounce {
@@ -262,7 +281,7 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   50%,
   80%,
   100% {
-    transform: translateY(0) ;
+    transform: translateY(0);
   }
 
   40% {

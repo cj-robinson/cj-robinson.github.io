@@ -131,10 +131,28 @@
             margin-right: auto;
         }
 
-        .map-subtitle {
+        
+
+        .subtitle {
             font-size: 14px;
             text-align: center;
             margin-bottom: .5em;
+        }
+
+        .map-subtitle {
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: .5em;
+            font-weight: bold;
+        }
+
+        .city-label {
+            font-size: 16px;
+            text-align: right;
+            margin-bottom: .5em;
+            position: relative;
+            transform: translateY(35%);
+            width: 150px;
         }
 
         .hero {
@@ -382,7 +400,7 @@
             <div class="map-title">
                 New Yorkers Often Can't Rent or Return Citi Bikes
             </div>
-            <div class="map-subtitle">
+            <div class="subtitle">
                 Average station unavailability rate by hour from September to November 2024
             </div>
 
@@ -1010,9 +1028,11 @@
         <style>
             .mini-maps-container {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 flex-direction: row;
                 width: 100%;
+                position: relative;
+                gap: 20px;
             }
 
             .mini-maps-container>div {
@@ -1022,7 +1042,6 @@
                 margin: 10px;
                 max-width: 200px;
                 margin-bottom: 0;
-
             }
 
             /* 
@@ -1056,7 +1075,6 @@
             @media (max-width: 800px) {
                 .mini-maps-container {
                     flex-direction: column;
-                    /* Stack columns vertically */
                 }
 
                 .mini-maps-container>div {
@@ -1074,6 +1092,12 @@
                     max-width: 100%;
                 }
 
+                .city-label {
+                    width: 100%;
+                    text-align: right;
+                    margin-bottom: 1em;
+                }
+
 
             }
 
@@ -1084,43 +1108,44 @@
             }
         </style>
 
-        <div class="map-subtitle" style="font-weight: bold; font-size: 16px">
-            East Village, Manhattan
+
+
+
+        <div class="mini-maps-container">
+            <div class="city-label">
+                East Village, Manhattan
+            </div>
+                <div>
+                    <div class="map-subtitle">
+                        Weekday - 7 a.m.
+                    </div>
+                    <figure>
+                        <img src="img/evillage_7am.png">
+                    </figure>
+                </div>
+                <div>
+                    <div class="map-subtitle">
+                        Weekday - 12 p.m.
+                    </div>
+                    <figure>
+                        <img src="img/evillage_12pm.png">
+                    </figure>
+                </div>
+                <div>
+                    <div class="map-subtitle">
+                        Weekday - 3 p.m.
+                    </div>
+                    <figure>
+                        <img src="img/evillage_3pm.png">
+                    </figure>
+                </div>
         </div>
 
 
         <div class="mini-maps-container">
-            <div>
-                <div class="map-subtitle">
-                    Weekday - 7 a.m.
-                </div>
-                <figure>
-                    <img src="img/evillage_7am.png">
-                </figure>
+            <div class="city-label">
+                Midtown East, Manhattan
             </div>
-            <div>
-                <div class="map-subtitle">
-                    Weekday - 12 p.m.
-                </div>
-                <figure>
-                    <img src="img/evillage_12pm.png">
-                </figure>
-            </div>
-            <div>
-                <div class="map-subtitle">
-                    Weekday - 3 p.m.
-                </div>
-                <figure>
-                    <img src="img/evillage_3pm.png">
-                </figure>
-            </div>
-        </div>
-
-        <div class="map-subtitle" style="font-weight: bold; font-size: 16px">
-            Midtown East, Manhattan
-        </div>
-
-        <div class="mini-maps-container">
             <div>
                 <div class="map-subtitle mobile-only-text">
                     Weekday - 7 a.m.
@@ -1147,11 +1172,12 @@
             </div>
         </div>
 
-        <div class="map-subtitle" style="font-weight: bold; font-size: 16px">
-            Hudson Yards, Manhattan
-        </div>
+
 
         <div class="mini-maps-container">
+            <div class="city-label">
+                Hudson Yards, Manhattan
+            </div>
             <div>
                 <div class="map-subtitle mobile-only-text">
                     Weekday - 7 a.m.
@@ -1230,12 +1256,11 @@
             }
         </style>
         <div class="full-width">
-            <div class="map-title" style="">
+            <div class="map-title">
                 Citi Bike Station Availability, Citywide
             </div>
-            <div class="map-subtitle" style="max-width: 500px; margin: auto; margin-bottom: .5em;">
-                How often Citi Bike stations had bikes or docks available at certain hour from September to November
-                2024
+            <div class="subtitle" style="max-width: 500px; margin: auto; margin-bottom: .5em;">
+                Citi Bike stations availability by hour from September to November 2024
             </div>
 
             <div class="legend-container">
