@@ -131,11 +131,27 @@
             margin-right: auto;
         }
 
-        .map-subtitle {
-            font-size: 14px;
-            text-align: center;
-            margin-bottom: .5em;
-        }
+        .subtitle {
+             font-size: 14px;
+             text-align: center;
+             margin-bottom: .5em;
+         }
+ 
+         .map-subtitle {
+             font-size: 14px;
+             text-align: left;
+             margin-bottom: .5em;
+             font-weight: bold;
+         }
+ 
+         .city-label {
+             font-size: 16px;
+             text-align: right;
+             margin-bottom: .5em;
+             position: relative;
+             transform: translateY(35%);
+             width: 150px;
+         }
 
         .hero {
             background-color: #a2a251;
@@ -195,7 +211,7 @@
     <div class="content">
         <div class="header">
             <h1>Citi Bike or City Hike? Mapping NYC's Most Unreliable Stations</h1>
-            <p class="subhead">Tracking when and where users may be most likely to encounter unusable stations.</p>
+            <p class="subhead">Even the most popular stations fail to serve riders at peak times.</p>
         </div>
         <div class="byline">
             <p>By <a href="https://cj-robinson.github.io">C.J. Robinson</a></p>
@@ -382,7 +398,7 @@
             <div class="map-title">
                 New Yorkers Often Can't Rent or Return Citi Bikes
             </div>
-            <div class="map-subtitle">
+            <div class="subtitle">
                 Average station unavailability rate by hour from September to November 2024
             </div>
 
@@ -1017,19 +1033,18 @@
 
             .mini-maps-container>div {
                 flex: 1;
-                /* This makes each div take equal space */
                 padding: 0px;
                 margin: 10px;
                 max-width: 200px;
                 margin-bottom: 0;
-
             }
 
-            /* 
-            .mini-maps-container>div>figure>img {
-                border-style: solid;
-                border-width: .25px;
-            } */
+            .mini-maps {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                flex-grow: 1;
+            }
 
             .legend-container {
                 display: flex;
@@ -1084,13 +1099,14 @@
             }
         </style>
 
-        <div class="map-subtitle" style="font-weight: bold; font-size: 16px">
-            East Village, Manhattan
-        </div>
+
 
 
         <div class="mini-maps-container">
-            <div>
+            <div class="city-label">
+                East Village, Manhattan
+            </div>
+            <div class="mini-maps">
                 <div class="map-subtitle">
                     Weekday - 7 a.m.
                 </div>
@@ -1116,12 +1132,13 @@
             </div>
         </div>
 
-        <div class="map-subtitle" style="font-weight: bold; font-size: 16px">
-            Midtown East, Manhattan
-        </div>
+
 
         <div class="mini-maps-container">
-            <div>
+            <div class="city-label">
+                Midtown East, Manhattan
+            </div>
+            <div class="mini-maps">
                 <div class="map-subtitle mobile-only-text">
                     Weekday - 7 a.m.
                 </div>
@@ -1147,12 +1164,13 @@
             </div>
         </div>
 
-        <div class="map-subtitle" style="font-weight: bold; font-size: 16px">
-            Hudson Yards, Manhattan
-        </div>
+
 
         <div class="mini-maps-container">
-            <div>
+            <div class="city-label">
+                Hudson Yards, Manhattan
+            </div>
+            <div class="mini-maps">
                 <div class="map-subtitle mobile-only-text">
                     Weekday - 7 a.m.
                 </div>
@@ -1233,7 +1251,7 @@
             <div class="map-title" style="">
                 Citi Bike Station Availability, Citywide
             </div>
-            <div class="map-subtitle" style="max-width: 500px; margin: auto; margin-bottom: .5em;">
+            <div class="subtitle">
                 How often Citi Bike stations had bikes or docks available at certain hour from September to November
                 2024
             </div>
