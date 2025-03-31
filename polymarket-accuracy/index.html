@@ -2,1547 +2,1330 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <meta property="og:title" content="Know what Trump is going to do next? Willing to bet on it?">
-    <meta property="og:description"
-        content="An analysis of how accurate predicting political events can be in the age of Donald Trump">
-    <meta property=" og:type" content="article">
-    <meta property="og:image" content="https://cj-robinson.github.io/assets/waffle_trump_accuracy.png">
-    <meta name="twitter:card" content="Know what Trump is going to do next? Willing to bet on it?">
-    <meta name="twitter:creator" content="@_cjrobinson">
+	<meta property="og:title" content="Know what Trump is going to do next? Willing to bet on it?">
+	<meta property="og:description"
+		content="An analysis of how accurate predicting political events can be in the age of Donald Trump">
+	<meta property=" og:type" content="article">
+	<meta property="og:image" content="https://cj-robinson.github.io/assets/waffle_trump_accuracy.png">
+	<meta name="twitter:card" content="Know what Trump is going to do next? Willing to bet on it?">
+	<meta name="twitter:creator" content="@_cjrobinson">
 
-    <title>C.J. Robinson</title>
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-    <script src="https://kit.fontawesome.com/e0b8a3b78e.js" crossorigin="anonymous"></script>
+	<title>C.J. Robinson</title>
+	<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+	<script src="https://kit.fontawesome.com/e0b8a3b78e.js" crossorigin="anonymous"></script>
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+	<!-- Google fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            /* Makes padding included in width calculations */
-        }
+	<style>
+		* {
+			box-sizing: border-box;
+			/* Makes padding included in width calculations */
+		}
 
-        body {
-            margin: 0;
-            overflow-x: hidden;
-            width: 100%;
-            font-size: 20px;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            text-rendering: optimizeLegibility;
-        }
+		body {
+			margin: 0;
+			overflow-x: hidden;
+			width: 100%;
+			font-size: 20px;
+			font-family: Arial, Helvetica, sans-serif;
+			text-rendering: optimizeLegibility;
+		}
 
-        .hero {
-            background-color: #a2a251;
-            padding: 1.5rem;
-            width: 100%;
-            margin: 0;
-            overflow-x: hidden;
-        }
+		.hero {
+			background-color: #a2a251;
+			padding: 1.5rem;
+			width: 100%;
+			margin: 0;
+			overflow-x: hidden;
+		}
 
-        .hero-body {
-            width: 100%;
-            margin: 0;
-        }
+		.hero-body {
+			width: 100%;
+			margin: 0;
+		}
 
-        .content {
-            max-width: 640px;
-            margin: auto;
-        }
+		.content {
+			max-width: 640px;
+			margin: auto;
+		}
 
-        .header {
-            padding: 3em 0;
-            padding-bottom: 0em;
-        }
+		.header {
+			padding: 3em 0;
+			padding-bottom: 0em;
+		}
 
-        a {
-            color: #f05349;
-        }
+		a {
+			color: #95CB99;
+		}
 
-        .footer {
-            background: #a2a251;
-            text-align: center;
-            font-size: 0.8em;
-            margin-top: 4em;
-            padding: 4em 0;
-        }
+		.footer {
+			background: #a2a251;
+			text-align: center;
+			font-size: 0.8em;
+			margin-top: 4em;
+			padding: 4em 0;
+		}
 
-        figure {
-            margin: 0;
-            padding-bottom: 1.2em;
-        }
+		figure {
+			margin: 0;
+			padding-bottom: 1.2em;
+		}
 
-        figcaption {
-            font-size: 0.8em;
-            text-align: center;
-            margin-top: 0.5em;
-            color: #666;
-        }
+		figcaption {
+			font-size: 0.8em;
+			text-align: center;
+			margin-top: 0.5em;
+			color: #666;
+		}
 
-        h1 {
-            font-family: 'Lora', Georgia, serif;
-            font-weight: bold;
-            font-size: 3em;
-            line-height: 1.1;
-        }
+		h1 {
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: bold;
+			font-size: 3em;
+			line-height: 1.1;
+		}
 
-        .subhead {
-            font-family: 'Lora', Georgia, serif;
-        }
+		.subhead {
+			font-family: 'Lora', Georgia, serif;
+		}
 
-        iframe,
-        img,
-        video {
-            max-width: 100%;
-        }
+		iframe,
+		img,
+		video {
+			max-width: 100%;
+		}
 
-        p {
-            line-height: 1.6;
-            margin: 0;
-            padding-bottom: 1.2em;
-        }
+		p {
+			line-height: 1.6;
+			margin: 0;
+			padding-bottom: 1.2em;
+		}
 
-        ul {
-            margin: 0;
-            padding-bottom: 1em;
-            line-height: 1.6;
-        }
+		ul {
+			margin: 0;
+			padding-bottom: 1em;
+			line-height: 1.6;
+		}
 
-        iframe {
-            padding-bottom: 1.2em;
-        }
+		iframe {
+			padding-bottom: 1.2em;
+		}
 
-        code {
-            font-family: 'Courier New', monospace;
-            background: #fffbaf;
-            font-size: 0.85em;
-        }
+		code {
+			font-family: 'Courier New', monospace;
+			background: #fffbaf;
+			font-size: 0.85em;
+		}
 
-        .full-width figure {
-            text-align: center;
-        }
+		.full-width figure {
+			text-align: center;
+		}
 
-        .full-width {
-            width: 100%;
-        }
+		.full-width {
+			width: 100%;
+		}
 
-        .chart-title {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: left;
-            margin-bottom: .5em;
-            margin-left: auto;
-            margin-right: auto;
-        }
+		.chart-title {
+			font-size: 24px;
+			font-weight: bold;
+			text-align: left;
+			margin-bottom: .5em;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
-        .chart-subtitle {
-            font-size: 14px;
-            text-align: left;
-            margin-bottom: .5em;
-        }
+		.chart-subtitle {
+			font-size: 14px;
+			text-align: left;
+			margin-bottom: .5em;
+		}
 
-        /* margin on mobile */
-        @media (max-width: 640px) {
-            body {
-                font-size: 18px;
-            }
+		/* margin on mobile */
+		@media (max-width: 640px) {
+			body {
+				font-size: 18px;
+			}
 
-            .content {
-                padding-left: 0.5em;
-                padding-right: 0.5em;
-            }
+			.content {
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+			}
 
-            .hero {
-                padding: 1rem;
-            }
+			.hero {
+				padding: 1rem;
+			}
 
-            .hero-body {
-                width: 100%;
-                margin: 0;
-            }
+			.hero-body {
+				width: 100%;
+				margin: 0;
+			}
 
-            .footer {
-                width: 100%;
-            }
-        }
-    </style>
+			.footer {
+				width: 100%;
+			}
+		}
+	</style>
 </head>
 
 <body>
-    <section class="hero">
-        <div class="hero-body">
-            <a href="https://cj-robinson.github.io" style="color:transparent;">
-                <h1 class="title"
-                    style="font-family: -apple-system, BlinkMacSystemFont, 'helvetica neue', helvetica,arial, sans-serif; color: white; font-size: 2rem; margin: 0;">
-                    C.J. Robinson
-                </h1>
-            </a>
-        </div>
-    </section>
-    <div class="content">
-        <div class="header">
-            <h1>Know what Trump is going to do next? Willing to bet on it?</h1>
-            <p class="subhead">An analysis of how accurate political betting markets can be in the age of Donald Trump
-            </p>
-        </div>
-        <div class="byline">
-            <p>By <a href="https://cj-robinson.github.io">C.J. Robinson</a></p>
-        </div>
-        <p>The rise of prediction markets like Polymarket over the past decade has given them large-scale legitimacy,
-            especially after their correct prediction of the 2024 election. A new analysis reveals, however, that
-            markets may have a harder time predicting Trump's actions compared to other political events.</p>
-        <p>Proponents of these markets argue that since <a
-                href="https://finance.yahoo.com/news/elon-musk-advocates-crypto-prediction-072206636.html">money is on
-                the line</a>, they can often lead to more powerful
-            predictions. Users will buy or sell shares of a certain outcome, like whether Trump will end the war in
-            Ukraine within 90 days of his presidency. Each possible outcome's price rises and falls in real time as
-            users trade using real money.</p>
-        <p>Utilizing the Polymarket to analyze each political event since 2024, the analysis found that large political
-            betting markets not mentioning Trump correctly predicted outcomes almost 80% of the time. For markets
-            dealing with Trump, that accuracy fell to 68%.</p>
-
-        <div class="chart-title">
-            With Money on the Line, Predictions About Trump Are Less Accurate
-        </div>
-        <div class="chart-subtitle">
-            Proportion of Polymarket events where market correctly predicted outcome from January 2024 to March 2025
-        </div>
-    </div>
-    <div class="full-width">
-
-
-
-
-        <!-- Generated by ai2html v0.121.1 - 2025-03-11 22:58 -->
-        <!-- ai file: waffle_tump_template.ai -->
-        <style media="screen,print">
-            #g-waffle_tump_template-box,
-            #g-waffle_tump_template-box .g-artboard {
-                margin: 0 auto;
-            }
-
-            #g-waffle_tump_template-box p {
-                margin: 0;
-            }
-
-            #g-waffle_tump_template-box .g-aiAbs {
-                position: absolute;
-            }
-
-            #g-waffle_tump_template-box .g-aiImg {
-                position: absolute;
-                top: 0;
-                display: block;
-                width: 100% !important;
-            }
-
-            #g-waffle_tump_template-box .g-aiSymbol {
-                position: absolute;
-                box-sizing: border-box;
-            }
-
-            #g-waffle_tump_template-box .g-aiPointText p {
-                white-space: nowrap;
-            }
-
-            #g-waffle_tump_template-full {
-                position: relative;
-                overflow: hidden;
-            }
-
-            #g-waffle_tump_template-full p {
-                font-weight: regular;
-                line-height: 14px;
-                height: auto;
-                opacity: 1;
-                letter-spacing: 0em;
-                font-size: 12px;
-                text-align: left;
-                color: rgb(0, 0, 0);
-                text-transform: none;
-                padding-bottom: 0;
-                padding-top: 0;
-                mix-blend-mode: normal;
-                font-style: normal;
-                position: static;
-            }
-
-            #g-waffle_tump_template-full .g-pstyle0 {
-                font-weight: 500;
-                height: 14px;
-            }
-
-            #g-waffle_tump_template-full .g-pstyle1 {
-                font-weight: 500;
-                height: 14px;
-                text-align: right;
-            }
-
-            #g-waffle_tump_template-medium {
-                position: relative;
-                overflow: hidden;
-            }
-
-            #g-waffle_tump_template-medium p {
-                font-weight: regular;
-                line-height: 14px;
-                height: auto;
-                opacity: 1;
-                letter-spacing: 0em;
-                font-size: 12px;
-                text-align: left;
-                color: rgb(0, 0, 0);
-                text-transform: none;
-                padding-bottom: 0;
-                padding-top: 0;
-                mix-blend-mode: normal;
-                font-style: normal;
-                position: static;
-            }
-
-            #g-waffle_tump_template-medium .g-pstyle0 {
-                font-weight: 500;
-                height: 14px;
-            }
-
-            #g-waffle_tump_template-medium .g-pstyle1 {
-                font-weight: 500;
-                height: 14px;
-                text-align: right;
-            }
-
-            #g-waffle_tump_template-mobile {
-                position: relative;
-                overflow: hidden;
-            }
-
-            #g-waffle_tump_template-mobile p {
-                font-weight: regular;
-                line-height: 14px;
-                height: auto;
-                opacity: 1;
-                letter-spacing: 0em;
-                font-size: 12px;
-                text-align: left;
-                color: rgb(0, 0, 0);
-                text-transform: none;
-                padding-bottom: 0;
-                padding-top: 0;
-                mix-blend-mode: normal;
-                font-style: normal;
-                position: static;
-            }
-
-            #g-waffle_tump_template-mobile .g-pstyle0 {
-                font-weight: 500;
-                height: 14px;
-            }
-
-            #g-waffle_tump_template-mobile .g-pstyle1 {
-                font-weight: 500;
-                height: 14px;
-                text-align: center;
-            }
-
-            #g-waffle_tump_template-mobile .g-pstyle2 {
-                font-weight: 500;
-                height: 14px;
-                text-align: right;
-            }
-
-            #g-waffle_tump_template-Artboard_13 {
-                position: relative;
-                overflow: hidden;
-            }
-
-            #g-waffle_tump_template-Artboard_13 p {
-                font-weight: regular;
-                line-height: 14px;
-                height: auto;
-                opacity: 1;
-                letter-spacing: 0em;
-                font-size: 12px;
-                text-align: left;
-                color: rgb(0, 0, 0);
-                text-transform: none;
-                padding-bottom: 0;
-                padding-top: 0;
-                mix-blend-mode: normal;
-                font-style: normal;
-                position: static;
-            }
-
-            #g-waffle_tump_template-Artboard_13 .g-pstyle0 {
-                font-weight: 500;
-                height: 14px;
-                text-align: right;
-            }
-        </style>
-
-        <div id="g-waffle_tump_template-box" class="ai2html ai2html-responsive">
-
-            <!-- Artboard: full -->
-            <div id="g-waffle_tump_template-full" class="g-artboard" style="width:700px; height:568px;"
-                data-aspect-ratio="1.232" data-min-width="700">
-                <div style=""></div>
-                <img id="g-waffle_tump_template-full-img" class="g-waffle_tump_template-full-img g-aiImg" alt=""
-                    src="assets/ai2html-output/waffle_tump_template-full.png" />
-                <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:3.7038%;margin-top:-9px;left:61.5601%;width:124px;">
-                    <p class="g-pstyle0">Incorrect prediction</p>
-                </div>
-                <div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:3.7038%;margin-top:-9px;left:41.6659%;width:117px;">
-                    <p class="g-pstyle0">Correct prediction</p>
-                </div>
-                <div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:30.6757%;margin-top:-16.2px;right:82.1235%;width:118px;">
-                    <p class="g-pstyle1">Political events</p>
-                    <p class="g-pstyle1">mentioning Trump</p>
-                </div>
-                <div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:76.8024%;margin-top:-16.2px;right:82.1563%;width:95px;">
-                    <p class="g-pstyle1">Other political</p>
-                    <p class="g-pstyle1">events</p>
-                </div>
-                <div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:97.1897%;margin-top:-9px;right:4.1761%;width:150px;">
-                    <p class="g-pstyle1">Source: Polymarket API</p>
-                </div>
-            </div>
-
-            <!-- Artboard: medium -->
-            <div id="g-waffle_tump_template-medium" class="g-artboard" style="width:490px; height:485.5px;"
-                data-aspect-ratio="1.009" data-min-width="490" data-max-width="699">
-                <div style=""></div>
-                <img id="g-waffle_tump_template-medium-img" class="g-waffle_tump_template-medium-img g-aiImg" alt=""
-                    src="assets/ai2html-output/waffle_tump_template-medium.png" />
-                <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:4.5392%;margin-top:-9px;left:65.6194%;width:124px;">
-                    <p class="g-pstyle0">Incorrect prediction</p>
-                </div>
-                <div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:4.7451%;margin-top:-9px;left:37.1991%;width:117px;">
-                    <p class="g-pstyle0">Correct prediction</p>
-                </div>
-                <div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:31.1509%;margin-top:-16.2px;right:79.5918%;width:118px;">
-                    <p class="g-pstyle1">Political events</p>
-                    <p class="g-pstyle1">mentioning Trump</p>
-                </div>
-                <div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:74.8173%;margin-top:-16.2px;right:81.2713%;width:95px;">
-                    <p class="g-pstyle1">Other political</p>
-                    <p class="g-pstyle1">events</p>
-                </div>
-                <div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:97.2271%;margin-top:-9px;right:1.986%;width:150px;">
-                    <p class="g-pstyle1">Source: Polymarket API</p>
-                </div>
-            </div>
-
-            <!-- Artboard: mobile -->
-            <div id="g-waffle_tump_template-mobile" class="g-artboard" style="width:375px; height:482.549999999999px;"
-                data-aspect-ratio="0.777" data-min-width="375" data-max-width="489">
-                <div style=""></div>
-                <img id="g-waffle_tump_template-mobile-img" class="g-waffle_tump_template-mobile-img g-aiImg" alt=""
-                    src="assets/ai2html-output/waffle_tump_template-mobile.png" />
-                <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:5.1886%;margin-top:-9px;left:57.8818%;width:124px;">
-                    <p class="g-pstyle0">Incorrect prediction</p>
-                </div>
-                <div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:5.1886%;margin-top:-9px;left:20.7458%;width:117px;">
-                    <p class="g-pstyle0">Correct prediction</p>
-                </div>
-                <div id="g-ai2-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:91.646%;margin-top:-16.2px;left:25.6979%;margin-left:-59px;width:118px;">
-                    <p class="g-pstyle1">Political events</p>
-                    <p class="g-pstyle1">mentioning Trump</p>
-                </div>
-                <div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:91.8532%;margin-top:-16.2px;left:74.2458%;margin-left:-47.5px;width:95px;">
-                    <p class="g-pstyle1">Other political</p>
-                    <p class="g-pstyle1">events</p>
-                </div>
-                <div id="g-ai2-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:97.8215%;margin-top:-9px;right:3.012%;width:150px;">
-                    <p class="g-pstyle2">Source: Polymarket API</p>
-                </div>
-            </div>
-
-            <!-- Artboard: Artboard_13 -->
-            <div id="g-waffle_tump_template-Artboard_13" class="g-artboard" style="max-width: 73px;max-height: 30px"
-                data-aspect-ratio="2.395" data-min-width="0" data-max-width="374">
-                <div style="padding: 0 0 41.7474% 0;"></div>
-                <img id="g-waffle_tump_template-Artboard_13-img" class="g-waffle_tump_template-Artboard_13-img g-aiImg"
-                    alt="" src="assets/ai2html-output/waffle_tump_template-Artboard_13.png" />
-                <div id="g-ai3-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
-                    style="top:50%;margin-top:-16.2px;right:-0.0007%;width:95px;">
-                    <p class="g-pstyle0">Other political</p>
-                    <p class="g-pstyle0">events</p>
-                </div>
-            </div>
-
-        </div>
-
-        <script type="text/javascript">
-            (function (containerId, opts) {
-                var nameSpace = opts.namespace || '';
-                var containers = findContainers(containerId);
-                containers.forEach(resize);
-
-                function resize(container) {
-                    var onResize = throttle(update, 200);
-                    var waiting = !!window.IntersectionObserver;
-                    var observer;
-                    update();
-
-                    document.addEventListener('DOMContentLoaded', update);
-                    window.addEventListener('resize', onResize);
-
-                    // NYT Scoop-specific code
-                    if (opts.setup) {
-                        opts.setup(container).on('cleanup', cleanup);
-                    }
-
-                    function cleanup() {
-                        document.removeEventListener('DOMContentLoaded', update);
-                        window.removeEventListener('resize', onResize);
-                        if (observer) observer.disconnect();
-                    }
-
-                    function update() {
-                        var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
-                            width = Math.round(container.getBoundingClientRect().width);
-
-                        // Set artboard visibility based on container width
-                        artboards.forEach(function (el) {
-                            var minwidth = el.getAttribute('data-min-width'),
-                                maxwidth = el.getAttribute('data-max-width');
-                            if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
-                                if (!waiting) {
-                                    selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
-                                    selectChildren('video', el).forEach(updateVideoSrc);
-                                }
-                                el.style.display = 'block';
-                            } else {
-                                el.style.display = 'none';
-                            }
-                        });
-
-                        // Initialize lazy loading on first call
-                        if (waiting && !observer) {
-                            if (elementInView(container)) {
-                                waiting = false;
-                                update();
-                            } else {
-                                observer = new IntersectionObserver(onIntersectionChange, { rootMargin: "800px" });
-                                observer.observe(container);
-                            }
-                        }
-                    }
-
-                    function onIntersectionChange(entries) {
-                        // There may be multiple entries relating to the same container
-                        // (captured at different times)
-                        var isIntersecting = entries.reduce(function (memo, entry) {
-                            return memo || entry.isIntersecting;
-                        }, false);
-                        if (isIntersecting) {
-                            waiting = false;
-                            // update: don't remove -- we need the observer to trigger an update
-                            // when a hidden map becomes visible after user interaction
-                            // (e.g. when an accordion menu or tab opens)
-                            // observer.disconnect();
-                            // observer = null;
-                            update();
-                        }
-                    }
-                }
-
-                function findContainers(id) {
-                    // support duplicate ids on the page
-                    return selectChildren('.ai2html-responsive', document).filter(function (el) {
-                        if (el.getAttribute('id') != id) return false;
-                        if (el.classList.contains('ai2html-resizer')) return false;
-                        el.classList.add('ai2html-resizer');
-                        return true;
-                    });
-                }
-
-                // Replace blank placeholder image with actual image
-                function updateImgSrc(img) {
-                    var src = img.getAttribute('data-src');
-                    if (src && img.getAttribute('src') != src) {
-                        img.setAttribute('src', src);
-                    }
-                }
-
-                function updateVideoSrc(el) {
-                    var src = el.getAttribute('data-src');
-                    if (src && !el.hasAttribute('src')) {
-                        el.setAttribute('src', src);
-                    }
-                }
-
-                function elementInView(el) {
-                    var bounds = el.getBoundingClientRect();
-                    return bounds.top < window.innerHeight && bounds.bottom > 0;
-                }
-
-                function selectChildren(selector, parent) {
-                    return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
-                }
-
-                // based on underscore.js
-                function throttle(func, wait) {
-                    var timeout = null, previous = 0;
-                    function run() {
-                        previous = Date.now();
-                        timeout = null;
-                        func();
-                    }
-                    return function () {
-                        var remaining = wait - (Date.now() - previous);
-                        if (remaining <= 0 || remaining > wait) {
-                            clearTimeout(timeout);
-                            run();
-                        } else if (!timeout) {
-                            timeout = setTimeout(run, remaining);
-                        }
-                    };
-                }
-            })("g-waffle_tump_template-box", { namespace: "g-", setup: window.setupInteractive || window.getComponent });
-        </script>
-        <!-- End ai2html - 2025-03-11 22:58 -->
-
-
-
-
-    </div>
-    </div>
-    <div class="content">
-
-        <p>There may be several reasons for this discrepancy.</p>
-        <p>First, markets may be influenced by decisions by external factors like political preference.</p>
-        <p>Mattew Flynn, a professor at Texas State University, said these markets differ from the stock market in how
-            they price information, and possibly their accuracy. He found that Polymarket can react more quickly than
-            traditional markets to changes. Even still, investing in an individual's decisions rather than a corporation
-            leads to differing incentives.</p>
-        <p>“In some sense, it does ignore if you have some strong behavioral bias that might influence you to act a
-            certain way,” Flynn said. “If you love the Mets, even though the Mets might not be good, you'd still bet on
-            the Mets all the time.”</p>
-        <p><a href="https://finance.yahoo.com/news/polymarket-whale-actually-made-85-050139914.html">Evidence of
-                “whales”</a> who dumped large amounts of money into markets predicting the presidential election
-            caused controversy in 2024 by those alleging market manipulation.</p>
-        <p>Markets may have differing levels of trading volume. A less popular market predicting a specific action of
-            Trump may be less accurate than a larger market predicting the actions of the Federal Reserve. The data
-            shows that accuracy is largely unaffected by the amount of money in a market.</p>
-        <p>Many of these markets involve President Trump, especially since his inauguration.</p>
-
-        <div class="chart-title">
-            In January 2025, Trump dominated political bettting and prediction markets
-        </div>
-        <div class="chart-subtitle">
-            Percentage of political Polymarket events mentioning Trump by month of market creation
-        </div>
-    </div>
-
-    <div class="full-width">
-
-
-      
-<!-- Generated by ai2html v0.121.1 - 2025-03-24 10:05 -->
-<!-- ai file: trump_event_template.ai -->
-<style media="screen,print">
-	#g-trump_event_template-box ,
-	#g-trump_event_template-box .g-artboard {
-		margin:0 auto;
-	}
-	#g-trump_event_template-box p {
-		margin:0;
-	}
-	#g-trump_event_template-box .g-aiAbs {
-		position:absolute;
-	}
-	#g-trump_event_template-box .g-aiImg {
-		position:absolute;
-		top:0;
-		display:block;
-		width:100% !important;
-	}
-	#g-trump_event_template-box .g-aiSymbol {
-		position: absolute;
-		box-sizing: border-box;
-	}
-	#g-trump_event_template-box .g-aiPointText p { white-space: nowrap; }
-	#g-trump_event_template-full {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-trump_event_template-full p {
-		font-weight:regular;
-		line-height:14px;
-		height:auto;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:12px;
-		text-align:left;
-		color:rgb(0,0,0);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		position:static;
-	}
-	#g-trump_event_template-full .g-pstyle0 {
-		font-weight:500;
-		height:14px;
-	}
-	#g-trump_event_template-full .g-pstyle1 {
-		font-weight:500;
-		height:14px;
-		text-align:right;
-	}
-	#g-trump_event_template-full .g-pstyle2 {
-		font-weight:500;
-		height:14px;
-		color:rgb(255,255,255);
-	}
-	#g-trump_event_template-full .g-pstyle3 {
-		font-family:arial,helvetica,sans-serif;
-		font-weight:bold;
-		height:14px;
-		text-align:center;
-	}
-	#g-trump_event_template-full .g-pstyle4 {
-		font-weight:500;
-		height:14px;
-		letter-spacing:-0.02em;
-		text-align:right;
-	}
-	#g-trump_event_template-full .g-cstyle0 {
-		letter-spacing:-0.119em;
-	}
-	#g-trump_event_template-full .g-cstyle1 {
-		letter-spacing:0.014em;
-	}
-	#g-trump_event_template-full .g-cstyle2 {
-		letter-spacing:-0.02em;
-	}
-	#g-trump_event_template-full .g-cstyle3 {
-		letter-spacing:-0.01em;
-	}
-	#g-trump_event_template-full .g-cstyle4 {
-		letter-spacing:0.029em;
-	}
-	#g-trump_event_template-full .g-cstyle5 {
-		letter-spacing:-0.029em;
-	}
-	#g-trump_event_template-full .g-cstyle6 {
-		letter-spacing:-0.03em;
-	}
-	#g-trump_event_template-full .g-cstyle7 {
-		letter-spacing:-0.019em;
-	}
-	#g-trump_event_template-full .g-cstyle8 {
-		letter-spacing:-0.015em;
-	}
-	#g-trump_event_template-full .g-cstyle9 {
-		letter-spacing:-0.025em;
-	}
-	#g-trump_event_template-medium {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-trump_event_template-medium p {
-		font-weight:regular;
-		line-height:14px;
-		height:auto;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:12px;
-		text-align:left;
-		color:rgb(0,0,0);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		position:static;
-	}
-	#g-trump_event_template-medium .g-pstyle0 {
-		font-weight:500;
-		height:14px;
-	}
-	#g-trump_event_template-medium .g-pstyle1 {
-		font-weight:500;
-		height:14px;
-		color:rgb(255,255,255);
-	}
-	#g-trump_event_template-medium .g-pstyle2 {
-		font-weight:500;
-		height:14px;
-		text-align:right;
-	}
-	#g-trump_event_template-medium .g-pstyle3 {
-		font-family:arial,helvetica,sans-serif;
-		font-weight:bold;
-		height:14px;
-		text-align:center;
-	}
-	#g-trump_event_template-medium .g-pstyle4 {
-		font-weight:500;
-		height:14px;
-		letter-spacing:-0.02em;
-		text-align:right;
-	}
-	#g-trump_event_template-medium .g-cstyle0 {
-		letter-spacing:-0.119em;
-	}
-	#g-trump_event_template-medium .g-cstyle1 {
-		letter-spacing:0.014em;
-	}
-	#g-trump_event_template-medium .g-cstyle2 {
-		letter-spacing:-0.02em;
-	}
-	#g-trump_event_template-medium .g-cstyle3 {
-		letter-spacing:-0.01em;
-	}
-	#g-trump_event_template-medium .g-cstyle4 {
-		letter-spacing:0.029em;
-	}
-	#g-trump_event_template-medium .g-cstyle5 {
-		letter-spacing:-0.029em;
-	}
-	#g-trump_event_template-medium .g-cstyle6 {
-		letter-spacing:-0.03em;
-	}
-	#g-trump_event_template-medium .g-cstyle7 {
-		letter-spacing:-0.019em;
-	}
-	#g-trump_event_template-medium .g-cstyle8 {
-		letter-spacing:-0.015em;
-	}
-	#g-trump_event_template-medium .g-cstyle9 {
-		letter-spacing:-0.025em;
-	}
-	#g-trump_event_template-mobile {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-trump_event_template-mobile p {
-		font-weight:regular;
-		line-height:14px;
-		height:auto;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:12px;
-		text-align:left;
-		color:rgb(0,0,0);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		position:static;
-	}
-	#g-trump_event_template-mobile .g-pstyle0 {
-		font-weight:500;
-		height:14px;
-	}
-	#g-trump_event_template-mobile .g-pstyle1 {
-		font-weight:500;
-		height:14px;
-		color:rgb(255,255,255);
-	}
-	#g-trump_event_template-mobile .g-pstyle2 {
-		font-weight:500;
-		height:14px;
-		letter-spacing:-0.02em;
-		text-align:right;
-	}
-	#g-trump_event_template-mobile .g-pstyle3 {
-		font-weight:500;
-		height:14px;
-		letter-spacing:-0.029em;
-		text-align:right;
-	}
-	#g-trump_event_template-mobile .g-pstyle4 {
-		font-weight:500;
-		height:14px;
-		text-align:right;
-	}
-	#g-trump_event_template-mobile .g-pstyle5 {
-		font-family:arial,helvetica,sans-serif;
-		font-weight:bold;
-		height:14px;
-		text-align:center;
-	}
-	#g-trump_event_template-mobile .g-cstyle0 {
-		letter-spacing:-0.119em;
-	}
-	#g-trump_event_template-mobile .g-cstyle1 {
-		letter-spacing:0.014em;
-	}
-	#g-trump_event_template-mobile .g-cstyle2 {
-		letter-spacing:-0.03em;
-	}
-	#g-trump_event_template-mobile .g-cstyle3 {
-		letter-spacing:-0.02em;
-	}
-	#g-trump_event_template-mobile .g-cstyle4 {
-		letter-spacing:-0.019em;
-	}
-
-</style>
-
-<div id="g-trump_event_template-box" class="ai2html ai2html-responsive">
-
-	<!-- Artboard: full -->
-	<div id="g-trump_event_template-full" class="g-artboard" style="width:700px; height:501px;" data-aspect-ratio="1.397" data-min-width="700">
-<div style=""></div>
-		<img id="g-trump_event_template-full-img" class="g-trump_event_template-full-img g-aiImg" alt="" src="assets/ai2html-output/trump_event_template-full.png"/>
-		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.1951%;margin-top:-9px;left:40.2386%;width:115px;">
-			<p class="g-pstyle0"><span class="g-cstyle0">T</span><span class="g-cstyle1">r</span>ump mentioned</p>
+	<section class="hero">
+		<div class="hero-body">
+			<a href="https://cj-robinson.github.io" style="color:transparent;">
+				<h1 class="title"
+					style="font-family: -apple-system, BlinkMacSystemFont, 'helvetica neue', helvetica,arial, sans-serif; color: white; font-size: 2rem; margin: 0;">
+					C.J. Robinson
+				</h1>
+			</a>
 		</div>
-		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.1951%;margin-top:-9px;left:60.4985%;width:135px;">
-			<p class="g-pstyle0"><span class="g-cstyle0">T</span><span class="g-cstyle1">r</span>ump not mentioned</p>
+	</section>
+	<div class="content">
+		<div class="header">
+			<h1>Know what Trump is going to do next? Willing to bet on it?</h1>
+			<p class="subhead">An analysis of how accurate political betting markets can be in the age of Donald Trump
+			</p>
 		</div>
-		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:12.9816%;margin-top:-9px;right:83.4985%;width:95px;">
-			<p class="g-pstyle1"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2024</p>
+		<div class="byline">
+			<p>By <a href="https://cj-robinson.github.io">C.J. Robinson</a></p>
 		</div>
-		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:12.9816%;margin-top:-9px;right:83.4985%;width:95px;">
-			<p class="g-pstyle1"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2024</p>
+		<p>The rise of prediction markets like Polymarket over the past decade has given them large-scale legitimacy,
+			especially after their correct prediction of the 2024 election. A new analysis reveals, however, that
+			markets may have a harder time predicting Trump's actions compared to other political events.</p>
+		<p>Proponents of these markets argue that since <a
+				href="https://finance.yahoo.com/news/elon-musk-advocates-crypto-prediction-072206636.html">money is on
+				the line</a>, they can often lead to more powerful
+			predictions. Users will buy or sell shares of a certain outcome, like whether Trump will end the war in
+			Ukraine within 90 days of his presidency. Each possible outcome's price rises and falls in real time as
+			users trade using real money.</p>
+		<p>Utilizing the Polymarket to analyze each political event since 2024, the analysis found that large political
+			betting markets not mentioning Trump correctly predicted outcomes almost 80% of the time. For markets
+			dealing with Trump, that accuracy fell to 68%.</p>
+
+		<div class="chart-title">
+			With money on the line, predictions about Trump are less accurate
 		</div>
-		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:13.3808%;margin-top:-9px;left:20.4342%;width:39px;">
-			<p class="g-pstyle2">9%</p>
-		</div>
-		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:13.3808%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">91%</p>
-		</div>
-		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.5684%;margin-top:-9px;right:83.5708%;width:100px;">
-			<p class="g-pstyle1"><span class="g-cstyle5">F</span>eb<span class="g-cstyle1">r</span>ua<span class="g-cstyle4">r</span>y 2024</p>
-		</div>
-		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.5684%;margin-top:-9px;right:83.5708%;width:100px;">
-			<p class="g-pstyle1"><span class="g-cstyle5">F</span>eb<span class="g-cstyle1">r</span>ua<span class="g-cstyle4">r</span>y 2024</p>
-		</div>
-		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.768%;margin-top:-9px;left:29.5271%;width:46px;">
-			<p class="g-pstyle2">22%</p>
-		</div>
-		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.768%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">78%</p>
-		</div>
-		<div id="g-ai0-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.5564%;margin-top:-9px;right:83.5928%;width:85px;">
-			<p class="g-pstyle1">March 2024</p>
-		</div>
-		<div id="g-ai0-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.5564%;margin-top:-9px;right:83.5928%;width:85px;">
-			<p class="g-pstyle1">March 2024</p>
-		</div>
-		<div id="g-ai0-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.9556%;margin-top:-9px;left:89.9842%;width:53px;">
-			<p class="g-pstyle2">100%</p>
-		</div>
-		<div id="g-ai0-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:32.1432%;margin-top:-9px;right:83.5691%;width:76px;">
-			<p class="g-pstyle1">Ap<span class="g-cstyle1">r</span>il 2024</p>
-		</div>
-		<div id="g-ai0-15" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:32.1432%;margin-top:-9px;right:83.5691%;width:76px;">
-			<p class="g-pstyle1">Ap<span class="g-cstyle1">r</span>il 2024</p>
-		</div>
-		<div id="g-ai0-16" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:32.3428%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">97%</p>
-		</div>
-		<div id="g-ai0-17" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.3309%;margin-top:-9px;right:83.5886%;width:74px;">
-			<p class="g-pstyle1">M<span class="g-cstyle6">a</span>y 2024</p>
-		</div>
-		<div id="g-ai0-18" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.3309%;margin-top:-9px;right:83.5886%;width:74px;">
-			<p class="g-pstyle1">M<span class="g-cstyle6">a</span>y 2024</p>
-		</div>
-		<div id="g-ai0-19" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.604%;margin-top:-8.4px;left:59.1713%;margin-left:-156.5px;width:313px;">
-			<p class="g-pstyle3">First presidential debate between Trump and Biden</p>
-		</div>
-		<div id="g-ai0-20" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.7301%;margin-top:-9px;left:21.2642%;width:46px;">
-			<p class="g-pstyle2">11%</p>
-		</div>
-		<div id="g-ai0-21" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.7301%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">89%</p>
-		</div>
-		<div id="g-ai0-22" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.9177%;margin-top:-9px;right:83.513%;width:78px;">
-			<p class="g-pstyle1"><span class="g-cstyle2">J</span>une 2024</p>
-		</div>
-		<div id="g-ai0-23" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.9177%;margin-top:-9px;right:83.513%;width:78px;">
-			<p class="g-pstyle1"><span class="g-cstyle2">J</span>une 2024</p>
-		</div>
-		<div id="g-ai0-24" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:45.3169%;margin-top:-9px;left:47.6542%;width:46px;">
-			<p class="g-pstyle2">45%</p>
-		</div>
-		<div id="g-ai0-25" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:45.3169%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">55%</p>
-		</div>
-		<div id="g-ai0-26" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.1053%;margin-top:-9px;right:83.5603%;width:73px;">
-			<p class="g-pstyle1"><span class="g-cstyle7">J</span>uly 2024</p>
-		</div>
-		<div id="g-ai0-27" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.1053%;margin-top:-9px;right:83.5603%;width:73px;">
-			<p class="g-pstyle1"><span class="g-cstyle7">J</span>uly 2024</p>
-		</div>
-		<div id="g-ai0-28" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.5045%;margin-top:-9px;left:21.4942%;width:46px;">
-			<p class="g-pstyle2">12%</p>
-		</div>
-		<div id="g-ai0-29" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.5045%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">88%</p>
-		</div>
-		<div id="g-ai0-30" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:57.6921%;margin-top:-9px;right:83.5459%;width:89px;">
-			<p class="g-pstyle1"><span class="g-cstyle5">A</span>ugust 2024</p>
-		</div>
-		<div id="g-ai0-31" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:57.6921%;margin-top:-9px;right:83.5459%;width:89px;">
-			<p class="g-pstyle1"><span class="g-cstyle5">A</span>ugust 2024</p>
-		</div>
-		<div id="g-ai0-32" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:58.0913%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">96%</p>
-		</div>
-		<div id="g-ai0-33" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.279%;margin-top:-9px;right:83.5013%;width:111px;">
-			<p class="g-pstyle1">September 2024</p>
-		</div>
-		<div id="g-ai0-34" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.279%;margin-top:-9px;right:83.5013%;width:111px;">
-			<p class="g-pstyle1">September 2024</p>
-		</div>
-		<div id="g-ai0-35" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.4786%;margin-top:-9px;left:18.1085%;width:39px;">
-			<p class="g-pstyle2">6%</p>
-		</div>
-		<div id="g-ai0-36" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.4786%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">94%</p>
-		</div>
-		<div id="g-ai0-37" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.4666%;margin-top:-9px;right:83.4994%;width:95px;">
-			<p class="g-pstyle1">October 2024</p>
-		</div>
-		<div id="g-ai0-38" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.4666%;margin-top:-9px;right:83.4994%;width:95px;">
-			<p class="g-pstyle1">October 2024</p>
-		</div>
-		<div id="g-ai0-39" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.8658%;margin-top:-9px;left:24.7899%;width:46px;">
-			<p class="g-pstyle2">16%</p>
-		</div>
-		<div id="g-ai0-40" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.8658%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">84%</p>
-		</div>
-		<div id="g-ai0-41" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.7398%;margin-top:-8.4px;left:59.0556%;margin-left:-51.5px;width:103px;">
-			<p class="g-pstyle3">Trump elected</p>
-		</div>
-		<div id="g-ai0-42" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.0534%;margin-top:-9px;right:83.5262%;width:107px;">
-			<p class="g-pstyle1">N<span class="g-cstyle8">o</span><span class="g-cstyle9">v</span>ember 2024</p>
-		</div>
-		<div id="g-ai0-43" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.0534%;margin-top:-9px;right:83.5262%;width:107px;">
-			<p class="g-pstyle1">N<span class="g-cstyle8">o</span><span class="g-cstyle9">v</span>ember 2024</p>
-		</div>
-		<div id="g-ai0-44" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.253%;margin-top:-9px;left:43.4313%;width:46px;">
-			<p class="g-pstyle2">40%</p>
-		</div>
-		<div id="g-ai0-45" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.253%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">60%</p>
-		</div>
-		<div id="g-ai0-46" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.241%;margin-top:-9px;right:83.5948%;width:107px;">
-			<p class="g-pstyle1">December 2024</p>
-		</div>
-		<div id="g-ai0-47" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.241%;margin-top:-9px;right:83.5948%;width:107px;">
-			<p class="g-pstyle1">December 2024</p>
-		</div>
-		<div id="g-ai0-48" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.6402%;margin-top:-9px;left:18.6956%;width:39px;">
-			<p class="g-pstyle2">7%</p>
-		</div>
-		<div id="g-ai0-49" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.6402%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">93%</p>
-		</div>
-		<div id="g-ai0-50" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.5142%;margin-top:-8.4px;left:78.8186%;margin-left:-65.5px;width:131px;">
-			<p class="g-pstyle3">Trump inaugurated</p>
-		</div>
-		<div id="g-ai0-51" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:89.8279%;margin-top:-9px;right:83.4985%;width:95px;">
-			<p class="g-pstyle1"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2025</p>
-		</div>
-		<div id="g-ai0-52" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:89.8279%;margin-top:-9px;right:83.4985%;width:95px;">
-			<p class="g-pstyle1"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2025</p>
-		</div>
-		<div id="g-ai0-53" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:90.0275%;margin-top:-9px;left:67.1928%;width:46px;">
-			<p class="g-pstyle2">70%</p>
-		</div>
-		<div id="g-ai0-54" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:90.0275%;margin-top:-9px;left:90.8428%;width:46px;">
-			<p class="g-pstyle2">30%</p>
-		</div>
-		<div id="g-ai0-55" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:97.0135%;margin-top:-9px;right:4.5654%;width:145px;">
-			<p class="g-pstyle4">Source: Polymarket API</p>
+		<div class="chart-subtitle">
+			Proportion of Polymarket events where market correctly predicted outcome from January 2024 to March 2025
 		</div>
 	</div>
+	<div class="full-width">
 
-	<!-- Artboard: medium -->
-	<div id="g-trump_event_template-medium" class="g-artboard" style="width:490px; height:490px;" data-aspect-ratio="1" data-min-width="490" data-max-width="699">
-<div style=""></div>
-		<img id="g-trump_event_template-medium-img" class="g-trump_event_template-medium-img g-aiImg" alt="" src="assets/ai2html-output/trump_event_template-medium.png"/>
-		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.3138%;margin-top:-9px;left:38.2125%;width:115px;">
-			<p class="g-pstyle0"><span class="g-cstyle0">T</span><span class="g-cstyle1">r</span>ump mentioned</p>
-		</div>
-		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.3138%;margin-top:-9px;left:67.1552%;width:135px;">
-			<p class="g-pstyle0"><span class="g-cstyle0">T</span><span class="g-cstyle1">r</span>ump not mentioned</p>
-		</div>
-		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.8444%;margin-top:-9px;left:28.3016%;width:39px;">
-			<p class="g-pstyle1">9%</p>
-		</div>
-		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.8444%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">91%</p>
-		</div>
-		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.8444%;margin-top:-9px;right:75.7047%;width:95px;">
-			<p class="g-pstyle2"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2024</p>
-		</div>
-		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.8444%;margin-top:-9px;right:75.7047%;width:95px;">
-			<p class="g-pstyle2"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2024</p>
-		</div>
-		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.375%;margin-top:-9px;left:36.5513%;width:46px;">
-			<p class="g-pstyle1">22%</p>
-		</div>
-		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.375%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">78%</p>
-		</div>
-		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.5791%;margin-top:-9px;right:75.8082%;width:100px;">
-			<p class="g-pstyle2"><span class="g-cstyle5">F</span>eb<span class="g-cstyle1">r</span>ua<span class="g-cstyle4">r</span>y 2024</p>
-		</div>
-		<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.5791%;margin-top:-9px;right:75.8082%;width:100px;">
-			<p class="g-pstyle2"><span class="g-cstyle5">F</span>eb<span class="g-cstyle1">r</span>ua<span class="g-cstyle4">r</span>y 2024</p>
-		</div>
-		<div id="g-ai1-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:24.7016%;margin-top:-9px;left:91.4017%;width:53px;">
-			<p class="g-pstyle1">100%</p>
-		</div>
-		<div id="g-ai1-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:24.7016%;margin-top:-9px;right:75.8396%;width:85px;">
-			<p class="g-pstyle2">March 2024</p>
-		</div>
-		<div id="g-ai1-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:24.7016%;margin-top:-9px;right:75.8396%;width:85px;">
-			<p class="g-pstyle2">March 2024</p>
-		</div>
-		<div id="g-ai1-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:31.4362%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">97%</p>
-		</div>
-		<div id="g-ai1-15" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:31.4362%;margin-top:-9px;right:75.8058%;width:76px;">
-			<p class="g-pstyle2">Ap<span class="g-cstyle1">r</span>il 2024</p>
-		</div>
-		<div id="g-ai1-16" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:31.4362%;margin-top:-9px;right:75.8058%;width:76px;">
-			<p class="g-pstyle2">Ap<span class="g-cstyle1">r</span>il 2024</p>
-		</div>
-		<div id="g-ai1-17" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.6339%;margin-top:-8.4px;left:58.3839%;margin-left:-121.5px;width:243px;">
-			<p class="g-pstyle3">First debate between Trump and Biden</p>
-		</div>
-		<div id="g-ai1-18" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.7628%;margin-top:-9px;left:29.0549%;width:46px;">
-			<p class="g-pstyle1">11%</p>
-		</div>
-		<div id="g-ai1-19" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.7628%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">89%</p>
-		</div>
-		<div id="g-ai1-20" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.7628%;margin-top:-9px;right:75.8335%;width:74px;">
-			<p class="g-pstyle2">M<span class="g-cstyle6">a</span>y 2024</p>
-		</div>
-		<div id="g-ai1-21" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.7628%;margin-top:-9px;right:75.8335%;width:74px;">
-			<p class="g-pstyle2">M<span class="g-cstyle6">a</span>y 2024</p>
-		</div>
-		<div id="g-ai1-22" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.4975%;margin-top:-9px;left:52.9974%;width:46px;">
-			<p class="g-pstyle1">45%</p>
-		</div>
-		<div id="g-ai1-23" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.4975%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">55%</p>
-		</div>
-		<div id="g-ai1-24" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.4975%;margin-top:-9px;right:75.7256%;width:78px;">
-			<p class="g-pstyle2"><span class="g-cstyle2">J</span>une 2024</p>
-		</div>
-		<div id="g-ai1-25" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.4975%;margin-top:-9px;right:75.7256%;width:78px;">
-			<p class="g-pstyle2"><span class="g-cstyle2">J</span>une 2024</p>
-		</div>
-		<div id="g-ai1-26" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.824%;margin-top:-9px;left:29.2636%;width:46px;">
-			<p class="g-pstyle1">12%</p>
-		</div>
-		<div id="g-ai1-27" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.824%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">88%</p>
-		</div>
-		<div id="g-ai1-28" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.0281%;margin-top:-9px;right:75.793%;width:73px;">
-			<p class="g-pstyle2"><span class="g-cstyle7">J</span>uly 2024</p>
-		</div>
-		<div id="g-ai1-29" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.0281%;margin-top:-9px;right:75.793%;width:73px;">
-			<p class="g-pstyle2"><span class="g-cstyle7">J</span>uly 2024</p>
-		</div>
-		<div id="g-ai1-30" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:57.5587%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">96%</p>
-		</div>
-		<div id="g-ai1-31" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:57.5587%;margin-top:-9px;right:75.7725%;width:89px;">
-			<p class="g-pstyle2"><span class="g-cstyle5">A</span>ugust 2024</p>
-		</div>
-		<div id="g-ai1-32" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:57.5587%;margin-top:-9px;right:75.7725%;width:89px;">
-			<p class="g-pstyle2"><span class="g-cstyle5">A</span>ugust 2024</p>
-		</div>
-		<div id="g-ai1-33" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.0893%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">94%</p>
-		</div>
-		<div id="g-ai1-34" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.2934%;margin-top:-9px;right:75.7089%;width:111px;">
-			<p class="g-pstyle2">September 2024</p>
-		</div>
-		<div id="g-ai1-35" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.2934%;margin-top:-9px;right:75.7089%;width:111px;">
-			<p class="g-pstyle2">September 2024</p>
-		</div>
-		<div id="g-ai1-36" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.6199%;margin-top:-9px;left:32.2537%;width:46px;">
-			<p class="g-pstyle1">16%</p>
-		</div>
-		<div id="g-ai1-37" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.6199%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">84%</p>
-		</div>
-		<div id="g-ai1-38" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.4911%;margin-top:-8.4px;left:61.8832%;margin-left:-51.5px;width:103px;">
-			<p class="g-pstyle3">Trump elected</p>
-		</div>
-		<div id="g-ai1-39" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.6199%;margin-top:-9px;right:75.7061%;width:95px;">
-			<p class="g-pstyle2">October 2024</p>
-		</div>
-		<div id="g-ai1-40" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.6199%;margin-top:-9px;right:75.7061%;width:95px;">
-			<p class="g-pstyle2">October 2024</p>
-		</div>
-		<div id="g-ai1-41" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.1505%;margin-top:-9px;left:49.1663%;width:46px;">
-			<p class="g-pstyle1">40%</p>
-		</div>
-		<div id="g-ai1-42" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.1505%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">60%</p>
-		</div>
-		<div id="g-ai1-43" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.3546%;margin-top:-9px;right:75.7444%;width:107px;">
-			<p class="g-pstyle2">N<span class="g-cstyle8">o</span><span class="g-cstyle9">v</span>ember 2024</p>
-		</div>
-		<div id="g-ai1-44" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.3546%;margin-top:-9px;right:75.7444%;width:107px;">
-			<p class="g-pstyle2">N<span class="g-cstyle8">o</span><span class="g-cstyle9">v</span>ember 2024</p>
-		</div>
-		<div id="g-ai1-45" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.6811%;margin-top:-9px;left:26.7245%;width:39px;">
-			<p class="g-pstyle1">7%</p>
-		</div>
-		<div id="g-ai1-46" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.6811%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">93%</p>
-		</div>
-		<div id="g-ai1-47" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.5523%;margin-top:-8.4px;left:79.0226%;margin-left:-65.5px;width:131px;">
-			<p class="g-pstyle3">Trump inaugurated</p>
-		</div>
-		<div id="g-ai1-48" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.6811%;margin-top:-9px;right:75.8424%;width:107px;">
-			<p class="g-pstyle2">December 2024</p>
-		</div>
-		<div id="g-ai1-49" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.6811%;margin-top:-9px;right:75.8424%;width:107px;">
-			<p class="g-pstyle2">December 2024</p>
-		</div>
-		<div id="g-ai1-50" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:90.4158%;margin-top:-9px;left:70.7241%;width:46px;">
-			<p class="g-pstyle1">70%</p>
-		</div>
-		<div id="g-ai1-51" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:90.4158%;margin-top:-9px;left:92.1807%;width:46px;">
-			<p class="g-pstyle1">30%</p>
-		</div>
-		<div id="g-ai1-52" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:90.4158%;margin-top:-9px;right:75.7047%;width:95px;">
-			<p class="g-pstyle2"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2025</p>
-		</div>
-		<div id="g-ai1-53" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:90.4158%;margin-top:-9px;right:75.7047%;width:95px;">
-			<p class="g-pstyle2"><span class="g-cstyle2">J</span>a<span class="g-cstyle3">n</span>ua<span class="g-cstyle4">r</span>y 2025</p>
-		</div>
-		<div id="g-ai1-54" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:97.3546%;margin-top:-9px;right:3.0086%;width:145px;">
-			<p class="g-pstyle4">Source: Polymarket API</p>
-		</div>
-	</div>
 
-	<!-- Artboard: mobile -->
-	<div id="g-trump_event_template-mobile" class="g-artboard" style="max-width: 375px;max-height: 488px" data-aspect-ratio="0.768" data-min-width="0" data-max-width="489">
-<div style="padding: 0 0 130.2133% 0;"></div>
-		<img id="g-trump_event_template-mobile-img" class="g-trump_event_template-mobile-img g-aiImg" alt="" src="assets/ai2html-output/trump_event_template-mobile.png"/>
-		<div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:4.3083%;margin-top:-9px;left:23.751%;width:115px;">
-			<p class="g-pstyle0"><span class="g-cstyle0">T</span><span class="g-cstyle1">r</span>ump mentioned</p>
-		</div>
-		<div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:4.3083%;margin-top:-9px;left:61.5695%;width:135px;">
-			<p class="g-pstyle0"><span class="g-cstyle0">T</span><span class="g-cstyle1">r</span>ump not mentioned</p>
-		</div>
-		<div id="g-ai2-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.0665%;margin-top:-9px;left:23.9607%;width:39px;">
-			<p class="g-pstyle1">9%</p>
-		</div>
-		<div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.0665%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">91%</p>
-		</div>
-		<div id="g-ai2-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.2713%;margin-top:-9px;right:80.031%;width:70px;">
-			<p class="g-pstyle2">Jan 2024</p>
-		</div>
-		<div id="g-ai2-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:17.6198%;margin-top:-9px;left:30.8289%;width:46px;">
-			<p class="g-pstyle1">22%</p>
-		</div>
-		<div id="g-ai2-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:17.6198%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">78%</p>
-		</div>
-		<div id="g-ai2-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.0294%;margin-top:-9px;right:80.1841%;width:70px;">
-			<p class="g-pstyle3">Feb 2024</p>
-		</div>
-		<div id="g-ai2-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:23.9684%;margin-top:-9px;left:87.1307%;width:53px;">
-			<p class="g-pstyle1">100%</p>
-		</div>
-		<div id="g-ai2-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:24.1732%;margin-top:-9px;right:80.2104%;width:85px;">
-			<p class="g-pstyle4">March 2024</p>
-		</div>
-		<div id="g-ai2-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:30.5217%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">97%</p>
-		</div>
-		<div id="g-ai2-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:30.9313%;margin-top:-9px;right:80.1214%;width:76px;">
-			<p class="g-pstyle4">April 2024</p>
-		</div>
-		<div id="g-ai2-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:36.8703%;margin-top:-9px;left:23.6365%;width:46px;">
-			<p class="g-pstyle1">11%</p>
-		</div>
-		<div id="g-ai2-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:36.741%;margin-top:-8.4px;left:61.7391%;margin-left:-45px;width:90px;">
-			<p class="g-pstyle5">First debate</p>
-		</div>
-		<div id="g-ai2-15" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.0751%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">89%</p>
-		</div>
-		<div id="g-ai2-16" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.2799%;margin-top:-9px;right:80.2023%;width:74px;">
-			<p class="g-pstyle4">M<span class="g-cstyle2">a</span>y 2024</p>
-		</div>
-		<div id="g-ai2-17" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:43.6284%;margin-top:-9px;left:47.7099%;width:46px;">
-			<p class="g-pstyle1">45%</p>
-		</div>
-		<div id="g-ai2-18" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:43.6284%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">55%</p>
-		</div>
-		<div id="g-ai2-19" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.038%;margin-top:-9px;right:80.0615%;width:78px;">
-			<p class="g-pstyle4"><span class="g-cstyle3">J</span>une 2024</p>
-		</div>
-		<div id="g-ai2-20" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.1818%;margin-top:-9px;left:23.3484%;width:46px;">
-			<p class="g-pstyle1">12%</p>
-		</div>
-		<div id="g-ai2-21" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.1818%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">88%</p>
-		</div>
-		<div id="g-ai2-22" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.3866%;margin-top:-9px;right:80.1495%;width:73px;">
-			<p class="g-pstyle4"><span class="g-cstyle4">J</span>uly 2024</p>
-		</div>
-		<div id="g-ai2-23" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:56.7351%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">96%</p>
-		</div>
-		<div id="g-ai2-24" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:57.1447%;margin-top:-9px;right:80.2135%;width:73px;">
-			<p class="g-pstyle4">Aug 2024</p>
-		</div>
-		<div id="g-ai2-25" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:63.4933%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">94%</p>
-		</div>
-		<div id="g-ai2-26" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:63.6981%;margin-top:-9px;right:80.0359%;width:77px;">
-			<p class="g-pstyle4">Sept 2024</p>
-		</div>
-		<div id="g-ai2-27" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.0466%;margin-top:-9px;left:26.4174%;width:46px;">
-			<p class="g-pstyle1">16%</p>
-		</div>
-		<div id="g-ai2-28" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.0466%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">84%</p>
-		</div>
-		<div id="g-ai2-29" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:69.9173%;margin-top:-8.4px;left:59.312%;margin-left:-34.5px;width:69px;">
-			<p class="g-pstyle5">Election</p>
-		</div>
-		<div id="g-ai2-30" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.2514%;margin-top:-9px;right:80.0313%;width:71px;">
-			<p class="g-pstyle4">Oct 2024</p>
-		</div>
-		<div id="g-ai2-31" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.6%;margin-top:-9px;left:43.7779%;width:46px;">
-			<p class="g-pstyle1">40%</p>
-		</div>
-		<div id="g-ai2-32" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.6%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">60%</p>
-		</div>
-		<div id="g-ai2-33" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:77.0095%;margin-top:-9px;right:80.2104%;width:73px;">
-			<p class="g-pstyle4">Nov 2024</p>
-		</div>
-		<div id="g-ai2-34" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.1533%;margin-top:-9px;left:23.1419%;width:36px;">
-			<p class="g-pstyle1">7%</p>
-		</div>
-		<div id="g-ai2-35" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.1533%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">93%</p>
-		</div>
-		<div id="g-ai2-36" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.024%;margin-top:-8.4px;left:75.7685%;margin-left:-47.5px;width:95px;">
-			<p class="g-pstyle5">Inauguration</p>
-		</div>
-		<div id="g-ai2-37" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:83.3581%;margin-top:-9px;right:80.2104%;width:73px;">
-			<p class="g-pstyle4">Dec 2024</p>
-		</div>
-		<div id="g-ai2-38" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:89.7067%;margin-top:-9px;left:65.9057%;width:46px;">
-			<p class="g-pstyle1">70%</p>
-		</div>
-		<div id="g-ai2-39" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:89.7067%;margin-top:-9px;left:87.9305%;width:46px;">
-			<p class="g-pstyle1">30%</p>
-		</div>
-		<div id="g-ai2-40" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:90.1162%;margin-top:-9px;right:80.2125%;width:71px;">
-			<p class="g-pstyle4">Jan 2025</p>
-		</div>
-		<div id="g-ai2-41" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:96.8744%;margin-top:-9px;right:4.6938%;width:145px;">
-			<p class="g-pstyle2">Source: Polymarket API</p>
-		</div>
-	</div>
 
-</div>
 
-<script type="text/javascript">
-	(function (containerId, opts) {
-		var nameSpace = opts.namespace || '';
-		var containers = findContainers(containerId);
-		containers.forEach(resize);
-
-		function resize(container) {
-			var onResize = throttle(update, 200);
-			var waiting = !!window.IntersectionObserver;
-			var observer;
-			update();
-
-			document.addEventListener('DOMContentLoaded', update);
-			window.addEventListener('resize', onResize);
-
-			// NYT Scoop-specific code
-			if (opts.setup) {
-				opts.setup(container).on('cleanup', cleanup);
+		<!-- Generated by ai2html v0.121.1 - 2025-03-30 22:57 -->
+		<!-- ai file: waffle_tump_template.ai -->
+		<style media="screen,print">
+			#g-waffle_tump_template-box,
+			#g-waffle_tump_template-box .g-artboard {
+				margin: 0 auto;
 			}
 
-			function cleanup() {
-				document.removeEventListener('DOMContentLoaded', update);
-				window.removeEventListener('resize', onResize);
-				if (observer) observer.disconnect();
+			#g-waffle_tump_template-box p {
+				margin: 0;
 			}
 
-			function update() {
-				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
-						width = Math.round(container.getBoundingClientRect().width);
-
-				// Set artboard visibility based on container width
-				artboards.forEach(function(el) {
-					var minwidth = el.getAttribute('data-min-width'),
-							maxwidth = el.getAttribute('data-max-width');
-					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
-						if (!waiting) {
-							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
-							selectChildren('video', el).forEach(updateVideoSrc);
-						}
-						el.style.display = 'block';
-					} else {
-						el.style.display = 'none';
-					}
-				});
-
-				// Initialize lazy loading on first call
-				if (waiting && !observer) {
-					if (elementInView(container)) {
-						waiting = false;
-						update();
-					} else {
-						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
-						observer.observe(container);
-					}
-				}
+			#g-waffle_tump_template-box .g-aiAbs {
+				position: absolute;
 			}
 
-			function onIntersectionChange(entries) {
-				// There may be multiple entries relating to the same container
-				// (captured at different times)
-				var isIntersecting = entries.reduce(function(memo, entry) {
-					return memo || entry.isIntersecting;
-				}, false);
-				if (isIntersecting) {
-					waiting = false;
-					// update: don't remove -- we need the observer to trigger an update
-					// when a hidden map becomes visible after user interaction
-					// (e.g. when an accordion menu or tab opens)
-					// observer.disconnect();
-					// observer = null;
+			#g-waffle_tump_template-box .g-aiImg {
+				position: absolute;
+				top: 0;
+				display: block;
+				width: 100% !important;
+			}
+
+			#g-waffle_tump_template-box .g-aiSymbol {
+				position: absolute;
+				box-sizing: border-box;
+			}
+
+			#g-waffle_tump_template-box .g-aiPointText p {
+				white-space: nowrap;
+			}
+
+			#g-waffle_tump_template-full {
+				position: relative;
+				overflow: hidden;
+			}
+
+			#g-waffle_tump_template-full p {
+				font-weight: regular;
+				line-height: 10px;
+				height: auto;
+				opacity: 1;
+				letter-spacing: 0em;
+				font-size: 12px;
+				text-align: left;
+				color: rgb(0, 0, 0);
+				text-transform: none;
+				padding-bottom: 0;
+				padding-top: 0;
+				mix-blend-mode: normal;
+				font-style: normal;
+				position: static;
+			}
+
+			#g-waffle_tump_template-full .g-pstyle0 {
+				font-family: arial, helvetica, sans-serif;
+				line-height: 14px;
+				height: 14px;
+				color: rgb(96, 96, 96);
+			}
+
+			#g-waffle_tump_template-full .g-pstyle1 {
+				font-family: arial, helvetica, sans-serif;
+				line-height: 14px;
+				height: 14px;
+			}
+
+			#g-waffle_tump_template-full .g-pstyle2 {
+				font-family: arial, helvetica, sans-serif;
+				line-height: 14px;
+				height: 14px;
+				text-align: right;
+			}
+
+			#g-waffle_tump_template-full .g-pstyle3 {
+				font-weight: 500;
+				height: 10px;
+				text-align: right;
+			}
+
+			#g-waffle_tump_template-medium {
+				position: relative;
+				overflow: hidden;
+			}
+
+			#g-waffle_tump_template-medium p {
+				font-family: arial, helvetica, sans-serif;
+				font-style: normal;
+				line-height: 10px;
+				height: auto;
+				opacity: 1;
+				letter-spacing: 0em;
+				font-size: 12px;
+				text-align: left;
+				color: rgb(0, 0, 0);
+				text-transform: none;
+				padding-bottom: 0;
+				padding-top: 0;
+				mix-blend-mode: normal;
+				font-weight: regular;
+				position: static;
+			}
+
+			#g-waffle_tump_template-medium .g-pstyle0 {
+				line-height: 14px;
+				height: 14px;
+			}
+
+			#g-waffle_tump_template-medium .g-pstyle1 {
+				line-height: 14px;
+				height: 14px;
+				color: rgb(96, 96, 96);
+			}
+
+			#g-waffle_tump_template-medium .g-pstyle2 {
+				line-height: 14px;
+				height: 14px;
+				text-align: right;
+			}
+
+			#g-waffle_tump_template-medium .g-pstyle3 {
+				font-style: italic;
+				height: 10px;
+				text-align: right;
+			}
+
+			#g-waffle_tump_template-mobile {
+				position: relative;
+				overflow: hidden;
+			}
+
+			#g-waffle_tump_template-mobile p {
+				font-family: arial, helvetica, sans-serif;
+				font-style: normal;
+				line-height: 14px;
+				height: auto;
+				opacity: 1;
+				letter-spacing: 0em;
+				font-size: 12px;
+				text-align: left;
+				color: rgb(0, 0, 0);
+				text-transform: none;
+				padding-bottom: 0;
+				padding-top: 0;
+				mix-blend-mode: normal;
+				font-weight: regular;
+				position: static;
+			}
+
+			#g-waffle_tump_template-mobile .g-pstyle0 {
+				height: 14px;
+			}
+
+			#g-waffle_tump_template-mobile .g-pstyle1 {
+				height: 14px;
+				color: rgb(96, 96, 96);
+			}
+
+			#g-waffle_tump_template-mobile .g-pstyle2 {
+				height: 14px;
+				text-align: center;
+			}
+
+			#g-waffle_tump_template-mobile .g-pstyle3 {
+				font-style: italic;
+				height: 14px;
+				text-align: right;
+			}
+		</style>
+
+		<div id="g-waffle_tump_template-box" class="ai2html ai2html-responsive">
+
+			<!-- Artboard: full -->
+			<div id="g-waffle_tump_template-full" class="g-artboard" style="width:700px; height:249px;"
+				data-aspect-ratio="2.811" data-min-width="700">
+				<div style=""></div>
+				<img id="g-waffle_tump_template-full-img" class="g-waffle_tump_template-full-img g-aiImg" alt=""
+					src="assets/ai2html-output/waffle_tump_template-full.png" />
+				<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:10.8824%;margin-top:-8.1px;left:39.5977%;width:61px;">
+					<p class="g-pstyle0">Correct</p>
+				</div>
+				<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:10.8824%;margin-top:-8.1px;left:73.3491%;width:69px;">
+					<p class="g-pstyle1">Incorrect</p>
+				</div>
+				<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:35.3804%;margin-top:-8.1px;right:88.9295%;width:56px;">
+					<p class="g-pstyle2">Trump</p>
+				</div>
+				<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:71.6054%;margin-top:-15.3px;right:89.0615%;width:56px;">
+					<p class="g-pstyle2">Not </p>
+					<p class="g-pstyle2">Trump</p>
+				</div>
+				<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.7862%;margin-top:-7px;right:7.8765%;width:150px;">
+					<p class="g-pstyle3">Source: Polymarket API</p>
+				</div>
+			</div>
+
+			<!-- Artboard: medium -->
+			<div id="g-waffle_tump_template-medium" class="g-artboard" style="width:490px; height:232.5px;"
+				data-aspect-ratio="2.108" data-min-width="490" data-max-width="699">
+				<div style=""></div>
+				<img id="g-waffle_tump_template-medium-img" class="g-waffle_tump_template-medium-img g-aiImg" alt=""
+					src="assets/ai2html-output/waffle_tump_template-medium.png" />
+				<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:9.9343%;margin-top:-8.1px;left:75.562%;width:69px;">
+					<p class="g-pstyle0">Incorrect</p>
+				</div>
+				<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:10.3644%;margin-top:-8.1px;left:41.3805%;width:61px;">
+					<p class="g-pstyle1">Correct</p>
+				</div>
+				<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:37.4611%;margin-top:-8.1px;right:89.6162%;width:56px;">
+					<p class="g-pstyle2">Trump</p>
+				</div>
+				<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:70.2354%;margin-top:-15.3px;right:89.7622%;width:56px;">
+					<p class="g-pstyle2">Not </p>
+					<p class="g-pstyle2">Trump</p>
+				</div>
+				<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:94.6648%;margin-top:-6.1px;right:6.0617%;width:149px;">
+					<p class="g-pstyle3">Source: Polymarket API</p>
+				</div>
+			</div>
+
+			<!-- Artboard: mobile -->
+			<div id="g-waffle_tump_template-mobile" class="g-artboard" style="max-width: 375px;max-height: 483px"
+				data-aspect-ratio="0.777" data-min-width="0" data-max-width="489">
+				<div style="padding: 0 0 128.68% 0;"></div>
+				<img id="g-waffle_tump_template-mobile-img" class="g-waffle_tump_template-mobile-img g-aiImg" alt=""
+					src="assets/ai2html-output/waffle_tump_template-mobile.png" />
+				<div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:5.4082%;margin-top:-8.1px;left:72.4383%;width:69px;">
+					<p class="g-pstyle0">Incorrect</p>
+				</div>
+				<div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:5.4082%;margin-top:-8.1px;left:24.9966%;width:61px;">
+					<p class="g-pstyle1">Correct</p>
+				</div>
+				<div id="g-ai2-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:89.959%;margin-top:-8.1px;left:25.6758%;margin-left:-28px;width:56px;">
+					<p class="g-pstyle2">Trump</p>
+				</div>
+				<div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:90.1662%;margin-top:-8.1px;left:74.2922%;margin-left:-39px;width:78px;">
+					<p class="g-pstyle2">Not Trump</p>
+				</div>
+				<div id="g-ai2-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:97.0046%;margin-top:-8.1px;right:3.3349%;width:149px;">
+					<p class="g-pstyle3">Source: Polymarket API</p>
+				</div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			(function (containerId, opts) {
+				var nameSpace = opts.namespace || '';
+				var containers = findContainers(containerId);
+				containers.forEach(resize);
+
+				function resize(container) {
+					var onResize = throttle(update, 200);
+					var waiting = !!window.IntersectionObserver;
+					var observer;
 					update();
+
+					document.addEventListener('DOMContentLoaded', update);
+					window.addEventListener('resize', onResize);
+
+					// NYT Scoop-specific code
+					if (opts.setup) {
+						opts.setup(container).on('cleanup', cleanup);
+					}
+
+					function cleanup() {
+						document.removeEventListener('DOMContentLoaded', update);
+						window.removeEventListener('resize', onResize);
+						if (observer) observer.disconnect();
+					}
+
+					function update() {
+						var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+							width = Math.round(container.getBoundingClientRect().width);
+
+						// Set artboard visibility based on container width
+						artboards.forEach(function (el) {
+							var minwidth = el.getAttribute('data-min-width'),
+								maxwidth = el.getAttribute('data-max-width');
+							if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+								if (!waiting) {
+									selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+									selectChildren('video', el).forEach(updateVideoSrc);
+								}
+								el.style.display = 'block';
+							} else {
+								el.style.display = 'none';
+							}
+						});
+
+						// Initialize lazy loading on first call
+						if (waiting && !observer) {
+							if (elementInView(container)) {
+								waiting = false;
+								update();
+							} else {
+								observer = new IntersectionObserver(onIntersectionChange, { rootMargin: "800px" });
+								observer.observe(container);
+							}
+						}
+					}
+
+					function onIntersectionChange(entries) {
+						// There may be multiple entries relating to the same container
+						// (captured at different times)
+						var isIntersecting = entries.reduce(function (memo, entry) {
+							return memo || entry.isIntersecting;
+						}, false);
+						if (isIntersecting) {
+							waiting = false;
+							// update: don't remove -- we need the observer to trigger an update
+							// when a hidden map becomes visible after user interaction
+							// (e.g. when an accordion menu or tab opens)
+							// observer.disconnect();
+							// observer = null;
+							update();
+						}
+					}
 				}
-			}
-		}
 
-		function findContainers(id) {
-			// support duplicate ids on the page
-			return selectChildren('.ai2html-responsive', document).filter(function(el) {
-				if (el.getAttribute('id') != id) return false;
-				if (el.classList.contains('ai2html-resizer')) return false;
-				el.classList.add('ai2html-resizer');
-				return true;
-			});
-		}
-
-		// Replace blank placeholder image with actual image
-		function updateImgSrc(img) {
-			var src = img.getAttribute('data-src');
-			if (src && img.getAttribute('src') != src) {
-				img.setAttribute('src', src);
-			}
-		}
-
-		function updateVideoSrc(el) {
-			var src = el.getAttribute('data-src');
-			if (src && !el.hasAttribute('src')) {
-				el.setAttribute('src', src);
-			}
-		}
-
-		function elementInView(el) {
-			var bounds = el.getBoundingClientRect();
-			return bounds.top < window.innerHeight && bounds.bottom > 0;
-		}
-
-		function selectChildren(selector, parent) {
-			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
-		}
-
-		// based on underscore.js
-		function throttle(func, wait) {
-			var timeout = null, previous = 0;
-			function run() {
-					previous = Date.now();
-					timeout = null;
-					func();
-			}
-			return function() {
-				var remaining = wait - (Date.now() - previous);
-				if (remaining <= 0 || remaining > wait) {
-					clearTimeout(timeout);
-					run();
-				} else if (!timeout) {
-					timeout = setTimeout(run, remaining);
+				function findContainers(id) {
+					// support duplicate ids on the page
+					return selectChildren('.ai2html-responsive', document).filter(function (el) {
+						if (el.getAttribute('id') != id) return false;
+						if (el.classList.contains('ai2html-resizer')) return false;
+						el.classList.add('ai2html-resizer');
+						return true;
+					});
 				}
-			};
-		}
-	})("g-trump_event_template-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
-</script>
-<!-- End ai2html - 2025-03-24 10:05 -->
+
+				// Replace blank placeholder image with actual image
+				function updateImgSrc(img) {
+					var src = img.getAttribute('data-src');
+					if (src && img.getAttribute('src') != src) {
+						img.setAttribute('src', src);
+					}
+				}
+
+				function updateVideoSrc(el) {
+					var src = el.getAttribute('data-src');
+					if (src && !el.hasAttribute('src')) {
+						el.setAttribute('src', src);
+					}
+				}
+
+				function elementInView(el) {
+					var bounds = el.getBoundingClientRect();
+					return bounds.top < window.innerHeight && bounds.bottom > 0;
+				}
+
+				function selectChildren(selector, parent) {
+					return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+				}
+
+				// based on underscore.js
+				function throttle(func, wait) {
+					var timeout = null, previous = 0;
+					function run() {
+						previous = Date.now();
+						timeout = null;
+						func();
+					}
+					return function () {
+						var remaining = wait - (Date.now() - previous);
+						if (remaining <= 0 || remaining > wait) {
+							clearTimeout(timeout);
+							run();
+						} else if (!timeout) {
+							timeout = setTimeout(run, remaining);
+						}
+					};
+				}
+			})("g-waffle_tump_template-box", { namespace: "g-", setup: window.setupInteractive || window.getComponent });
+		</script>
+		<!-- End ai2html - 2025-03-30 22:57 -->
 
 
 
 
-    </div>
 
-    <div class="content">
+	</div>
+	</div>
+	<div class="content">
 
-        <p>This presents an increasing risk to investors in these markets and casts doubt on the predictive power of
-            these markets as a whole. Polymarket users have already invested more than $18 million on whether Trump
-            will end the war in Ukraine by the end of his first 90 days (currently, a 30% chance of occurring,
-            according to the bettors).</p>
-    </div>
-    <div class="footer">
-        <p>Find the code and data for this project <a href="https://github.com/cj-robinson/polymarket-accuracy">here</a>
+		<p>There may be several reasons for this discrepancy.</p>
+		<p>First, markets may be influenced by decisions by external factors like political preference.</p>
+		<p>Mattew Flynn, a professor at Texas State University, said these markets differ from the stock market in how
+			they price information, and possibly their accuracy. He found that Polymarket can react more quickly than
+			traditional markets to changes. Even still, investing in an individual's decisions rather than a corporation
+			leads to differing incentives.</p>
+		<p>“In some sense, it does ignore if you have some strong behavioral bias that might influence you to act a
+			certain way,” Flynn said. “If you love the Mets, even though the Mets might not be good, you'd still bet on
+			the Mets all the time.”</p>
+		<p><a href="https://finance.yahoo.com/news/polymarket-whale-actually-made-85-050139914.html">Evidence of
+				“whales”</a> who dumped large amounts of money into markets predicting the presidential election
+			caused controversy in 2024 by those alleging market manipulation.</p>
+		<p>Markets may have differing levels of trading volume. A less popular market predicting a specific action of
+			Trump may be less accurate than a larger market predicting the actions of the Federal Reserve. The data
+			shows that accuracy is largely unaffected by the amount of money in a market.</p>
+		<p>Many of these markets involve President Trump, especially since his inauguration.</p>
 
-            <!-- Social Icons -->
-        <div class="social-icons mt-4">
-            <a href="mailto:c.j.robinson@columbia.edu" class="icon is-medium mr-3" style="color:transparent;">
-                <i class="fas fa-envelope fa-lg" style="color:white;"></i>
-            </a>
-            <a href="https://bsky.app/profile/cj-robinson.bsky.social" class="icon is-medium mr-3"
-                style="color:transparent;">
-                <i class="fa-brands fa-bluesky" style="color:white;"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/christophercjrobinson" class="icon is-medium mr-3"
-                style="color:transparent;">
-                <i class="fab fa-linkedin fa-lg" style="color:white;"></i>
-            </a>
-            <a href="https://github.com/cj-robinson" class="icon is-medium mr-3" style="color:transparent;">
-                <i class="fab fa-github fa-lg" style="color:white;"></i>
-            </a>
-        </div>
-    </div>
+		<div class="chart-title">
+			In January 2025, Trump dominated political betting and prediction markets
+		</div>
+		<div class="chart-subtitle">
+			Percentage of political Polymarket events mentioning Trump by month of market creation
+		</div>
+	</div>
+
+	<div class="full-width">
+
+
+
+
+		<!-- Generated by ai2html v0.121.1 - 2025-03-30 22:22 -->
+		<!-- ai file: trump_event_template.ai -->
+		<style media="screen,print">
+			#g-trump_event_template-box,
+			#g-trump_event_template-box .g-artboard {
+				margin: 0 auto;
+			}
+
+			#g-trump_event_template-box p {
+				margin: 0;
+			}
+
+			#g-trump_event_template-box .g-aiAbs {
+				position: absolute;
+			}
+
+			#g-trump_event_template-box .g-aiImg {
+				position: absolute;
+				top: 0;
+				display: block;
+				width: 100% !important;
+			}
+
+			#g-trump_event_template-box .g-aiSymbol {
+				position: absolute;
+				box-sizing: border-box;
+			}
+
+			#g-trump_event_template-box .g-aiPointText p {
+				white-space: nowrap;
+			}
+
+			#g-trump_event_template-full {
+				position: relative;
+				overflow: hidden;
+			}
+
+			#g-trump_event_template-full p {
+				font-family: arial, helvetica, sans-serif;
+				line-height: 17px;
+				height: auto;
+				opacity: 1;
+				letter-spacing: 0em;
+				font-size: 14px;
+				text-align: left;
+				color: rgb(0, 0, 0);
+				text-transform: none;
+				padding-bottom: 0;
+				padding-top: 0;
+				mix-blend-mode: normal;
+				font-style: normal;
+				font-weight: regular;
+				position: static;
+			}
+
+			#g-trump_event_template-full .g-pstyle0 {
+				font-weight: 500;
+				line-height: 14px;
+				height: 14px;
+				font-size: 12px;
+			}
+
+			#g-trump_event_template-full .g-pstyle1 {
+				height: 17px;
+				text-align: center;
+			}
+
+			#g-trump_event_template-full .g-pstyle2 {
+				font-weight: 500;
+				line-height: 14px;
+				height: 14px;
+				letter-spacing: -0.02em;
+				font-size: 12px;
+				text-align: right;
+			}
+
+			#g-trump_event_template-full .g-cstyle0 {
+				letter-spacing: -0.02em;
+			}
+
+			#g-trump_event_template-full .g-cstyle1 {
+				letter-spacing: -0.03em;
+			}
+
+			#g-trump_event_template-full .g-cstyle2 {
+				letter-spacing: -0.015em;
+			}
+
+			#g-trump_event_template-medium {
+				position: relative;
+				overflow: hidden;
+			}
+
+			#g-trump_event_template-medium p {
+				font-family: arial, helvetica, sans-serif;
+				line-height: 15px;
+				height: auto;
+				opacity: 1;
+				letter-spacing: 0em;
+				font-size: 13px;
+				text-align: left;
+				color: rgb(0, 0, 0);
+				text-transform: none;
+				padding-bottom: 0;
+				padding-top: 0;
+				mix-blend-mode: normal;
+				font-style: normal;
+				font-weight: regular;
+				position: static;
+			}
+
+			#g-trump_event_template-medium .g-pstyle0 {
+				font-weight: 500;
+				line-height: 13px;
+				height: 13px;
+				font-size: 11px;
+			}
+
+			#g-trump_event_template-medium .g-pstyle1 {
+				height: 15px;
+				text-align: center;
+			}
+
+			#g-trump_event_template-medium .g-pstyle2 {
+				font-weight: 500;
+				line-height: 13px;
+				height: 13px;
+				letter-spacing: -0.02em;
+				font-size: 11px;
+				text-align: right;
+			}
+
+			#g-trump_event_template-medium .g-cstyle0 {
+				letter-spacing: -0.02em;
+			}
+
+			#g-trump_event_template-medium .g-cstyle1 {
+				letter-spacing: -0.03em;
+			}
+
+			#g-trump_event_template-medium .g-cstyle2 {
+				letter-spacing: -0.015em;
+			}
+
+			#g-trump_event_template-mobile {
+				position: relative;
+				overflow: hidden;
+			}
+
+			#g-trump_event_template-mobile p {
+				font-weight: regular;
+				line-height: 13px;
+				height: auto;
+				opacity: 1;
+				letter-spacing: 0em;
+				font-size: 11px;
+				text-align: left;
+				color: rgb(0, 0, 0);
+				text-transform: none;
+				padding-bottom: 0;
+				padding-top: 0;
+				mix-blend-mode: normal;
+				font-style: normal;
+				position: static;
+			}
+
+			#g-trump_event_template-mobile .g-pstyle0 {
+				font-weight: 500;
+				height: 13px;
+			}
+
+			#g-trump_event_template-mobile .g-pstyle1 {
+				font-family: arial, helvetica, sans-serif;
+				line-height: 15px;
+				height: 15px;
+				font-size: 13px;
+				text-align: center;
+			}
+
+			#g-trump_event_template-mobile .g-pstyle2 {
+				font-weight: 500;
+				height: 13px;
+				letter-spacing: -0.02em;
+				text-align: right;
+			}
+
+			#g-trump_event_template-mobile .g-cstyle0 {
+				letter-spacing: -0.02em;
+			}
+
+			#g-trump_event_template-mobile .g-cstyle1 {
+				letter-spacing: -0.03em;
+			}
+
+			#g-trump_event_template-mobile .g-cstyle2 {
+				letter-spacing: -0.015em;
+			}
+		</style>
+
+		<div id="g-trump_event_template-box" class="ai2html ai2html-responsive">
+
+			<!-- Artboard: full -->
+			<div id="g-trump_event_template-full" class="g-artboard" style="width:700px; height:522.999999999998px;"
+				data-aspect-ratio="1.338" data-min-width="700">
+				<div style=""></div>
+				<img id="g-trump_event_template-full-img" class="g-trump_event_template-full-img g-aiImg" alt=""
+					src="assets/ai2html-output/trump_event_template-full.png" />
+				<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:5.3609%;margin-top:-9px;left:85.0714%;width:46px;">
+					<p class="g-pstyle0">70%</p>
+				</div>
+				<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:7.2238%;margin-top:-9.8px;left:69.8258%;margin-left:-70px;width:140px;">
+					<p class="g-pstyle1">Trump inaugurated</p>
+				</div>
+				<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:17.74%;margin-top:-9.8px;left:23.769%;margin-left:-131.5px;width:263px;">
+					<p class="g-pstyle1">First debate between Trump and Biden</p>
+				</div>
+				<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:26.7266%;margin-top:-9.8px;left:56.328%;margin-left:-55.5px;width:111px;">
+					<p class="g-pstyle1">Trump elected</p>
+				</div>
+				<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:34.2328%;margin-top:-9px;left:41.5663%;width:46px;">
+					<p class="g-pstyle0">45%</p>
+				</div>
+				<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:40.5426%;margin-top:-9px;left:72.6906%;width:46px;">
+					<p class="g-pstyle0">40%</p>
+				</div>
+				<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:61.0015%;margin-top:-9px;left:16.9506%;width:46px;">
+					<p class="g-pstyle0">22%</p>
+				</div>
+				<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:68.076%;margin-top:-9px;left:66.385%;width:46px;">
+					<p class="g-pstyle0">16%</p>
+				</div>
+				<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:72.8561%;margin-top:-9px;left:47.6692%;width:46px;">
+					<p class="g-pstyle0">12%</p>
+				</div>
+				<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:73.2385%;margin-top:-9px;left:35.2592%;width:46px;">
+					<p class="g-pstyle0">11%</p>
+				</div>
+				<div id="g-ai0-11" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:75.7242%;margin-top:-9px;left:11.0006%;width:39px;">
+					<p class="g-pstyle0">9%</p>
+				</div>
+				<div id="g-ai0-12" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:78.2099%;margin-top:-9px;left:79.1521%;width:39px;">
+					<p class="g-pstyle0">7%</p>
+				</div>
+				<div id="g-ai0-13" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:79.7395%;margin-top:-9px;left:60.6392%;width:39px;">
+					<p class="g-pstyle0">6%</p>
+				</div>
+				<div id="g-ai0-14" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:82.4164%;margin-top:-9px;left:54.3321%;width:39px;">
+					<p class="g-pstyle0">4%</p>
+				</div>
+				<div id="g-ai0-15" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:83.1812%;margin-top:-9px;left:29.5135%;width:39px;">
+					<p class="g-pstyle0">3%</p>
+				</div>
+				<div id="g-ai0-16" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:86.4317%;margin-top:-9px;left:23.2078%;width:39px;">
+					<p class="g-pstyle0">0%</p>
+				</div>
+				<div id="g-ai0-17" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:91.5942%;margin-top:-9px;left:8.7058%;width:71px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>an 2024</p>
+				</div>
+				<div id="g-ai0-18" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:91.5942%;margin-top:-9px;left:22.9466%;width:43px;">
+					<p class="g-pstyle0">Mar</p>
+				</div>
+				<div id="g-ai0-19" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:91.5942%;margin-top:-9px;left:35.2378%;width:44px;">
+					<p class="g-pstyle0">M<span class="g-cstyle1">a</span>y</p>
+				</div>
+				<div id="g-ai0-20" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:91.5942%;margin-top:-9px;left:48.1628%;width:37px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>ul</p>
+				</div>
+				<div id="g-ai0-21" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:91.5942%;margin-top:-9px;left:60.3291%;width:43px;">
+					<p class="g-pstyle0">Sep</p>
+				</div>
+				<div id="g-ai0-22" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:91.5942%;margin-top:-9px;left:72.7513%;width:43px;">
+					<p class="g-pstyle0">N<span class="g-cstyle2">o</span>v</p>
+				</div>
+				<div id="g-ai0-23" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:91.5942%;margin-top:-9px;left:83.163%;width:71px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>an 2025</p>
+				</div>
+				<div id="g-ai0-24" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:95.4183%;margin-top:-9px;right:6.5822%;width:145px;">
+					<p class="g-pstyle2">Source: Polymarket API</p>
+				</div>
+			</div>
+
+			<!-- Artboard: medium -->
+			<div id="g-trump_event_template-medium" class="g-artboard" style="width:490px; height:490px;"
+				data-aspect-ratio="1" data-min-width="490" data-max-width="699">
+				<div style=""></div>
+				<img id="g-trump_event_template-medium-img" class="g-trump_event_template-medium-img g-aiImg" alt=""
+					src="assets/ai2html-output/trump_event_template-medium.png" />
+				<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:10.0536%;margin-top:-8.3px;left:88.7293%;width:44px;">
+					<p class="g-pstyle0">70%</p>
+				</div>
+				<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:11.935%;margin-top:-8.5px;left:71.8391%;margin-left:-64px;width:128px;">
+					<p class="g-pstyle1">Trump inaugurated</p>
+				</div>
+				<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:21.3227%;margin-top:-8.5px;left:27.4049%;margin-left:-120px;width:240px;">
+					<p class="g-pstyle1">First debate between Trump and Biden</p>
+				</div>
+				<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:30.7105%;margin-top:-8.5px;left:56.9575%;margin-left:-51px;width:102px;">
+					<p class="g-pstyle1">Trump elected</p>
+				</div>
+				<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:38.0128%;margin-top:-8.3px;left:40.7043%;width:44px;">
+					<p class="g-pstyle0">45%</p>
+				</div>
+				<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:43.9312%;margin-top:-8.3px;left:75.0624%;width:44px;">
+					<p class="g-pstyle0">40%</p>
+				</div>
+				<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:63.7271%;margin-top:-8.3px;left:13.531%;width:44px;">
+					<p class="g-pstyle0">22%</p>
+				</div>
+				<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:70.4618%;margin-top:-8.3px;left:68.1015%;width:44px;">
+					<p class="g-pstyle0">16%</p>
+				</div>
+				<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:75.1557%;margin-top:-8.3px;left:47.4412%;width:44px;">
+					<p class="g-pstyle0">12%</p>
+				</div>
+				<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:75.5638%;margin-top:-8.3px;left:33.7418%;width:44px;">
+					<p class="g-pstyle0">11%</p>
+				</div>
+				<div id="g-ai1-11" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:78.0128%;margin-top:-8.3px;left:6.9629%;width:38px;">
+					<p class="g-pstyle0">9%</p>
+				</div>
+				<div id="g-ai1-12" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:80.4618%;margin-top:-8.3px;left:82.1951%;width:38px;">
+					<p class="g-pstyle0">7%</p>
+				</div>
+				<div id="g-ai1-13" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:81.8903%;margin-top:-8.3px;left:61.7586%;width:38px;">
+					<p class="g-pstyle0">6%</p>
+				</div>
+				<div id="g-ai1-14" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:84.5434%;margin-top:-8.3px;left:54.7963%;width:38px;">
+					<p class="g-pstyle0">4%</p>
+				</div>
+				<div id="g-ai1-15" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:85.1557%;margin-top:-8.3px;left:27.3992%;width:38px;">
+					<p class="g-pstyle0">3%</p>
+				</div>
+				<div id="g-ai1-16" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:88.2169%;margin-top:-8.3px;left:20.4385%;width:38px;">
+					<p class="g-pstyle0">0%</p>
+				</div>
+				<div id="g-ai1-17" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:93.3189%;margin-top:-8.3px;left:4.4298%;width:66px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>an 2024</p>
+				</div>
+				<div id="g-ai1-18" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:93.3189%;margin-top:-8.3px;left:20.1501%;width:41px;">
+					<p class="g-pstyle0">Mar</p>
+				</div>
+				<div id="g-ai1-19" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:93.3189%;margin-top:-8.3px;left:33.7181%;width:42px;">
+					<p class="g-pstyle0">M<span class="g-cstyle1">a</span>y</p>
+				</div>
+				<div id="g-ai1-20" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:93.3189%;margin-top:-8.3px;left:47.9861%;width:36px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>ul</p>
+				</div>
+				<div id="g-ai1-21" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:93.3189%;margin-top:-8.3px;left:61.4162%;width:41px;">
+					<p class="g-pstyle0">Sep</p>
+				</div>
+				<div id="g-ai1-22" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:93.3189%;margin-top:-8.3px;left:75.1291%;width:41px;">
+					<p class="g-pstyle0">N<span class="g-cstyle2">o</span>v</p>
+				</div>
+				<div id="g-ai1-23" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:93.3189%;margin-top:-8.3px;left:86.6227%;width:66px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>an 2025</p>
+				</div>
+				<div id="g-ai1-24" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:96.9924%;margin-top:-8.3px;right:2.0683%;width:133px;">
+					<p class="g-pstyle2">Source: Polymarket API</p>
+				</div>
+			</div>
+
+			<!-- Artboard: mobile -->
+			<div id="g-trump_event_template-mobile" class="g-artboard" style="max-width: 375px;max-height: 488px"
+				data-aspect-ratio="0.768" data-min-width="0" data-max-width="489">
+				<div style="padding: 0 0 130.2133% 0;"></div>
+				<img id="g-trump_event_template-mobile-img" class="g-trump_event_template-mobile-img g-aiImg" alt=""
+					src="assets/ai2html-output/trump_event_template-mobile.png" />
+				<div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:8.6551%;margin-top:-8.3px;left:85.6984%;width:44px;">
+					<p class="g-pstyle0">70%</p>
+				</div>
+				<div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:10.7478%;margin-top:-8.5px;left:69.0469%;margin-left:-64px;width:128px;">
+					<p class="g-pstyle1">Trump inaugurated</p>
+				</div>
+				<div id="g-ai2-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:20.5778%;margin-top:-8.5px;left:33.8974%;margin-left:-120px;width:240px;">
+					<p class="g-pstyle1">First debate between Trump and Biden</p>
+				</div>
+				<div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:36.5068%;margin-top:-8.3px;left:39.9102%;width:44px;">
+					<p class="g-pstyle0">45%</p>
+				</div>
+				<div id="g-ai2-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:42.6506%;margin-top:-8.3px;left:72.668%;width:44px;">
+					<p class="g-pstyle0">40%</p>
+				</div>
+				<div id="g-ai2-6" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:62.5154%;margin-top:-8.3px;left:14.0026%;width:44px;">
+					<p class="g-pstyle0">22%</p>
+				</div>
+				<div id="g-ai2-7" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:69.2735%;margin-top:-8.3px;left:66.0315%;width:44px;">
+					<p class="g-pstyle0">16%</p>
+				</div>
+				<div id="g-ai2-8" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:73.9838%;margin-top:-8.3px;left:46.3336%;width:44px;">
+					<p class="g-pstyle0">12%</p>
+				</div>
+				<div id="g-ai2-9" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:74.3933%;margin-top:-8.3px;left:33.2724%;width:44px;">
+					<p class="g-pstyle0">11%</p>
+				</div>
+				<div id="g-ai2-10" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:76.6461%;margin-top:-8.3px;left:7.7409%;width:38px;">
+					<p class="g-pstyle0">9%</p>
+				</div>
+				<div id="g-ai2-11" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:79.3084%;margin-top:-8.3px;left:79.469%;width:38px;">
+					<p class="g-pstyle0">7%</p>
+				</div>
+				<div id="g-ai2-12" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:80.7419%;margin-top:-8.3px;left:59.9841%;width:38px;">
+					<p class="g-pstyle0">6%</p>
+				</div>
+				<div id="g-ai2-13" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:83.1994%;margin-top:-8.3px;left:53.3464%;width:38px;">
+					<p class="g-pstyle0">4%</p>
+				</div>
+				<div id="g-ai2-14" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:83.8138%;margin-top:-8.3px;left:27.225%;width:38px;">
+					<p class="g-pstyle0">3%</p>
+				</div>
+				<div id="g-ai2-15" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:87.0905%;margin-top:-8.3px;left:20.5888%;width:38px;">
+					<p class="g-pstyle0">0%</p>
+				</div>
+				<div id="g-ai2-16" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.0055%;margin-top:-8.3px;left:3.9919%;width:66px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>an 2024</p>
+				</div>
+				<div id="g-ai2-17" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.0055%;margin-top:-8.3px;left:20.3141%;width:41px;">
+					<p class="g-pstyle0">Mar</p>
+				</div>
+				<div id="g-ai2-18" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.0055%;margin-top:-8.3px;left:33.2495%;width:42px;">
+					<p class="g-pstyle0">M<span class="g-cstyle1">a</span>y</p>
+				</div>
+				<div id="g-ai2-19" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.0055%;margin-top:-8.3px;left:46.8534%;width:36px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>ul</p>
+				</div>
+				<div id="g-ai2-20" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.0055%;margin-top:-8.3px;left:59.6578%;width:41px;">
+					<p class="g-pstyle0">Sep</p>
+				</div>
+				<div id="g-ai2-21" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.0055%;margin-top:-8.3px;left:72.732%;width:41px;">
+					<p class="g-pstyle0">N<span class="g-cstyle2">o</span>v</p>
+				</div>
+				<div id="g-ai2-22" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:92.0055%;margin-top:-8.3px;left:83.6901%;width:66px;">
+					<p class="g-pstyle0"><span class="g-cstyle0">J</span>an 2025</p>
+				</div>
+				<div id="g-ai2-23" class="g-ai2html-settings g-aiAbs g-aiPointText"
+					style="top:96.7157%;margin-top:-8.3px;right:5.4951%;width:133px;">
+					<p class="g-pstyle2">Source: Polymarket API</p>
+				</div>
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			(function (containerId, opts) {
+				var nameSpace = opts.namespace || '';
+				var containers = findContainers(containerId);
+				containers.forEach(resize);
+
+				function resize(container) {
+					var onResize = throttle(update, 200);
+					var waiting = !!window.IntersectionObserver;
+					var observer;
+					update();
+
+					document.addEventListener('DOMContentLoaded', update);
+					window.addEventListener('resize', onResize);
+
+					// NYT Scoop-specific code
+					if (opts.setup) {
+						opts.setup(container).on('cleanup', cleanup);
+					}
+
+					function cleanup() {
+						document.removeEventListener('DOMContentLoaded', update);
+						window.removeEventListener('resize', onResize);
+						if (observer) observer.disconnect();
+					}
+
+					function update() {
+						var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+							width = Math.round(container.getBoundingClientRect().width);
+
+						// Set artboard visibility based on container width
+						artboards.forEach(function (el) {
+							var minwidth = el.getAttribute('data-min-width'),
+								maxwidth = el.getAttribute('data-max-width');
+							if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+								if (!waiting) {
+									selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+									selectChildren('video', el).forEach(updateVideoSrc);
+								}
+								el.style.display = 'block';
+							} else {
+								el.style.display = 'none';
+							}
+						});
+
+						// Initialize lazy loading on first call
+						if (waiting && !observer) {
+							if (elementInView(container)) {
+								waiting = false;
+								update();
+							} else {
+								observer = new IntersectionObserver(onIntersectionChange, { rootMargin: "800px" });
+								observer.observe(container);
+							}
+						}
+					}
+
+					function onIntersectionChange(entries) {
+						// There may be multiple entries relating to the same container
+						// (captured at different times)
+						var isIntersecting = entries.reduce(function (memo, entry) {
+							return memo || entry.isIntersecting;
+						}, false);
+						if (isIntersecting) {
+							waiting = false;
+							// update: don't remove -- we need the observer to trigger an update
+							// when a hidden map becomes visible after user interaction
+							// (e.g. when an accordion menu or tab opens)
+							// observer.disconnect();
+							// observer = null;
+							update();
+						}
+					}
+				}
+
+				function findContainers(id) {
+					// support duplicate ids on the page
+					return selectChildren('.ai2html-responsive', document).filter(function (el) {
+						if (el.getAttribute('id') != id) return false;
+						if (el.classList.contains('ai2html-resizer')) return false;
+						el.classList.add('ai2html-resizer');
+						return true;
+					});
+				}
+
+				// Replace blank placeholder image with actual image
+				function updateImgSrc(img) {
+					var src = img.getAttribute('data-src');
+					if (src && img.getAttribute('src') != src) {
+						img.setAttribute('src', src);
+					}
+				}
+
+				function updateVideoSrc(el) {
+					var src = el.getAttribute('data-src');
+					if (src && !el.hasAttribute('src')) {
+						el.setAttribute('src', src);
+					}
+				}
+
+				function elementInView(el) {
+					var bounds = el.getBoundingClientRect();
+					return bounds.top < window.innerHeight && bounds.bottom > 0;
+				}
+
+				function selectChildren(selector, parent) {
+					return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+				}
+
+				// based on underscore.js
+				function throttle(func, wait) {
+					var timeout = null, previous = 0;
+					function run() {
+						previous = Date.now();
+						timeout = null;
+						func();
+					}
+					return function () {
+						var remaining = wait - (Date.now() - previous);
+						if (remaining <= 0 || remaining > wait) {
+							clearTimeout(timeout);
+							run();
+						} else if (!timeout) {
+							timeout = setTimeout(run, remaining);
+						}
+					};
+				}
+			})("g-trump_event_template-box", { namespace: "g-", setup: window.setupInteractive || window.getComponent });
+		</script>
+		<!-- End ai2html - 2025-03-30 22:22 -->
+
+
+
+
+
+	</div>
+
+	<div class="content">
+
+		<p>This presents an increasing risk to investors in these markets and casts doubt on the predictive power of
+			these markets as a whole. Polymarket users have already invested more than $18 million on whether Trump
+			will end the war in Ukraine by the end of his first 90 days (currently, a 30% chance of occurring,
+			according to the bettors).</p>
+	</div>
+	<div class="footer">
+		<p>Find the code and data for this project <a href="https://github.com/cj-robinson/polymarket-accuracy">here</a>
+
+			<!-- Social Icons -->
+		<div class="social-icons mt-4">
+			<a href="mailto:c.j.robinson@columbia.edu" class="icon is-medium mr-3" style="color:transparent;">
+				<i class="fas fa-envelope fa-lg" style="color:white;"></i>
+			</a>
+			<a href="https://bsky.app/profile/cj-robinson.bsky.social" class="icon is-medium mr-3"
+				style="color:transparent;">
+				<i class="fa-brands fa-bluesky" style="color:white;"></i>
+			</a>
+			<a href="https://www.linkedin.com/in/christophercjrobinson" class="icon is-medium mr-3"
+				style="color:transparent;">
+				<i class="fab fa-linkedin fa-lg" style="color:white;"></i>
+			</a>
+			<a href="https://github.com/cj-robinson" class="icon is-medium mr-3" style="color:transparent;">
+				<i class="fab fa-github fa-lg" style="color:white;"></i>
+			</a>
+		</div>
+	</div>
 </body>
 
 </html>
