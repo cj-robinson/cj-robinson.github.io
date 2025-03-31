@@ -132,26 +132,26 @@
         }
 
         .subtitle {
-             font-size: 14px;
-             text-align: center;
-             margin-bottom: .5em;
-         }
- 
-         .map-subtitle {
-             font-size: 14px;
-             text-align: left;
-             margin-bottom: .5em;
-             font-weight: bold;
-         }
- 
-         .city-label {
-             font-size: 16px;
-             text-align: right;
-             margin-bottom: .5em;
-             position: relative;
-             transform: translateY(35%);
-             width: 150px;
-         }
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: .5em;
+        }
+
+        .map-subtitle {
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: .5em;
+            font-weight: bold;
+        }
+
+        .city-label {
+            font-size: 16px;
+            text-align: right;
+            margin-bottom: .5em;
+            position: relative;
+            transform: translateY(35%);
+            width: 150px;
+        }
 
         .hero {
             background-color: #a2a251;
@@ -163,6 +163,28 @@
 
         .hero-body {
             margin: 0;
+        }
+
+        .legend-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            max-width: 900px;
+            margin: 0 auto;
+
+        }
+
+        .legend-container>div {
+            flex: 1;
+            /* This makes each div take equal space */
+            padding: 0px;
+            min-width: 300px;
+            margin-bottom: 0;
+
+        }
+
+        .legend-container>div:last-child {
+            margin-right: 0;
         }
 
         /* margin on mobile */
@@ -192,6 +214,17 @@
             .hero-body {
                 width: 100%;
                 margin: 0;
+            }
+        }
+
+        @media (max-width:800px) {
+            .legend-container {
+                flex-direction: column;
+                /* Stack columns vertically */
+            }
+
+            .legend-container>div {
+                max-width: 100%;
             }
         }
     </style>
@@ -1024,195 +1057,215 @@
 
 
         <style>
-            .mini-maps-container {
+            .wrapper {
                 display: flex;
                 justify-content: center;
-                flex-direction: row;
-                width: 100%;
+                /* Centers the three divs */
+                align-items: center;
+                /* Centers them vertically */
             }
 
-            .mini-maps-container>div {
-                flex: 1;
-                padding: 0px;
-                margin: 10px;
-                max-width: 200px;
-                margin-bottom: 0;
-            }
-
-            .mini-maps {
+            .city-row {
                 display: flex;
-                gap: 10px;
-                justify-content: center;
-                flex-grow: 1;
+                gap: 20px;
+                /* Space between the three main divs */
+                position: relative;
+                /* Ensures the left div is positioned relative to this */
             }
 
-            .legend-container {
+            .map-row {
                 display: flex;
-                justify-content: center;
-                flex-direction: row;
-                max-width: 900px;
-                margin: 0 auto;
-
+                gap: 20px;
+                /*a Adjust spacing between the three divs */
             }
 
-            .legend-container>div {
-                flex: 1;
-                /* This makes each div take equal space */
-                padding: 0px;
-                min-width: 300px;
-                margin-bottom: 0;
-
+            .city-label {
+                position: absolute;
+                right: 100%;
+                /* Moves it to the left of the main group */
+                margin-right: 20px;
+                /* Changes to vertical middle */
+                transform: translateY(250%);
             }
 
-            .legend-container>div:last-child {
-                margin-right: 0;
+
+            .map-subtitle {
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 5px;
             }
 
-            @media (max-width: 800px) {
-                .mini-maps-container {
-                    flex-direction: column;
-                    /* Stack columns vertically */
-                }
+    /* Add mobile responsiveness */
+    @media (max-width: 1000px) {
+        .wrapper {
+            flex-direction: column;
+            align-items: center; /* Center the stack horizontally */
+        }
 
-                .mini-maps-container>div {
-                    margin: 5px 0;
-                    /* Adjust margins for vertical layout */
-                    max-width: 100%;
-                }
+        .city-row {
+            flex-direction: column;
+            gap: 0px;
+            margin-top: 20px;
+            font-weight: bold;
+            align-items: center; /* Center the city-row content */
+        }
 
-                .legend-container {
-                    flex-direction: column;
-                    /* Stack columns vertically */
-                }
+        .map-row {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center; /* Center the map-row content */
+        }
 
-                .legend-container>div {
-                    max-width: 100%;
-                }
+        .city-label {
+            position: static;
+            margin: 0 0 10px 0;
+            transform: none;
+            text-align: center; /* Center the text */
+        }
 
+        .mini-maps-container img {
+            width: 300px; /* Reduce width for smaller screens */
+        }
 
-            }
-
-            @media (min-width: 800px) {
-                .mobile-only-text {
-                    display: none;
-                }
-            }
+    }
         </style>
 
 
 
 
         <div class="mini-maps-container">
-            <div class="city-label">
-                East Village, Manhattan
-            </div>
-            <div class="mini-maps">
-                <div class="map-subtitle">
-                    Weekday - 7 a.m.
+
+            <div class="wrapper">
+                <div class="city-row">
+                    <div class="city-label">
+                        East Village, Manhattan
+                    </div>
+                    <div class="map-row">
+                        <div>
+                            <div class="map-subtitle">
+                                Weekday - 7 a.m.
+                            </div>
+                            <figure>
+                                <img src="img/evillage_7am.png">
+                            </figure>
+                        </div>
+                        <div>
+                            <div class="map-subtitle">
+                                Weekday - 12 p.m.
+                            </div>
+                            <figure>
+                                <img src="img/evillage_12pm.png">
+                            </figure>
+                        </div>
+                        <div>
+
+                            <div class="map-subtitle">
+                                Weekday - 3 p.m.
+                            </div>
+                            <figure>
+                                <img src="img/evillage_3pm.png">
+                            </figure>
+                        </div>
+                    </div>
                 </div>
-                <figure>
-                    <img src="img/evillage_7am.png">
-                </figure>
             </div>
-            <div>
-                <div class="map-subtitle">
-                    Weekday - 12 p.m.
+
+
+
+            <div class="wrapper">
+                <div class="city-row">
+                    <div class="city-label">
+                        Midtown East, Manhattan
+                    </div>
+                    <div>
+                        <div class="map-subtitle mobile-only-text">
+                            Weekday - 7 a.m.
+                        </div>
+                        <figure>
+                            <img src="img/midtown_7am.png">
+                        </figure>
+                    </div>
+                    <div>
+                        <div class="map-subtitle mobile-only-text">
+                            Weekday - 12 p.m.
+                        </div>
+                        <figure>
+                            <img src="img/midtown_12pm.png">
+                        </figure>
+                    </div>
+                    <div>
+                        <div class="map-subtitle mobile-only-text">
+                            Weekday - 3 p.m.
+                        </div>
+                        <figure>
+                            <img src="img/midtown_3pm.png">
+                        </figure>
+                    </div>
                 </div>
-                <figure>
-                    <img src="img/evillage_12pm.png">
-                </figure>
             </div>
-            <div>
-                <div class="map-subtitle">
-                    Weekday - 3 p.m.
+
+            <div class="wrapper">
+                <div class="city-row">
+                    <div class="city-label">
+                        Hudson Yards, Manhattan
+                    </div>
+                    <div>
+                        <div class="map-subtitle mobile-only-text">
+                            Weekday - 7 a.m.
+                        </div>
+                        <figure>
+                            <img src="img/wvillage_7am.png">
+                        </figure>
+                    </div>
+                    <div>
+                        <div class="map-subtitle mobile-only-text">
+                            Weekday - 12 p.m.
+                        </div>
+                        <figure>
+                            <img src="img/wvillage_12pm.png">
+                        </figure>
+                    </div>
+                    <div>
+                        <div class="map-subtitle mobile-only-text">
+                            Weekday - 3 p.m.
+                        </div>
+                        <figure>
+                            <img src="img/wvillage_3pm.png">
+                        </figure>
+                    </div>
                 </div>
-                <figure>
-                    <img src="img/evillage_3pm.png">
-                </figure>
             </div>
         </div>
-
-
-
-        <div class="mini-maps-container">
-            <div class="city-label">
-                Midtown East, Manhattan
-            </div>
-            <div class="mini-maps">
-                <div class="map-subtitle mobile-only-text">
-                    Weekday - 7 a.m.
-                </div>
-                <figure>
-                    <img src="img/midtown_7am.png">
-                </figure>
-            </div>
-            <div>
-                <div class="map-subtitle mobile-only-text">
-                    Weekday - 12 p.m.
-                </div>
-                <figure>
-                    <img src="img/midtown_12pm.png">
-                </figure>
-            </div>
-            <div>
-                <div class="map-subtitle mobile-only-text">
-                    Weekday - 3 p.m.
-                </div>
-                <figure>
-                    <img src="img/midtown_3pm.png">
-                </figure>
-            </div>
-        </div>
-
-
-
-        <div class="mini-maps-container">
-            <div class="city-label">
-                Hudson Yards, Manhattan
-            </div>
-            <div class="mini-maps">
-                <div class="map-subtitle mobile-only-text">
-                    Weekday - 7 a.m.
-                </div>
-                <figure>
-                    <img src="img/wvillage_7am.png">
-                </figure>
-            </div>
-            <div>
-                <div class="map-subtitle mobile-only-text">
-                    Weekday - 12 p.m.
-                </div>
-                <figure>
-                    <img src="img/wvillage_12pm.png">
-                </figure>
-            </div>
-            <div>
-                <div class="map-subtitle mobile-only-text">
-                    Weekday - 3 p.m.
-                </div>
-                <figure>
-                    <img src="img/wvillage_3pm.png">
-                </figure>
-            </div>
-        </div>
-    </div>
     </div>
 
     <div class="content">
-        <p>Lyft, the company that owns and operates Citi Bike, only publishes data for station availability in real
-            time, meaning that historical analysis requires continuously capturing this data. I tracked these stations
+        <p>Lyft, the company that owns and operates Citi Bike, only publishes data for station availability in
+            real
+            time, meaning that historical analysis requires continuously capturing this data. I tracked these
+            stations
             from August to November 2024, downloading data every 10 minutes.</p>
 
-        <p>The Comptroller's report found that although Lyft has a contractual obligation to service stations around the
-            city, Lyft is rebalancing stations (replacing bikes from full to empty stations) at historically low levels.
-            “From 2014 to 2019, Citi Bike completed over 100 annual rebalancing moves per bike compared to just 26 in
-            2022 == an 80% drop,” the report stated. Lyft said this was due to their 'Bike Angels' program, which
-            incentivizes users to move bikes from low- to high-demand stations in exchange for rewards like free rides
+        <p>The Comptroller's report found that although Lyft has a contractual obligation to service stations
+            around
+            the
+            city, Lyft is rebalancing stations (replacing bikes from full to empty stations) at historically low
+            levels.
+            “From 2014 to 2019, Citi Bike completed over 100 annual rebalancing moves per bike compared to just
+            26
+            in
+            2022 == an 80% drop,” the report stated. Lyft said this was due to their 'Bike Angels' program,
+            which
+            incentivizes users to move bikes from low- to high-demand stations in exchange for rewards like free
+            rides
             or discounts.</p>
 
-        <p>The citywide view illustrates both the extent of service issues throughout the city and supports the findings
-            of the Comptroller's report. In addition to the highlighted neighborhoods, stations in the Bronx, Sunset
-            Park, Flatbush, and outer Queens all have consistently unreliable service, no matter the time of day.</p>
+        <p>The citywide view illustrates both the extent of service issues throughout the city and supports the
+            findings
+            of the Comptroller's report. In addition to the highlighted neighborhoods, stations in the Bronx,
+            Sunset
+            Park, Flatbush, and outer Queens all have consistently unreliable service, no matter the time of
+            day.
+        </p>
 
     </div>
 
@@ -1248,11 +1301,12 @@
             }
         </style>
         <div class="full-width">
-            <div class="map-title" style="">
+            <div class="map-title">
                 Citi Bike Station Availability, Citywide
             </div>
             <div class="subtitle">
-                How often Citi Bike stations had bikes or docks available at certain hour from September to November
+                How often Citi Bike stations had bikes or docks available at certain hour from September to
+                November
                 2024
             </div>
 
