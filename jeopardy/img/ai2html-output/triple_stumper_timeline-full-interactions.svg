@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="g-triple_stumper_timeline-full-interactions-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="tiny" version="1.2" viewBox="0 0 700 482">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <rect id="shading-2025" style="opacity:0.2;" x="631" y="11" width="50" height="426" fill="#f7bc31"/>
+  <g id="tourn-path">
+    <path d="M529,52c9.129.646,35.133,3.705,58,24,27.926,24.784,32.045,58.295,32.505,72.467" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="M619.5,154.5c-1.083-2.829-2.917-6.333-4.844-8.498l4.773,1.671,4.737-1.769c-1.882,2.204-3.643,5.746-4.666,8.596Z"/>
+  </g>
+  <g id="james-path">
+    <path d="M278.5,357.5c10.077,10.916,27.392,26.89,53,39,30.366,14.36,58.381,16.661,75.604,16.51" fill="none" stroke="#000" stroke-miterlimit="10"/>
+    <path d="M413.134,412.852c-2.814,1.122-6.293,3.003-8.431,4.96l1.606-4.796-1.834-4.712c2.229,1.851,5.795,3.564,8.659,4.548Z"/>
+  </g>
+  <rect id="shade-2019" style="opacity:0.2;" x="435" y="11" width="40" height="426" fill="#f7bc31"/>
+  <rect id="shading-2010" style="opacity:0.2;" x="90" y="10" width="300" height="426" fill="#f7bc31"/>
+  <image id="james" width="209" height="209" transform="translate(239.96 300.88) scale(.24)" xlink:href="triple_stumper_timeline-full-interactions-1.png"/>
+<style>
+#g-triple_stumper_timeline-full-interactions-img rect, #g-triple_stumper_timeline-full-interactions-img circle, #g-triple_stumper_timeline-full-interactions-img path, #g-triple_stumper_timeline-full-interactions-img line, #g-triple_stumper_timeline-full-interactions-img polyline, #g-triple_stumper_timeline-full-interactions-img polygon { vector-effect: non-scaling-stroke; }
+</style>
+</svg>
