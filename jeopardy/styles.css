@@ -26,6 +26,14 @@ body {
     margin-top: 80px;
 }
 
+.hed-container {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:.5em;
+    padding-right:.5em;
+}
+
 header {
     text-align: center;
     padding: 60px 20px;
@@ -233,9 +241,28 @@ h2 {
         font-size: 18px;
     }
 
-    .content {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+    .chart-title {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 48px;
+
+}
+
+    .chart-subtitle {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+
+    .content  {
+        padding-left: .5em !important;
+        padding-right: .5em !important;
+    }
+
+    .content .hed-container {
+        background-color: red; /* Temporary for debugging */
     }
 }
 
