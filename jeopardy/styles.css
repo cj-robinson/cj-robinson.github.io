@@ -218,11 +218,6 @@ code {
     border-left: 5px solid var(--highlight);
 }
 
-p {
-    margin-bottom: 20px;
-    font-size: 1.15rem;
-}
-
 .content-section {
     max-width: 800px;
     margin: 0 auto 80px;
