@@ -45,8 +45,7 @@
         </div>
         <div class="header-content">
             <h1>I'll take AWKWARD SILENCE for $800</h1>
-            <p class="subhead">Why Are Jeopardy Contestants Getting Stumped More Often? Jeopardy's wrong guesses and
-                questions that stump contestants peaked in 2025</p>
+            <p class="subhead">Why are Jeopardy contestants getting stumped more often?</p>
             <p class="byline">
             <p class="byline">By <a href="https://cj-robinson.github.io">C.J. Robinson</a></p>
         </div>
@@ -645,6 +644,16 @@
             rounds of 30 questions, culminating in a final question that contestants must bet a certain amount of their
             earned money on.</p>
 
+            <iframe class="ytp-iv-video-content"
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/Y8aZxitL258?si=4t-WhWepzfNbWOW6" 
+ title="A recent example of a triple stumper" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen>
+</iframe>
+
         <p>To boost ratings, recent years have seen the rise of tournaments like "Jeopardy! Masters" which collects some
             of Jeopardy's most successful winners together to answer more advanced trivia. Commenters thought this might
             have been the reason for the uptick in difficult answers, but even without these games, recent games have
@@ -776,8 +785,7 @@
 
             <div id="g-all_games_bubble-box" class="ai2html ai2html-responsive">
                 <div>
-                    <h3 class="chart-title">It's rare that Jeopardy games have more than 15 triple stumpers</h3>
-                    <p class="chart-subtitle">Jeopardy games since 2010 by number of triple stumper clues </p>
+                    <h3 class="chart-title">It's rare that <span style="color: #0928ab;">Jeopardy games</span> have more than 15 triple stumpers</h3>                    <p class="chart-subtitle">Jeopardy games since 2010 by number of triple stumper clues </p>
                 </div>
                 <!-- Artboard: full -->
                 <div id="g-all_games_bubble-full" class="g-artboard" style="width:700px; height:240.999999999998px;"
@@ -1294,7 +1302,7 @@
 
             <div id="g-big_stumps_bubble-box" class="ai2html ai2html-responsive">
                 <div>
-                    <h3 class="chart-title" style="width:700px">Last year represented almost half of the historically
+                    <h3 class="chart-title" style="width:700px"><span class="color-change">Last year</span>  represented almost half of the historically
                         bad triple stumper games</h3>
                     <p class="chart-subtitle" style="width:700px">Jeopardy games since 2010 by number of triple stumper
                         clues</p>
@@ -2883,12 +2891,30 @@
             d3.selectAll("#shading-2025").classed('hidden', false)
         })
 
-
-
-
         d3.select("#step-six").on('stepin', function (e) {
             d3.selectAll("#older-stump").classed('grey-circle', true)
             d3.selectAll("#older-stump").classed('blue-circle', false)
+            d3.select("span.color-change").style("color", "#0928ab");
+        })
+
+
+        d3.select("#step-six").on('stepout', function (e) {
+            if (e.detail.direction === "up") {
+            d3.selectAll("#older-stump").classed('grey-circle', false)
+            d3.selectAll("#older-stump").classed('blue-circle', true)
+            d3.select("span.color-change").style("color", "#e0e0e0");
+
+            }
+        })
+
+
+        d3.select("#step-eight").on('stepout', function (e) {
+            if (e.detail.direction === "up") {
+            d3.selectAll("#badrect1").classed('hidden', true)
+            d3.selectAll("#badrect2").classed('hidden', true)
+            d3.selectAll("#badrect3").classed('hidden', true)
+            d3.selectAll("#badrect").classed('hidden', true)
+            }
         })
 
         d3.select("#step-eight").on('stepin', function (e) {

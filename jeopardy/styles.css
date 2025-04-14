@@ -76,7 +76,7 @@ header {
 }
 
 .header-cell {
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .header-content {
@@ -155,7 +155,16 @@ ul {
 
 iframe {
     padding-bottom: 1.2em;
+    padding-bottom: 1.2em;
+    display: block;
+    margin: 0 auto;
+
 }
+
+.ytp-iv-video-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 code {
     font-family: 'Courier New', monospace;
