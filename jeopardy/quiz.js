@@ -37,11 +37,11 @@ fetch('data/jeopardy_questions.json')
 // };
 
 // Simulate fetching data
-setTimeout(() => {
-    data = fakeData; // Assign fake data to the global variable
-    console.log(data); // Use the data as needed
-    getRandomQuestion();
-}, 1000);
+// setTimeout(() => {
+//     data = fakeData; // Assign fake data to the global variable
+//     console.log(data); // Use the data as needed
+//     getRandomQuestion();
+// }, 1000);
 
 // Event listeners
 if (submitAnswer) {
