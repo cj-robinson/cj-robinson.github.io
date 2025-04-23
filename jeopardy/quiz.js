@@ -61,7 +61,7 @@ function getRandomQuestion() {
     document.getElementById('answer-input').value = '';
 
     //use the data from the fetch call
-    const questions = data.questions;
+    const questions = data;
     const randomIndex = Math.floor(Math.random() * questions.length);
     currentQuestion = questions[randomIndex];
 
