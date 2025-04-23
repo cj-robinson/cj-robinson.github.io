@@ -1,46 +1,46 @@
 :root {
-    --primary-blue: #0063be;
-    --secondary-blue: #003f7a;
-    --jeopardy-blue: #003399;
-    --jeopardy-light-blue: #060CE9;
-    --text-color: #333;
-    --light-gray: #f5f5f5;
-    --medium-gray: #e0e0e0;
     --dark-gray: #666;
     --highlight: #ffd700;
+    --jeopardy-blue: #003399;
+    --jeopardy-light-blue: #060CE9;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --primary-blue: #0063be;
+    --secondary-blue: #003f7a;
+    --text-color: #333;
 }
 
 body {
-    margin: 0;
-    font-size: 20px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
     background-color: white;
+    color: var(--text-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0;
     text-rendering: optimizeLegibility;
 }
 
 .content {
-    max-width: 640px;
     margin: auto;
     margin-top: 80px;
+    max-width: 640px;
 }
 
 .hed-container {
-    max-width: 640px;
     margin-left: auto;
     margin-right: auto;
-    padding-left:.5em;
-    padding-right:.5em;
+    max-width: 640px;
+    padding-left: .5em;
+    padding-right: .5em;
 }
 
 header {
-    text-align: center;
-    padding: 60px 20px;
     background-color: var(--jeopardy-blue);
     color: white;
-    position: relative;
     overflow: hidden;
+    padding: 60px 20px;
+    position: relative;
+    text-align: center;
 }
 
 .blue-circle {
@@ -49,37 +49,36 @@ header {
 
 .blue-circle circle {
     fill: inherit;
-  }
+}
 
 .grey-circle {
     fill: #e0e0e0;
-
 }
 
-.grey-circle circle{
+.grey-circle circle {
     fill: inherit;
-
 }
+
 .header {
-    padding: 3em 0;
-    text-align: center;
-    padding: 60px 20px;
     background-color: var(--jeopardy-blue);
     color: white;
-    position: relative;
     overflow: hidden;
+    padding: 3em 0;
+    padding: 60px 20px;
+    position: relative;
+    text-align: center;
 }
 
 .header-grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    height: 100%;
+    left: 0;
     opacity: 0.1;
+    position: absolute;
+    top: 0;
+    width: 100%;
     z-index: 0;
 }
 
@@ -95,17 +94,17 @@ header {
 h1 {
     font-size: 64px;
     font-weight: 800;
-    margin-bottom: 10px;
     line-height: 1.2;
+    margin-bottom: 10px;
 }
 
 .subtitle {
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 30px;
-    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 800px;
 }
 
 .byline {
@@ -114,7 +113,6 @@ h1 {
     margin-bottom: 5px;
 }
 
-    
 /* make byline link white and underlined */
 .byline a {
     color: white;
@@ -123,9 +121,9 @@ h1 {
 
 .footer {
     background: #f4f4f4;
-    text-align: center;
     font-size: 0.8em;
     padding: 4em 0;
+    text-align: center;
 }
 
 figure {
@@ -134,10 +132,10 @@ figure {
 }
 
 figcaption {
-    font-size: 0.8em;
-    text-align: center;
-    margin-top: 0.5em;
     color: #666;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    text-align: center;
 }
 
 .social-icons.mt-5 .icon {
@@ -156,81 +154,77 @@ p {
     padding-bottom: 1.2em;
 }
 
-
-
 ul {
+    line-height: 1.6;
     margin: 0;
     padding-bottom: 1em;
-    line-height: 1.6;
 }
 
 iframe {
-    padding-bottom: 1.2em;
-    padding-bottom: 1.2em;
     display: block;
     margin: 0 auto;
-
+    padding-bottom: 1.2em;
+    padding-bottom: 1.2em;
 }
 
 .ytp-iv-video-content {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
 code {
-    font-family: 'Courier New', monospace;
     background: #fff880;
+    font-family: 'Courier New', monospace;
 }
 
 .chart-title {
+    color: black;
     font-size: 1.6rem;
-    text-align: left;
     margin-bottom: 10px;
-    color:  black;
+    text-align: left;
 }
 
 .chart-subtitle {
-    font-size: 1rem;
-    text-align: left;
-    margin-bottom: 30px;
     color: var(--dark-gray);
+    font-size: 1rem;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
-
- /* Article styles */
- .article {
+/* Article styles */
+.article {
     padding: 60px 0;
 }
 
 .intro {
     font-size: 1.4rem;
-    max-width: 800px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
     line-height: 1.8;
+    margin: 0 auto 60px;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
 .quote {
+    border-left: 5px solid var(--highlight);
+    color: var(--jeopardy-light-blue);
     font-size: 1.8rem;
     font-style: italic;
-    max-width: 700px;
     margin: 40px auto;
+    max-width: 700px;
     padding: 20px;
     text-align: center;
-    color: var(--jeopardy-light-blue);
-    border-left: 5px solid var(--highlight);
 }
 
 .content-section {
-    max-width: 800px;
     margin: 0 auto 80px;
+    max-width: 800px;
     padding: 0 20px;
 }
 
 h2 {
+    color: var(--jeopardy-blue);
     font-size: 2.2rem;
     margin-bottom: 30px;
-    color: var(--jeopardy-blue);
 }
 
 /* margin on mobile */
@@ -245,43 +239,46 @@ h2 {
 
     h1 {
         font-size: 48px;
-
-}
+    }
 
     .chart-subtitle {
         font-size: 18px;
         margin-bottom: 10px;
     }
 
-
-    .content  {
+    .content {
         padding-left: .5em !important;
         padding-right: .5em !important;
     }
 
     .content .hed-container {
-        background-color: red; /* Temporary for debugging */
+        background-color: red;
+
+        /* Temporary for debugging */
     }
 }
 
 .chart-transition-arrow {
-    position: absolute;
-    right: 20%;  /* Position from right instead of left */
-    width: 100px;
-    height: 400px; /* Make taller to extend through content */
-    margin-top: -20px;
+    height: 400px;
     margin-bottom: -20px;
+    margin-top: -20px;
+    position: absolute;
+    right: 20%;
+    width: 100px;
     z-index: 1;
-  }
+
+    /* Position from right instead of left */
+    /* Make taller to extend through content */
+}
 
 .arrow-path {
-  fill: none;
-  stroke: #333;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-dasharray: 4,4;
+    fill: none;
+    stroke: #333;
+    stroke-dasharray: 4, 4;
+    stroke-linecap: round;
+    stroke-width: 2;
 }
 
 .arrow-head {
-  fill: #333;
+    fill: #333;
 }

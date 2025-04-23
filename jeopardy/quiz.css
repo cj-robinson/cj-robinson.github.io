@@ -1,124 +1,129 @@
    /* Interactive quiz section */
    .quiz-section {
-    background-color: var(--jeopardy-blue);
-    color: white;
-    padding: 80px 20px;
-    margin-top: 80px;
-}
+       background-color: var(--jeopardy-blue);
+       color: white;
+       margin-top: 80px;
+       padding: 80px 20px;
 
-.quiz-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
+    }
 
-.quiz-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
+   .quiz-container {
+       margin: 0 auto;
+       max-width: 800px;
+       max-width: 640px;
 
-.quiz-header h2 {
-    color: white;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
+    }
 
-.question-card {
-    background-color: var(--jeopardy-light-blue);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+   .quiz-header {
+        margin:auto;
+       margin-bottom: 50px;
+       text-align: center;
+       max-width: 640px;
+       text-align: left;
+    }
 
-.question-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--highlight);
-}
+   .quiz-header h2 {
+       color: white;
+       font-size: 2.5rem;
+       margin-bottom: 15px;
+    }
 
-.question-text {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
+   .question-card {
+       background-color: var(--jeopardy-light-blue);
+       border-radius: 5px;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+       margin-bottom: 30px;
+       padding: 30px;
+    }
 
-.category {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    color: var(--highlight);
-}
+   .question-card h3 {
+       color: var(--highlight);
+       font-size: 1.4rem;
+       margin-bottom: 10px;
+    }
 
-.value {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: white;
-}
+   .question-text {
+       font-size: 1.6rem;
+       font-weight: 600;
+       margin-bottom: 20px;
+    }
 
-.answer-form {
-    margin-top: 20px;
-}
+   .category {
+       color: var(--highlight);
+       font-size: 0.9rem;
+       margin-bottom: 10px;
+       text-transform: uppercase;
+    }
 
-.answer-input {
-    width: 100%;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-left: 16px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 3px;
-    margin-bottom: 10px;
-}
+   .value {
+       color: white;
+       font-size: 1.2rem;
+       font-weight: bold;
+       margin-bottom: 20px;
+    }
 
-.answer-input:focus {
-    outline: 2px solid var(--highlight);
-}
+   .answer-form {
+       margin-top: 20px;
+    }
 
-.submit-answer {
-    background-color: var(--highlight);
-    color: var(--jeopardy-blue);
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+   .answer-input {
+       border: none;
+       border-radius: 3px;
+       font-size: 1.2rem;
+       margin-bottom: 10px;
+       padding-bottom: 16px;
+       padding-left: 16px;
+       padding-top: 16px;
+       width: 100%;
+    }
 
-.next-question {
-    background-color: white;
-    color: var(--jeopardy-blue);
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+   .answer-input:focus {
+       outline: 2px solid var(--highlight);
+    }
 
+   .submit-answer {
+       background-color: var(--highlight);
+       border: none;
+       border-radius: 3px;
+       color: var(--jeopardy-blue);
+       cursor: pointer;
+       font-size: 1.1rem;
+       font-weight: bold;
+       padding: 12px 25px;
+       transition: all 0.3s ease;
+    }
 
-.submit-answer:hover {
-    background-color:var(--highlight);
-}
+   .next-question {
+       background-color: white;
+       border: none;
+       border-radius: 3px;
+       color: var(--jeopardy-blue);
+       cursor: pointer;
+       font-size: 1.1rem;
+       font-weight: bold;
+       padding: 12px 25px;
+       transition: all 0.3s ease;
+    }
 
-.result {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 3px;
-    display: none;
-}
+   .submit-answer:hover {
+       background-color: var(--highlight);
+    }
 
-.correct {
-    background-color: rgba(0, 255, 0, 0.2);
-    color: white;
-}
+   .result {
+       border-radius: 3px;
+       display: none;
+       font-size: 1.2rem;
+       font-weight: bold;
+       margin-top: 15px;
+       padding: 10px;
+    }
 
-.incorrect {
-    background-color: rgba(255, 0, 0, 0.2);
-    color: white;
-}
+   .correct {
+       background-color: rgba(0, 255, 0, 0.2);
+       color: white;
+    }
+
+   .incorrect {
+       background-color: rgba(255, 0, 0, 0.2);
+       color: white;
+    }

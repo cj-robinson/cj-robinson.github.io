@@ -2,9 +2,6 @@
   pointer-events: none;
   position: absolute;
   transform-origin: bottom center;
-
-  /* Prevent arrows from interfering with cursor */
-  /* Set the transform origin to the bottom center */
 }
 
 .arrow {
@@ -138,13 +135,15 @@
 
 .title {
   padding-bottom: 5px;
-  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+
+font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
 
 body {
   background-color: rgb(252, 249, 226);
-  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+
+font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
 
@@ -183,7 +182,7 @@ body {
   transform: translateY(-5px);
 }
 
-.profile-container{
+.profile-container {
   background-position: center;
   background-size: cover;
   border-radius: .75rem;
