@@ -18,7 +18,8 @@
    
     <link href="styles.css" rel="stylesheet">
     <link href="scrolly-styles.css" rel="stylesheet">
-    
+    <link href="quiz.css" rel="stylesheet">
+
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/intersection-observer/0.12.2/intersection-observer.min.js"></script>
 
@@ -2635,6 +2636,30 @@
 
 
 
+     <!-- Interactive Quiz Section -->
+     <section class="quiz-section">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>Can you beat the Triple Stumper?</h2>
+                <p>There have been thousands of triple stumpers that come from the easiest level, $200. Can you guess the answer none of the Jeopardy contestants could?</p>
+            </div>
+            
+            <div class="question-card">
+                <p id="question-value" style="padding-bottom:0em; font-weight: bold;"></p>
+                <p id="question-text" style="padding-bottom:0em;"></p>
+                <div class="answer-form">
+                    <input type="text" class="answer-input" id="answer-input" type="text" placeholder="What is...">
+                    <button class="submit-answer" id="submit-answer">Submit</button>
+                    <div class="result-message" id="result-message"></div>
+                    <button class="next-question" id="next-question" style="display: none;">Another Question</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <div class="footer">
         <p>Find the code and data for this project <a
@@ -2663,6 +2688,7 @@
     <style>
         .hidden {
             display: none;
+            transition: .5s;
         }
     </style>
 
@@ -2713,7 +2739,6 @@
             d3.selectAll("#shade-2019").classed('hidden', false)
 
             d3.selectAll("#shading-2010").classed('hidden', true)
-            console.log("step two")
 
         })
 
@@ -2916,6 +2941,7 @@
 
 
 
+<script src="quiz.js"></script>
 
 </body>
 
