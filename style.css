@@ -95,7 +95,7 @@
 .image-container {
   background-position: center;
   background-size: cover;
-  border-radius: .75rem;
+  /* border-radius: .75rem; */
   height: 100%;
   position: relative;
   transition: all 0.3s ease;
@@ -120,11 +120,9 @@
 
 .hero {
   background-color: #a2a251;
-  padding-bottom: 40px;
 }
 
 .tag {
-  border-radius: 20px;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
 }
@@ -218,15 +216,9 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   opacity: 0;
 }
 
-@media screen and (min-width: 600px) {
-  .arrow-down {
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
-    display: block;
-    height: 20px;
-    margin: 0 auto;
-    transform: rotate(45deg);
-    width: 20px;
+@media screen and (max-width: 600px) {
+  .mobile-disappear {
+    display: none;
   }
 }
 
@@ -247,4 +239,14 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   60% {
     transform: translateY(-5px) rotate(45deg);
   }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #a2a251;
+
 }
