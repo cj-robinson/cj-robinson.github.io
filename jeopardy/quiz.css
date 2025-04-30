@@ -19,7 +19,7 @@
        margin-bottom: 50px;
        text-align: center;
        max-width: 640px;
-       text-align: left;
+       text-align: center;
     }
 
    .quiz-header h2 {
@@ -72,9 +72,11 @@
        font-size: 1.2rem;
        margin-bottom: 10px;
        padding-bottom: 16px;
+       padding-right: 16px;
        padding-left: 16px;
        padding-top: 16px;
        width: 100%;
+       box-sizing: border-box;
     }
 
    .answer-input:focus {
