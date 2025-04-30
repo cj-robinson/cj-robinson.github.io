@@ -68,7 +68,7 @@
 
 .subtitle {
   box-shadow: none;
-
+  margin-bottom: 5px !important;  
   /* remove drop shadow */
 }
 
