@@ -1,53 +1,11 @@
-.arrow {
-  pointer-events: none;
-  position: absolute;
-  transform-origin: bottom center;
+/* Add global box-sizing rule */
+* {
+  box-sizing: border-box;
 }
 
-.arrow {
-  background-color: #292929;
-  height: 10px;
-  margin-top: 40px;
-  transform: rotate(90deg);
-  width: 50px;
-}
-
-.arrow::before {
-  background-color: #292929;
-  content: "";
-  display: block;
-  height: 10px;
-  left: -9px;
-  position: relative;
-  top: -11px;
-  transform: rotate(-45deg);
-  width: 40px;
-}
-
-.arrow::after {
-  background-color: #292929;
-  content: "";
-  display: block;
-  height: 10px;
-  left: -9px;
-  position: relative;
-  transform: rotate(45deg);
-  width: 40px;
-}
-
-#arrow1 {
-  left: 20%;
-  top: 20%;
-}
-
-#arrow2 {
-  left: 50%;
-  top: 50%;
-}
-
-#arrow3 {
-  left: 80%;
-  top: 80%;
+/* Ensure body and html do not exceed viewport width */
+html, body {
+  overflow-x: hidden;
 }
 
 .bsky-icon {
@@ -64,12 +22,14 @@
   background-color: rgb(252, 249, 226);
   box-shadow: none;
   padding: 1rem;
+  max-width: 100%;
 }
 
 .subtitle {
   box-shadow: none;
-  margin-bottom: 5px !important;  
-  /* remove drop shadow */
+  margin-bottom: 5px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+    arial, sans-serif;
 }
 
 .hero-subtitle {
@@ -83,13 +43,10 @@
 .custom-link {
   color: white;
 
-  /* Change this to your desired color */
 }
 
 .custom-link:hover {
   color: white;
-
-  /* Optional: Change the color on hover */
 }
 
 .image-container {
@@ -100,9 +57,7 @@
   position: relative;
   transition: all 0.3s ease;
   width: 100%;
-
-  /* Ensures the image covers the container without distortion */
-  /* Centers the image within the container */
+  max-width: 100%;
 }
 
 .box {
@@ -122,6 +77,11 @@
   background-color: #a2a251;
 }
 
+/* Adjust padding for hero-body */
+.hero-body {
+  padding: 2rem 1rem;
+}
+
 .tag {
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
@@ -133,15 +93,13 @@
 
 .title {
   padding-bottom: 5px;
-
-font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
 
 body {
   background-color: rgb(252, 249, 226);
-
-font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
+  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
 
@@ -149,12 +107,6 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   margin-top: 1rem;
   min-height: 2em;
   position: relative;
-}
-
-.subtitle {
-
-  font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
-    arial, sans-serif;
 }
 
 .is-3 {
@@ -187,9 +139,6 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   height: 100%;
   position: relative;
   width: 100%;
-
-  /* Ensures the image covers the container without distortion */
-  /* Centers the image within the container */
 }
 
 .hover-image {
@@ -216,30 +165,6 @@ font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
   opacity: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .mobile-disappear {
-    display: none;
-  }
-}
-
-@keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0) rotate(45deg);
-  }
-
-  40% {
-    transform: translateY(-10px) rotate(45deg);
-  }
-
-  60% {
-    transform: translateY(-5px) rotate(45deg);
-  }
-}
 
 a {
   text-decoration: none;
@@ -249,4 +174,39 @@ a:hover {
   text-decoration: underline;
   text-decoration-color: #a2a251;
 
+}
+
+.section-header {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-header .title {
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.columns {
+  flex-wrap: wrap;
+}
+
+.columns.is-vcentered > .column {
+  padding: 2rem;
+}
+
+@media screen and (max-width: 770px) {
+  .mobile-disappear {
+    display: none;
+  }
+
+  .hero-body {
+    padding: 1rem;
+  }
+
+  .columns.is-multiline > .column {
+    width: 100%;
+  }
 }
