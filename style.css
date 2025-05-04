@@ -19,7 +19,7 @@ html, body {
 }
 
 .card {
-  background-color: rgb(252, 249, 226);
+  background-color: #F5F5DC;
   box-shadow: none;
   padding: 1rem;
   max-width: 100%;
@@ -37,7 +37,7 @@ html, body {
 }
 
 .is-ft {
-  background-color: #a2a251;
+  background-color: #636B2F;
 }
 
 .custom-link {
@@ -74,7 +74,7 @@ html, body {
 }
 
 .hero {
-  background-color: #a2a251;
+  background-color: #636B2F;
 }
 
 /* Adjust padding for hero-body */
@@ -98,7 +98,7 @@ html, body {
 }
 
 body {
-  background-color: rgb(252, 249, 226);
+  background-color: #F5F5DC;
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
@@ -172,7 +172,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  text-decoration-color: #a2a251;
+  text-decoration-color: #636B2F;
 
 }
 
