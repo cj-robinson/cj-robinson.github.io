@@ -1,0 +1,349 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin: auto;
+    text-rendering: optimizeLegibility;
+}
+
+.headline {
+    font-family: 'Lora', serif;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    color: #111;
+    letter-spacing: -0.01em;
+    text-align: left;
+}
+
+nav {
+    align-items: center;
+    background-color: #333;
+    display: flex;
+    height: 50px;
+    justify-content: left;
+    padding: 0;
+}
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+  li {
+    margin: 0 10px;
+}
+
+  a.nav {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 15px;
+    text-decoration: none;
+}  
+
+.serif {
+    font-family: 'Lora', serif;
+}
+
+.sans-serif {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+.header {
+    padding: 2.5rem 0 2rem 0;
+    margin-bottom: 1.5rem;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.header-top {
+    margin-bottom: 2rem;
+}
+
+.content,
+.header,
+.chart-section {
+    margin: auto;
+    max-width: 680px;
+}
+
+.chart-section.wide {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.chart-section.wide p.chart-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    width: 100%;
+}
+
+.chart-section.wide p.chart-subhead {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    width: 100%;
+}
+
+p.kicker {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.25em;
+    margin-bottom: 0em;
+
+    /* Removes the bottom margin */
+}
+
+h3 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 0px;
+    padding-top: .25em;
+}
+
+.subhead {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+    max-width: 95%;
+    text-align: left;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+p{
+    font-size: 1.23rem;
+    line-height: 1.53;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+h3.section-head {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 40px 0 10px 0;
+}
+
+.byline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8em;
+    color: #222;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+
+
+.byline a:hover {
+    text-decoration: underline;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 400;
+}
+
+p.note {
+    font-size: 1rem;
+}
+
+.footer {
+    background: #f4f4f4;
+    font-size: 0.8em;
+    margin-top: 4em;
+    padding: 4em 0;
+    text-align: center;
+}
+
+/* chart styles */
+
+.chart-section {
+    max-width: 1200px;
+    padding: 20px 0px;
+    width: 100%;
+}
+
+.content .chart-section {
+    padding-top: 0px;
+}
+
+.chart-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+p.chart-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0px auto 5px auto;
+    max-width: 700px;
+}
+
+p.chart-subhead {
+    font-size: 1rem;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    max-width: 700px;
+}
+
+p.chart-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.chart-row .chart {
+    min-width: calc(25% - 15px);
+    padding-right: 15px;
+    width: 100%;
+}
+
+p.chart-source {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* photos */
+
+.photo-section {
+    margin: auto;
+    max-width: 1000px;
+    padding: 30px 0px;
+    width: 100%;
+
+    /* display: flex; */
+}
+
+.photo {
+    padding-right: 15px;
+    width: 100%;
+}
+
+.photo img {
+    width: 100%;
+}
+
+p.caption {
+    font-size: 0.8rem;
+    margin: 0;
+
+color: gray
+}
+
+/* mobile */
+@media (max-width:700px) {
+    body {
+        font-size: 18px;
+    }
+
+    .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .chart-row {
+        display: block;
+    }
+
+    .chart-row .chart {
+        padding: 0;
+    }
+
+    .photo-section {
+        display: block;
+    }
+
+    .photo {
+        padding: 0;
+    }
+
+    .header {
+        padding: 2rem 0 1.5rem 0;
+        max-width: 98vw;
+    }
+    .headline {
+        font-size: 2em;
+    }
+    .subhead {
+        font-size: 1em;
+        max-width: 100%;
+    }
+    .byline {
+        font-size: 0.95em;
+        margin-bottom: 1.5em;
+    }
+    .meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+
+
+/* These are the styles for ai2html */
+
+#g-stream_ai2html_svg-Artboard_1,
+#g-stream_ai2html_svg-Artboard_2,
+#g-generation-comparison-medium,
+#g-generation-comparison-mobile
+ {
+    display: none;
+}
+
+@media (max-width: 480px) {
+
+    #g-stream_ai2html_svg-Artboard_2,
+    #g-generation-comparison-medium {
+        display: block;
+    }
+}
+
+/* @media (min-width: 550px) and (max-width: 800px) {
+
+    #g-bemidji-radial-tablet,
+    #g-iceridge-tablet {
+        display: block;
+    }
+} */
+
+@media (min-width: 480px) {
+
+    #g-stream_ai2html_svg-Artboard_1,
+    #g-generation-comparison-medium {
+        display: block;
+    }
+}
