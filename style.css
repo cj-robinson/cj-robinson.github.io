@@ -18,6 +18,10 @@ html, body {
   width: 1.25em;
 }
 
+.icon {
+  text-decoration: none !important;
+}
+
 .card {
   background-color: #F5F5DC;
   box-shadow: none;
@@ -43,6 +47,19 @@ html, body {
 
 .is-ft {
   background-color: #3E5F44;
+}
+
+
+.custom-link {
+  text-decoration: none;
+}
+
+.content>a:hover {
+  text-decoration-color: black;
+}
+
+.content>a {
+  text-decoration-color: none;
 }
 
 .custom-link {
@@ -172,14 +189,14 @@ body {
 
 
 a {
-  text-decoration: none;
-  color: #EDA35A;
+  text-decoration: underline;
+  color: white;
 }
 
-a:hover {
-  text-decoration: underline;
-  text-decoration-color: #EDA35A;
 
+
+a:hover {
+  color: #EDA35A;
 }
 
 .section-header {
