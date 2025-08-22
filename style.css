@@ -42,7 +42,7 @@ html, body {
 }
 
 .is-ft {
-  background-color: #636B2F;
+  background-color: #3E5F44;
 }
 
 .custom-link {
@@ -79,7 +79,7 @@ html, body {
 }
 
 .hero {
-  background-color: #636B2F;
+  background-color: #3E5F44;
 }
 
 /* Adjust padding for hero-body */
@@ -173,11 +173,12 @@ body {
 
 a {
   text-decoration: none;
+  color: #EDA35A;
 }
 
 a:hover {
   text-decoration: underline;
-  text-decoration-color: #636B2F;
+  text-decoration-color: #EDA35A;
 
 }
 
