@@ -54,12 +54,13 @@ html, body {
   text-decoration: none;
 }
 
-.content>a:hover {
+.content > a:hover {
+  text-decoration: underline;
   text-decoration-color: black;
 }
 
-.content>a {
-  text-decoration-color: none;
+.content > a {
+  text-decoration: none;
 }
 
 .custom-link {
