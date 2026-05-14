@@ -23,9 +23,62 @@ html, body {
 }
 
 .card {
-  background-color: #F5F5DC;
+  background-color: transparent;
+  border: 1px solid #C9BC95;
+  border-radius: 0;
   box-shadow: none;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.card-image {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.card-image figure,
+.card-image .image,
+.card-image img {
+  border-radius: 0 !important;
+}
+
+.card-content {
+  padding: 0 !important;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-content > .content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-content > .content > .mt-4:last-child,
+.card-content > .mt-4:last-child {
+  margin-top: auto;
+}
+
+.footer.is-ft {
+  padding: 1.5rem 1.5rem;
+}
+
+.footer.is-ft .social-icons.mt-4 {
+  margin-top: 0 !important;
+}
+
+body > .container {
+  max-width: none;
+  width: 100%;
+  padding-left: 36px;
+  padding-right: 36px;
+  padding-bottom: 36px;
 }
 
 .is-one-third {
@@ -39,6 +92,7 @@ html, body {
   margin-bottom: 5px !important;
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
+  line-height: 1.5;
 }
 
 .hero-subtitle {
@@ -75,7 +129,6 @@ html, body {
 .image-container {
   background-position: center;
   background-size: cover;
-  /* border-radius: .75rem; */
   height: 100%;
   position: relative;
   transition: all 0.3s ease;
@@ -87,7 +140,7 @@ html, body {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 0;
   margin-bottom: 2rem;
   transition: transform 0.3s ease;
 }
@@ -99,6 +152,7 @@ html, body {
 .hero {
   background-color: #3E5F44;
   position: relative;
+  border: 36px solid #FAF3E0;
 }
 
 /* Adjust padding for hero-body */
@@ -107,12 +161,27 @@ html, body {
 }
 
 .tag {
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
+  height: auto !important;
+  padding: 0.75rem 1.25rem !important;
+  border-radius: 0 !important;
+  letter-spacing: 0;
+  font-size: 0.95rem !important;
+  font-weight: 500;
+  line-height: 1;
 }
 
-.tag:hover {
-  transform: translateY(-2px);
+.card .mt-4:last-child {
+  margin-top: auto !important;
+  padding-top: 1.5rem;
+}
+
+.card .subtitle {
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.card .title.is-4 {
+  margin-bottom: 0.6rem;
 }
 
 .title {
@@ -122,7 +191,7 @@ html, body {
 }
 
 body {
-  background-color: #F5F5DC;
+  background-color: #FAF3E0;
   font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica,
     arial, sans-serif;
 }
@@ -145,6 +214,12 @@ body {
   text-align: center;
   transform: translateX(-50%);
   z-index: 10;
+}
+
+@media screen and (min-width: 771px) {
+  .scroll-arrow {
+    display: none;
+  }
 }
 
 .arrow-down {
@@ -173,21 +248,19 @@ body {
   position: relative;
 }
 
-.image-container:hover {
-  transform: translateY(-5px);
-}
-.winner:hover {
-  transform: translateY(-5px);
-  
-}
 
 .profile-container {
   background-position: center;
   background-size: cover;
-  border-radius: .75rem;
+  border-radius: 0;
   height: 100%;
   position: relative;
   width: 100%;
+}
+
+.profile-container img {
+  border-radius: 0;
+  display: block;
 }
 
 .hover-image {
@@ -227,9 +300,13 @@ a:hover {
 }
 
 .section-header {
-  margin-top: 2rem;
+  margin-top: 36px;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+.container > .columns:first-child {
+  margin-top: 24px;
 }
 
 .section-header .title {
@@ -240,7 +317,19 @@ a:hover {
 }
 
 .columns {
+  display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Masonry feed for project cards (positions assigned by JS in script.js) */
+.container > .columns.is-multiline {
+  display: block;
+  margin: 0;
+}
+
+.container > .columns.is-multiline > .column {
+  max-width: none !important;
 }
 
 .columns.is-vcentered > .column {
@@ -274,7 +363,7 @@ a:hover {
   width: 120px;
   right: -50px;
   top: -30px;
-    z-index: 1001;
+  z-index: 1001;
 }
 
 
@@ -282,6 +371,10 @@ a:hover {
 @media screen and (max-width: 770px) {
   .mobile-disappear {
     display: none;
+  }
+
+  .hero {
+    border-width: 12px;
   }
 
   .hero-body {
